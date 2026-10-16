@@ -381,6 +381,7 @@
     }
 
     /* Unread indicator */
+    #app-mount .channelInfo_c69b6d .numberBadge__463b7,
     #app-mount .unread__2ea32.unreadImportant__2ea32 {
         background-color: var(--spook-highlight) !important;
         box-shadow: var(--spook-glow-medium);
