@@ -1,0 +1,994 @@
+/**
+ * @name Spookveil
+ * @author Made By Spook
+ * @version 1.0.0
+ * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
+ */
+
+
+/* ============================================================
+   01. VARIABLES
+   ============================================================ */
+
+:root {
+    /* Accent */
+    --spook-accent: #36a9ff;
+    --spook-highlight: var(--spook-accent);
+
+    /* Wallpaper */
+    --spook-background-image: var(--bgm-url);
+    --spook-bg-dark: 0.15;
+
+    /* Global background opacity */
+    --spook-wallpaper-overlay-opacity: 0.5;
+
+    /* Glass */
+    --spook-blur: 10px;
+    --spook-saturation: 1;
+    --spook-glass-filter:
+        blur(var(--spook-blur))
+        saturate(var(--spook-saturation));
+
+    /* Dark and light glass surfaces */
+    --spook-bg-primary: rgba(4, 9, 18, 0.20);
+    --spook-bg-secondary: rgba(5, 12, 24, 0.42);
+    --spook-bg-input: rgba(45, 80, 115, 0.32);
+    --spook-bg-code: rgba(4, 9, 18, 0.40);
+
+    /* Borders */
+    --spook-border: rgba(54, 169, 255, 0.32);
+
+    /* Glow */
+    --spook-glow-color: 54, 169, 255;
+
+    --spook-glow-subtle:
+        0 0 4px rgba(var(--spook-glow-color), 0.65),
+        0 0 12px rgba(var(--spook-glow-color), 0.40),
+        0 0 24px rgba(var(--spook-glow-color), 0.20);
+
+    --spook-glow-medium:
+        0 0 4px rgba(var(--spook-glow-color), 0.95),
+        0 0 12px rgba(var(--spook-glow-color), 0.80),
+        0 0 28px rgba(var(--spook-glow-color), 0.48),
+        0 0 48px rgba(var(--spook-glow-color), 0.20);
+
+    --spook-glow-strong:
+        0 0 3px rgba(var(--spook-glow-color), 1),
+        0 0 9px rgba(var(--spook-glow-color), 0.95),
+        0 0 22px rgba(var(--spook-glow-color), 0.75),
+        0 0 45px rgba(var(--spook-glow-color), 0.48),
+        0 0 70px rgba(var(--spook-glow-color), 0.23);
+
+    --spook-glow-filter:
+        drop-shadow(0 0 4px rgba(var(--spook-glow-color), 0.5));
+
+    --spook-glow-filter-strong:
+        drop-shadow(0 0 3px rgba(var(--spook-glow-color), 0.8))
+        drop-shadow(0 0 8px rgba(var(--spook-glow-color), 0.5));
+
+    /* Glass shadows */
+    --spook-glass-shadow:
+        inset 0 1px 0 rgba(125, 197, 255, 0.12),
+        inset 0 0 0 1px rgba(54, 169, 255, 0.18),
+        0 0 8px rgba(54, 169, 255, 0.32),
+        0 0 24px rgba(54, 169, 255, 0.16);
+
+    /* Text palette */
+    --spook-text-strong: #ffffff;
+    --spook-text-default: #e5edf8;
+    --spook-text-subtle: #a8b9cc;
+    --spook-text-muted: #b4c7dc;
+
+    /* Discord text palette */
+    --text-strong: var(--spook-text-strong);
+    --text-default: var(--spook-text-default);
+    --text-subtle: var(--spook-text-subtle);
+    --text-muted: var(--spook-text-muted);
+    --text-code: var(--spook-text-default);
+
+    /* Interactive text */
+    --interactive-text-active: var(--spook-text-strong);
+    --interactive-text-hover: var(--spook-text-strong);
+    --interactive-text-default: var(--spook-text-subtle);
+    --interactive-muted: var(--spook-text-muted);
+
+    /* Inputs */
+    --input-text-default: var(--spook-text-default);
+    --input-text-error-default: var(--spook-text-default);
+    --input-placeholder-text-default: var(--spook-text-muted);
+    --channel-text-area-placeholder: var(--spook-text-default);
+
+    /* Chat */
+    --chat-text-muted: var(--spook-text-muted);
+    --textbox-markdown-syntax: var(--spook-text-subtle);
+
+    /* Reactions */
+    --reaction-text-active: var(--spook-text-strong);
+    --reaction-text-hover: var(--spook-text-strong);
+    --reaction-text-default: var(--spook-text-subtle);
+
+    /* Secondary controls */
+    --control-secondary-text-active: var(--spook-text-strong);
+    --control-secondary-text-hover: var(--spook-text-strong);
+    --control-secondary-text-default: var(--spook-text-default);
+
+    /* Miscellaneous */
+    --badge-text-default: var(--spook-text-default);
+    --redesign-button-tertiary-text: var(--spook-text-default);
+    --redesign-button-tertiary-pressed-text: var(--spook-text-default);
+    --app-message-embed-secondary-text: var(--spook-text-subtle);
+}
+
+
+/* ============================================================
+   Global
+   ============================================================ */
+
+    /* Global text readability */
+    #app-mount {
+        text-shadow:
+            0 1px 2px rgba(0, 0, 0, 0.85),
+            0 0 3px rgba(255, 255, 255, 0.10);
+    }
+
+    /* Keep usernames free of the global text shadow */
+    #app-mount .username_c19a55 {
+        text-shadow: 
+            0 0px 5px rgba(0, 0, 0, 0.5),
+            0 -1px 2px rgba(255, 255, 255, 0.30);
+    }
+
+
+/* ============================================================
+   APPLICATION
+   ============================================================ */
+
+
+    /* Transparent application layers */
+    body,
+    #app-mount,
+    .app__160d8 {
+        background: transparent;
+    }
+
+    /* Global dark background */
+    #app-mount .bg__960e4 {
+        background-image: none !important;
+        background-color:
+            rgb(3 6 13 / var(--spook-wallpaper-overlay-opacity)) !important;
+    }
+
+    /* Hide BackgroundManager's global wallpaper layer.
+    Its image remains available through --bgm-url. */
+    #app-mount .BGM-bg_container {
+        display: none !important;
+    }
+
+    /* Header actions */
+    #app-mount .clickable__81391{       color: var(--spook-text-muted) !important; }
+    #app-mount .clickable__81391:hover{ color: var(--spook-text-strong) !important;}
+
+    /* Remove sidebar/chat seam */
+    #app-mount .container__2637a,
+    #app-mount .privateChannels_e6b769 {
+        margin-right: -1px !important;
+        z-index: 1 !important;
+    }
+
+
+/* ============================================================
+   SHARED GLASS STYLING
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Dark glass blur
+   ------------------------------------------------------------ */
+
+    #app-mount .guilds_c48ade, /* Server list */
+    #app-mount .wrapper_ef3116, /* Server list wrapper */
+    #app-mount .container__2637a, /* Channel list */
+    #app-mount .privateChannels_e6b769, /* DM list */
+    #app-mount .privateChannels_e6b769 .scrollerBase_d125d2, /* DM list scroller */
+    #app-mount .panels_c48ade, /* User/voice control panel */
+    #app-mount .container_f369db, /* Forum channel */
+    #app-mount .container__01ae2, /* Thread panel */
+    #app-mount .members_c8ffbb, /* Member list */
+    #app-mount .bar__7aaec, /* Chat system bar */
+    #app-mount .tabBody__133bf, /* Settings tab content */
+    #app-mount [data-layer="CHANNEL_SETTINGS"], /* Channel settings */
+    #app-mount .modal_e44912:has(.container_abd9a8), /* Settings modal */   
+    #app-mount .embedFull__623de /* Message embed */ {   
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+/* ------------------------------------------------------------
+   Bright glass appearance
+   ------------------------------------------------------------ */
+
+    #app-mount .pollContainer_b7e1cb, /* Poll embed */
+    #app-mount .container__34c2c, /* Forum/search control */
+    #app-mount .container__9293f, /* Chat header */
+    #app-mount .contentHeader_e9e3ed, /* Settings content header */
+    #app-mount .channelTextArea__74017, /* Message composer */
+    #app-mount .wrapper__44df5, /* Composer accessory */
+    #app-mount .popover_f84418, /* Floating popover */
+    #app-mount .toolbar_bba883, /* Floating toolbar */
+    #app-mount .content__908e2, /* Unread divider label */
+    #app-mount .container__9271d, /* Search/results panel */
+    #app-mount .browser_d98031, /* In-app browser */
+    #app-mount .popout__76f04, /* Forum posts popout */
+    #app-mount .header_d9c882, /* Popout header */
+    #app-mount .contentWrapper__08434, /* Emoji/sticker picker */
+    #app-mount .inspector_aeaaeb, /* Emoji inspector */
+    #app-mount .container__16eb0, /* Picker container */
+    #app-mount .container_e131a9, /* Picker panel */
+    #app-mount .clipContainer__841c8, /* Composer reply/attachment area */
+    #app-mount .mosaicItem__6c706, /* Attachment tile */
+    #app-mount .actionButton_f8fa06, /* Attachment action button */
+    #app-mount .hoverButtonGroup__06ab4, /* Message hover actions */
+    #app-mount [class*="mainCard_"], /* Forum post card */
+    #app-mount [class*="container_"][class*="isOpen_"], /* Expanded container */
+    #app-mount .container__5808f /* Popout/container */ {
+        background: rgba(185, 215, 255, 0.15) !important;
+        border: 1px solid rgba(205, 230, 255, 0.32) !important;
+        border-radius: 12px;
+
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.65),
+            inset 1px 0 0 rgba(255, 255, 255, 0.22),
+            inset -1px 0 0 rgba(5, 15, 30, 0.20),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.10),
+            0 1px 3px rgba(0, 0, 0, 0.24),
+            0 0 12px rgba(var(--spook-glow-color), 0.30),
+            0 0 24px rgba(var(--spook-glow-color), 0.12) !important;
+    }
+
+/* ------------------------------------------------------------
+   Bright glass blur
+   ------------------------------------------------------------ */
+
+    #app-mount .container__34c2c, /* Forum/search control */
+    #app-mount .popover_f84418, /* Floating popover */
+    #app-mount .toolbar_bba883, /* Floating toolbar */
+    #app-mount .browser_d98031, /* In-app browser */
+    #app-mount .contentWrapper__08434, /* Emoji/sticker picker */
+    #app-mount .container__16eb0, /* Picker container */
+    #app-mount .container__9293f, /* Chat header */
+    #app-mount [class*="mainCard_"], /* Forum post card */ 
+    #app-mount .container__5808f /* Popout/container */ {
+        background: rgba(185, 215, 255, 0.15) !important;
+        border: 1px solid rgba(205, 230, 255, 0.32) !important;
+
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+
+/* ============================================================
+   SERVER LIST
+   ============================================================ */
+
+
+    /* Server list: use global background without additional tint */
+    #app-mount .guilds_c48ade,
+    #app-mount .wrapper_ef3116,
+    #app-mount .sidebar__5e434::after /* Server list bottom fix */ {
+        background: transparent !important;
+    }
+
+    /* Unread server notification badge */
+    #app-mount .lowerBadge_cc5dd2 {
+        --badge-notification-background: var(--spook-highlight);
+        filter: var(--spook-glow-filter-strong);
+    }
+
+    /* Server list unread and selected indicators */
+    #app-mount .wrapper__58105 .item__58105.visible__58105 {
+        background-color: var(--spook-highlight) !important;
+        filter: var(--spook-glow-filter-strong);
+    }
+
+    /* Unread server notification badge */
+    #app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
+        background-color: var(--spook-highlight) !important;
+        filter: var(--spook-glow-filter);
+    }
+
+/* ============================================================
+   CHANNEL LIST
+   ============================================================ */
+
+
+    /* Channel list background */
+    #app-mount .container__2637a {
+        background: var(--spook-bg-primary) !important;
+        margin-bottom: 20px !important; /* Keep the DM list clear of the floating user panel */
+    }
+
+/* ------------------------------------------------------------
+   Muted
+   ------------------------------------------------------------ */
+
+   #app-mount .icon__29444, /* Channel Expand Arrow */
+   #app-mount .icon__2ea32 /* Channel icon */ {
+       color: var(--spook-text-muted) !important;
+   }
+   
+   /* Server Guide, Events and Channels & Roles */
+   #app-mount .name__2ea32 {
+       color: var(--spook-text-muted) !important;
+   }
+   
+   /* Channel actions */
+   #app-mount .actionIcon_c69b6d {
+       color: var(--spook-text-muted) !important;
+   }
+   
+/* ------------------------------------------------------------
+   Strong
+   ------------------------------------------------------------ */
+    
+    /* Unread Channel */
+    #app-mount .modeUnreadImportant__2ea32 .name__2ea32, 
+    #app-mount .modeUnreadImportant__2ea32 .icon__2ea32{
+        color: var(--spook-text-strong) !important;
+    }
+
+/* ------------------------------------------------------------
+   Glow
+   ------------------------------------------------------------ */
+
+    /* Selected channel */
+    #app-mount .modeSelected__2ea32 .name__2ea32,
+    #app-mount .modeSelected__2ea32 .icon__2ea32 {
+        color: var(--spook-text-strong) !important;
+        text-shadow: var(--spook-glow-subtle);
+        filter: var(--spook-glow-filter);
+    }
+    /* Selected channel background */
+    #app-mount .containerDefault_c69b6d.selected_c69b6d .link__2ea32 {
+        background: rgba(var(--spook-glow-color), 0.1) !important;
+    }
+
+    /* Selected channel action */
+    #app-mount .selectedChannel_c69b6d .actionIcon_c69b6d {
+        color: var(--spook-highlight) !important;
+        filter: var(--spook-glow-filter);
+    }
+
+    /* Hovered channel */
+    #app-mount .containerDefault_c69b6d:hover .actionIcon_c69b6d, /* Channel actions hover */
+    #app-mount .containerDefault_c69b6d:hover .name__2ea32,
+    #app-mount .containerDefault_c69b6d:hover .icon__2ea32 {
+        color: var(--spook-text-strong) !important;
+        text-shadow: var(--spook-glow-subtle);
+        filter: var(--spook-glow-filter);
+    }
+    
+    /* Channel row hover background */
+    #app-mount .containerDefault_c69b6d:hover .link__2ea32 {
+        background: rgba(var(--spook-glow-color), 0.1) !important;
+    }
+
+    /* Hovered channel category */
+    #app-mount .containerDefault__29444:hover .name__29444,
+    #app-mount .containerDefault__29444:hover .icon__29444 {
+        color: var(--spook-text-strong) !important;
+        text-shadow: var(--spook-glow-subtle);
+        filter: var(--spook-glow-filter);
+    }
+
+    /* Unread indicator */
+    #app-mount .unread__2ea32.unreadImportant__2ea32 {
+        background-color: var(--spook-highlight) !important;
+        box-shadow: var(--spook-glow-medium);
+        filter: var(--spook-glow-filter);
+    }
+
+
+/* ============================================================
+   DIRECT MESSAGES
+   ============================================================ */
+
+
+    /* DM list background */
+    #app-mount .privateChannels_e6b769 {
+        background: transparent !important;
+    }
+
+    /* DM scrolling background */
+    #app-mount .privateChannels_e6b769 .scrollerBase_d125d2 {
+        background: var(--spook-bg-primary) !important;
+        margin-bottom: 70px !important; /* Keep the DM list clear of the floating user panel */
+    }
+    
+/* ------------------------------------------------------------
+   Muted
+   ------------------------------------------------------------ */
+
+   /* Icons */
+    #app-mount svg.pinnedChannelsHeaderArrow_c32045, /* Pinned Channel Expand Icon */
+    #app-mount .favoriteIcon__972a0, /* Pin Icon */
+    #app-mount .closeIcon__972a0 /* Hover Close Icon */ {
+        color: var(--spook-text-muted) !important;
+    }
+
+    /* Muted DM text and icons */
+    #app-mount .subtext__972a0{ /* Friend subtext */
+        color: var(--spook-text-muted) !important;
+    }
+
+    /* ------------------------------------------------------------
+    Strong
+   ------------------------------------------------------------ */
+
+    /* Speaking participant */
+    #app-mount .name__20a53, /* Header Text */
+    #app-mount .linkButtonIcon__972a0, /* Header Icons */
+    #app-mount .overflow_b0dfc2 /* Friend Name */
+    {
+        color: var(--spook-text-strong) !important;
+    }
+
+/* ------------------------------------------------------------
+   Glow
+   ------------------------------------------------------------ */
+
+    /* Selected friend / DM */
+    #app-mount .privateChannels_e6b769 .interactiveSelected__972a0 {
+        color: var(--spook-text-strong) !important;
+        text-shadow: var(--spook-glow-subtle);
+        filter: var(--spook-glow-filter);
+    }
+
+    /* Friend Hover */
+    #app-mount .interactive__972a0:hover{
+        color: var(--spook-text-strong) !important;
+        text-shadow: var(--spook-glow-subtle);
+        filter: var(--spook-glow-filter);
+    }
+
+
+/* ============================================================
+   CHAT
+   ============================================================ */
+
+        
+    #app-mount .chatContent_f75fb0 {
+        background: transparent !important;
+    }
+
+    /* BackgroundManager wallpaper behind the entire chat */
+    #app-mount .chat_f75fb0::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, var(--spook-bg-dark)),
+                rgba(0, 0, 0, var(--spook-bg-dark))
+            ),
+            var(--spook-background-image);
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        filter: blur(var(--spook-blur));
+    }
+
+    #app-mount .chatContent_f75fb0, /* Chat content uses the shared wallpaper */
+    #app-mount .chat_f75fb0 { /* Chat wallpaper container and outer chat surfaces. includes header and messages */
+        position: relative;
+        isolation: isolate;
+        background: transparent !important;
+    }
+
+    
+    /* Remove chat gradients */
+    #app-mount .chatGradient__36d07,
+    #app-mount .chatTypingGradientAtBottom__36d07,
+    #app-mount .chatTypingGradientNotAtBottom__36d07 {
+        background: transparent !important;
+    }
+
+
+
+    /* Mentioned messages */
+    #app-mount .mentioned__5126c {
+        background:
+            color-mix(in srgb, var(--spook-highlight) 15%, transparent) !important;
+    }
+
+    #app-mount .mentioned__5126c::before {
+        background: var(--spook-highlight) !important;
+        box-shadow: var(--spook-glow-medium);
+    }
+
+    /* Message hover */
+    #app-mount .message__5126c:hover {
+        background: rgba(var(--spook-glow-color), 0.1) !important;
+    }    
+
+    /* Unread divider */
+    #app-mount .divider__908e2.isUnread__908e2 {
+        border-color: var(--spook-highlight) !important;
+        box-shadow: var(--spook-glow-medium);
+    }
+
+    /* Unread divider date text */
+    #app-mount .divider__908e2.isUnread__908e2 .content__908e2 {
+        color: var(--spook-text-subtle) !important;
+    }
+
+    #app-mount .unreadPill__908e2 {
+        background-color: var(--spook-highlight) !important;
+        box-shadow: var(--spook-glow-medium);
+    }
+
+    #app-mount .unreadPillCapStroke__908e2 {
+        stroke: var(--spook-highlight) !important;
+        fill: var(--spook-highlight) !important;
+    }
+
+
+
+    /* System bar */
+    #app-mount .bar__7aaec {
+        background: var(--spook-bg-primary) !important;
+    }
+
+    #app-mount .barText__7aaec {
+        color: var(--spook-text-subtle) !important;
+    }
+
+    /* Embed background */
+    #app-mount .embedFull__623de {
+        background: var(--spook-bg-primary) !important;
+    }
+
+    /* Embed highlight */
+    #app-mount .embedFull__623de {
+        border-left-color: var(--spook-highlight) !important;
+    }
+
+
+    /* Poll Embed */
+    #app-mount .pollContainer_b7e1cb .container__0be77 {
+        background: transparent !important;
+    }
+    /* Winning poll answer frame */
+    #app-mount .pollContainer_b7e1cb .answer__4c520.victorStyles_a1443c .answerInner__4c520 {
+        border: 1px solid var(--spook-highlight) !important;
+    }
+    /* Winning poll answer percentage fill */
+    #app-mount .pollContainer_b7e1cb .answer__4c520.victorStyles_a1443c .votePercentageBar__4c520 {
+        background-color: color-mix(in srgb, var(--spook-highlight) 25%, transparent) !important;    
+    }
+
+    /* Code container sizing */
+    #app-mount [class*="markup_"] pre,
+    #app-mount [class*="codeContainer_"] {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    /* Code block background */
+    #app-mount [class*="markup_"] code {
+        background: var(--spook-bg-code) !important;
+        border: none !important;
+    }
+
+
+    /* Thread connector: retain Discord's rounded L-shape */
+    #app-mount .message__5126c.hasThread_c19a55::after {
+        background: transparent !important;
+        border-left-color: var(--spook-highlight) !important;
+        border-bottom-color: var(--spook-highlight) !important;
+        box-shadow: none !important;
+        filter: var(--spook-glow-filter-strong);
+    }
+
+
+/* ============================================================
+   CHAT HEADERS AND NAVIGATION
+   ============================================================ */
+
+
+    /* Header: retain shared light-glass styling */
+    #app-mount .container__9293f {
+        border: none !important;
+    }
+
+    /* Remove header decorations */
+    #app-mount .container__9293f::before,
+    #app-mount .children__9293f::after {
+        display: none !important;
+    }
+
+    /* Header title */
+    #app-mount .title__9293f {
+        color: var(--spook-text-strong) !important;
+    }
+
+    /* Header action icons */
+    #app-mount .iconWrapper__9293f.clickable__9293f .icon__9293f {
+        color: var(--spook-text-muted) !important;
+    }
+
+    /* Header action icons hover */
+    #app-mount .iconWrapper__9293f.clickable__9293f:hover .icon__9293f {
+        color: var(--spook-highlight) !important;
+        filter: var(--spook-glow-filter-strong);
+    }
+
+
+/* ============================================================
+   08. MESSAGE COMPOSER
+   ============================================================ */
+
+
+    /* Prevent messages overlapping composer */
+    #app-mount .messagesWrapper__36d07 {
+        margin-bottom: 18px !important;
+    }
+
+    /* Transparent composer inner surfaces */
+    /* #app-mount .stackedBars__74017,  */
+    /* #app-mount .clipContainer__841c8 > div, */
+    /* #app-mount .replyBar__841c8, */
+    /* #app-mount .progressContainer__0d0f9, */
+    #app-mount .wrapper__44df5 .scrollableContainer__74017,
+    #app-mount .channelTextArea__74017 .scrollableContainer__74017,
+    #app-mount .wrapperAudio_cf09d8 {
+        background: transparent !important;
+    }
+
+
+    /* Message composer action buttons: stickers, emoji, and apps */
+    #app-mount .channelTextArea__74017 .button__74017,
+    #app-mount .channelTextArea__74017 .emojiButton__74017,
+    #app-mount .channelTextArea__74017 .button_e6e74f {
+        color: var(--spook-text-strong) !important;
+    }
+
+    /* Message composer action buttons hover */
+    #app-mount .channelTextArea__74017 .button__74017:hover,
+    #app-mount .channelTextArea__74017 .emojiButton__74017:hover,
+    #app-mount .channelTextArea__74017 .button_e6e74f:hover {
+        color: var(--spook-highlight) !important;
+        filter: var(--spook-glow-filter);
+    }    
+
+
+/* ============================================================
+   09. MEMBER LIST
+   ============================================================ */
+
+
+    /* Member list background */
+    #app-mount .members_c8ffbb {
+        background: var(--spook-bg-primary) !important;
+    }
+
+    /* Transparent outer surfaces */
+    #app-mount .container_c8ffbb {
+        background: transparent !important;
+    }
+
+    /* Transparent member rows */
+    #app-mount .member__5d473 {
+        background: transparent !important;
+    }
+
+    /* Stronger member row hover */
+    #app-mount .member__5d473:hover {
+        background: rgba(var(--spook-glow-color), 0.15) !important;
+        box-shadow: inset 0 0 0 1px rgba(var(--spook-glow-color), 0.35);
+        color: var(--spook-text-strong) !important;
+    }
+
+
+/* ============================================================
+   10. FORUMS
+   ============================================================ */
+
+
+    /* BackgroundManager wallpaper */
+    #app-mount .container_f369db::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, var(--spook-bg-dark)),
+                rgba(0, 0, 0, var(--spook-bg-dark))
+            ),
+            var(--spook-background-image);
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        filter: blur(var(--spook-blur));
+    }
+
+    /* Forum wallpaper container */
+    #app-mount .container_f369db {
+        position: relative;
+        isolation: isolate;
+        background: transparent !important;
+    }
+    
+    /* Forum post cards: stronger milky fill */
+    #app-mount [class*="mainCard_"] {
+        background: rgba(185, 215, 255, 0.2) !important;
+    }
+
+    /* Forum post cards: brighter glass and glow on hover */
+    #app-mount [class*="mainCard_"]:hover {
+        background: rgba(185, 215, 255, 0.33) !important;
+        border-color: rgba(205, 230, 255, 0.48) !important;
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.65),
+            inset 1px 0 0 rgba(255, 255, 255, 0.22),
+            inset -1px 0 0 rgba(5, 15, 30, 0.20),
+            0 0 14px rgba(var(--spook-glow-color), 0.45),
+            0 0 30px rgba(var(--spook-glow-color), 0.20) !important;
+    }
+
+    
+    /* Forum title text */
+    #app-mount .postTitleText_faa96b{
+        color: var(--spook-text-strong) !important;
+    }
+    
+    /* Forum text */
+    #app-mount .messageFocusBlock_faa96b [data-text-variant] {
+        color: var(--spook-text-default) !important;
+    }
+
+    /* Forum controls */
+    #app-mount .container__34c2c {
+        background-color: var(--spook-bg-input) !important;
+    }
+
+    /* New post count */
+    #app-mount .newPostCount__599fa {
+        color: var(--spook-highlight) !important;
+        text-shadow: var(--spook-glow-strong);
+    }
+
+
+/* ============================================================
+   VOICE CALLS
+   ============================================================ */
+
+
+    /* BackgroundManager wallpaper */
+    #app-mount .wrapper_cb9592 .root_bfe55a::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+
+        background-image:
+            linear-gradient(
+                rgba(0, 0, 0, var(--spook-bg-dark)),
+                rgba(0, 0, 0, var(--spook-bg-dark))
+            ),
+            var(--spook-background-image);
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        filter: blur(var(--spook-blur));
+    }
+
+    /* Voice call background */
+    #app-mount .wrapper_cb9592 .root_bfe55a {
+        position: relative;
+        isolation: isolate;
+        background: transparent !important;
+    }
+
+    /* Voice channel participant names (not speaking) */
+    #app-mount .username__07f91 {
+        color: var(--spook-text-muted) !important;
+    }    
+
+    /* speaking character */    
+    #app-mount .usernameSpeaking__07f91 {
+        color: var(--spook-text-strong) !important;
+        text-shadow: var(--spook-glow-subtle);
+        filter: var(--spook-glow-filter);
+    }
+    
+
+/* ============================================================
+   SEARCH
+   ============================================================ */
+
+
+    /* Muted search text */
+    #app-mount .searchBar_c322aa [data-slate-placeholder="true"],
+    #app-mount .clearSearchHistory__971b5,
+    #app-mount .channelInfo_c69b6d [data-text-variant="text-xs/semibold"] {
+        color: var(--spook-text-muted) !important;
+    }
+
+    /* Search group headers */
+    #app-mount .groupHeader__971b5 [data-text-variant="text-xs/semibold"] {
+        color: var(--spook-text-subtle) !important;
+    }
+
+    /* Strong search text */
+    #app-mount .itemIcon__971b5, /* Search Icons */
+    #app-mount .item__971b5 > div > [data-text-variant="text-sm/medium"],
+    #app-mount .nonText__971b5 {
+        color: var(--spook-text-strong) !important;
+    }
+
+    /* Search filter pills */
+    #app-mount .filterPill__971b5 {
+        color: var(--spook-text-strong) !important;
+        box-shadow: var(--spook-glow-subtle);
+    }
+
+
+/* ============================================================
+   SETTINGS
+   ============================================================ */
+
+    /* Settings backgrounds */
+    #app-mount .modal_e44912:has(.container_abd9a8),
+    #app-mount .tabBody__133bf,
+    #app-mount [data-layer="CHANNEL_SETTINGS"] {
+        background: var(--spook-bg-secondary) !important;
+    }
+
+    /* Transparent settings inner surfaces */
+    #app-mount .scrim__40128, /* Remove modal dimming */
+    #app-mount .modal_e44912:has(.container_abd9a8) .modalContentInner_e44912,
+    #app-mount .modal_e44912:has(.container_abd9a8) .container_abd9a8,
+    #app-mount .modal_e44912:has(.container_abd9a8) .sidebar__409aa,
+    #app-mount .modal_e44912:has(.container_abd9a8) .content_e9e3ed,
+    #app-mount .modal_e44912:has(.container_abd9a8) .bd-store-card,
+    #app-mount [data-layer="CHANNEL_SETTINGS"] .standardSidebarView__23e6b,
+    #app-mount [data-layer="CHANNEL_SETTINGS"] .sidebarRegion__23e6b,
+    #app-mount [data-layer="CHANNEL_SETTINGS"] .contentRegion__23e6b,
+    #app-mount [data-layer="CHANNEL_SETTINGS"] .sidebarRegionScroller__23e6b,
+    #app-mount [data-layer="CHANNEL_SETTINGS"] .contentRegionScroller__23e6b {
+        background: transparent !important;
+    }
+
+    /* Strong settings text */
+    #app-mount .modal_e44912 .label__409aa,
+    #app-mount .tabBar__133bf .item__133bf.selected_a8da2 {
+        color: var(--spook-text-strong) !important;
+    }
+
+    /* Subtle settings text */
+    #app-mount .tabBar__133bf .item__133bf,
+    #app-mount .modal_e44912 .item_caf372 [data-text-variant],
+    #app-mount .modal_e44912 .item_e4d939 [data-text-variant],
+    #app-mount .modal_e44912 [data-text-variant="text-sm/normal"] {
+        color: var(--spook-text-subtle) !important;
+    }
+
+    /* Default settings text */
+    #app-mount .modal_e44912 .button_a22cb0 [data-text-variant] {
+        color: var(--spook-text-default) !important;
+    }
+
+    /* Muted settings icons and labels */
+    #app-mount .modal_e44912 .icon_caf372,
+    #app-mount .modal_e44912 .item_caf372 .text-md\/medium_cf4812,
+    #app-mount .modal_e44912 .item_e4d939 .text-md\/normal_cf4812,
+    #app-mount .modal_e44912 .baseControlItem_dbfbe0 svg[fill="none"] {
+        color: var(--spook-text-muted) !important;
+    }
+
+    /* Settings navigation arrows */
+    #app-mount .modal_e44912 .baseControlItem_dbfbe0 svg[fill="none"] {
+        stroke: var(--spook-text-muted) !important;
+    }
+
+
+/* ============================================================
+   POPOVERS AND MENUS
+   ============================================================ */
+
+    /* More Active Posts popup */
+    #app-mount .popout__76f04 {
+        backdrop-filter: var(--spook-glass-filter) !important;
+        -webkit-backdrop-filter: var(--spook-glass-filter) !important;
+    }
+
+    /* Context menu */
+    #app-mount .menu_c1e9c4 {
+        background: transparent !important;
+        box-shadow: none;
+    }
+
+    /* Context menu glass */
+    #app-mount .menu_c1e9c4::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: var(--spook-bg-input);
+        box-shadow: var(--spook-glow-subtle);
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Tooltips */
+    #app-mount .tooltip_fa450d {
+        background: var(--spook-bg-input) !important;
+        border: 1px solid var(--spook-border);
+        box-shadow: var(--spook-glow-subtle);
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+
+/* ============================================================
+   PICKERS
+   ============================================================ */
+
+    /* Transparent picker inner surfaces */
+    #app-mount .wrapper__14245,
+    #app-mount .scroller_affa7e,
+    #app-mount .categoryList_c0e32c,
+    #app-mount .header__8ef02,
+    #app-mount .categoryList__3ad28,
+    #app-mount .container_fed6d3,
+    #app-mount .content_fed6d3,
+    #app-mount .container_d02962,
+    #app-mount .header_fed6d3,
+    #app-mount .content__99f8c {
+        background: transparent !important;
+        border-color: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* Selected categories */
+    #app-mount .stickerCategoryGenericSelected__3ad28,
+    #app-mount .categoryItemDefaultCategorySelected_b9ee0c {
+        background: transparent !important;
+    }
+
+    /* Active picker tab */
+    #app-mount .navButtonActive__08434 {
+        background: var(--spook-bg-primary) !important;
+    }
+
+
+/* ============================================================
+   TOOLBARS
+   ============================================================ */
+
+/* Remove toolbar decorations */
+#app-mount .toolbar_bba883::before,
+#app-mount .popover_f84418::before {
+    display: none !important;
+}
+
+/* Browser button */
+#app-mount .browser_d98031 button {
+    background-color: var(--spook-highlight) !important;
+    box-shadow: var(--spook-glow-medium);
+}    
+    
