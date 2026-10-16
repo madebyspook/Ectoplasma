@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.0.0
+ * @version 1.1.0
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -10,7 +10,7 @@
    01. VARIABLES
    ============================================================ */
 
-:root {
+    :root {
     /* Accent */
     --spook-accent: #36a9ff;
     --spook-highlight: var(--spook-accent);
@@ -93,6 +93,11 @@
     --spook-text-subtle: #a8b9cc;
     --spook-text-muted: #b4c7dc;
 
+    --spook-background-select: rgba(var(--spook-glow-color), 0.1);
+
+
+
+
     /* Discord text palette */
     --text-strong: var(--spook-text-strong);
     --text-default: var(--spook-text-default);
@@ -161,22 +166,18 @@
     /* Transparent application layers */
     body,
     #app-mount,
-    .app__160d8 {
-        background: transparent;
+    .app__160d8 { 
+        background: transparent; 
     }
 
     /* Global dark background */
     #app-mount .bg__960e4 {
         background-image: none !important;
-        background-color:
-            rgb(3 6 13 / var(--spook-wallpaper-overlay-opacity)) !important;
+        background-color: rgb(3 6 13 / var(--spook-wallpaper-overlay-opacity)) !important;
     }
 
-    /* Hide BackgroundManager's global wallpaper layer.
-    Its image remains available through --bgm-url. */
-    #app-mount .BGM-bg_container {
-        display: none !important;
-    }
+    /* Hide BackgroundManager's global wallpaper layer. Its image remains available through --bgm-url. */
+    #app-mount .BGM-bg_container { display: none !important; }
 
     /* Header actions */
     #app-mount .clickable__81391{       color: var(--spook-text-muted) !important; }
@@ -191,82 +192,37 @@
 
 
 /* ============================================================
-   SHARED GLASS STYLING
+   SHARED GLASS STYLING — UNASSIGNED COMPONENTS
    ============================================================ */
 
-
-/* ------------------------------------------------------------
-   Dark glass blur
-   ------------------------------------------------------------ */
-
-    #app-mount .guilds_c48ade, /* Server list */
-    #app-mount .wrapper_ef3116, /* Server list wrapper */
-    #app-mount .container__2637a, /* Channel list */
-    #app-mount .privateChannels_e6b769, /* DM list */
-    #app-mount .privateChannels_e6b769 .scrollerBase_d125d2, /* DM list scroller */
-    #app-mount .panels_c48ade, /* User/voice control panel */
-    #app-mount .container_f369db, /* Forum channel */
-    #app-mount .container__01ae2, /* Thread panel */
-    #app-mount .members_c8ffbb, /* Member list */
-    #app-mount .bar__7aaec, /* Chat system bar */
-    #app-mount .tabBody__133bf, /* Settings tab content */
-    #app-mount [data-layer="CHANNEL_SETTINGS"], /* Channel settings */
-    #app-mount .modal_e44912:has(.container_abd9a8), /* Settings modal */   
-    #app-mount .embedFull__623de /* Message embed */ {   
+    /* Shared glass: no dedicated section */
+    #app-mount .panels_c48ade {
         backdrop-filter: var(--spook-glass-filter);
         -webkit-backdrop-filter: var(--spook-glass-filter);
     }
 
-/* ------------------------------------------------------------
-   Bright glass appearance
-   ------------------------------------------------------------ */
+    /* Shared glass: no dedicated section */
+    #app-mount .container__01ae2 {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
 
-    #app-mount .pollContainer_b7e1cb, /* Poll embed */
-    #app-mount .container__34c2c, /* Forum/search control */
-    #app-mount .container__9293f, /* Chat header */
-    #app-mount .contentHeader_e9e3ed, /* Settings content header */
-    #app-mount .channelTextArea__74017, /* Message composer */
-    #app-mount .wrapper__44df5, /* Composer accessory */
-    #app-mount .popover_f84418, /* Floating popover */
-    #app-mount .toolbar_bba883, /* Floating toolbar */
-    #app-mount .content__908e2, /* Unread divider label */
-    #app-mount .container__9271d, /* Search/results panel */
-    #app-mount .browser_d98031, /* In-app browser */
-    #app-mount .popout__76f04, /* Forum posts popout */
-    #app-mount .header_d9c882, /* Popout header */
-    #app-mount .contentWrapper__08434, /* Emoji/sticker picker */
-    #app-mount .inspector_aeaaeb, /* Emoji inspector */
-    #app-mount .container__16eb0, /* Picker container */
-    #app-mount .container_e131a9, /* Picker panel */
-    #app-mount .clipContainer__841c8, /* Composer reply/attachment area */
-    #app-mount .mosaicItem__6c706, /* Attachment tile */
-    #app-mount .actionButton_f8fa06, /* Attachment action button */
-    #app-mount .hoverButtonGroup__06ab4, /* Message hover actions */
-    #app-mount [class*="mainCard_"], /* Forum post card */
-    #app-mount [class*="container_"][class*="isOpen_"], /* Expanded container */
-    #app-mount .container__5808f /* Popout/container */ {
+    /* Shared glass: no dedicated section */
+    #app-mount [class*="container_"][class*="isOpen_"] {
         background: var(--spook-glass-background) !important;
         border: var(--spook-glass-border) !important;
         border-radius: var(--spook-glass-border-radius);
         box-shadow: var(--spook-glass-box-shadow) !important;
     }
 
-/* ------------------------------------------------------------
-   Bright glass blur
-   ------------------------------------------------------------ */
-
-    #app-mount .container__34c2c, /* Forum/search control */
-    #app-mount .popover_f84418, /* Floating popover */
-    #app-mount .toolbar_bba883, /* Floating toolbar */
-    #app-mount .browser_d98031, /* In-app browser */
-    #app-mount .contentWrapper__08434, /* Emoji/sticker picker */
-    #app-mount .container__16eb0, /* Picker container */
-    #app-mount .container__9293f, /* Chat header */
-    #app-mount [class*="mainCard_"], /* Forum post card */ 
-    #app-mount .container__5808f /* Popout/container */ {
+    /* Shared glass: no dedicated section */
+    #app-mount .container__5808f {
         background: var(--spook-glass-background) !important;
         border: var(--spook-glass-border) !important;
-        
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
         backdrop-filter: var(--spook-glass-filter);
         -webkit-backdrop-filter: var(--spook-glass-filter);
     }
@@ -285,8 +241,10 @@
     }
 
     /* Unread server notification badge */
-    #app-mount .lowerBadge_cc5dd2 {
+    #app-mount .lowerBadge_cc5dd2,
+    #app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
         --badge-notification-background: var(--spook-highlight);
+        background-color: var(--spook-highlight) !important; /*Only for [class*="numberBadge"] part*/
         filter: var(--spook-glow-filter-strong);
     }
 
@@ -296,97 +254,59 @@
         filter: var(--spook-glow-filter-strong);
     }
 
-    /* Unread server notification badge */
-    #app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
-        background-color: var(--spook-highlight) !important;
-        filter: var(--spook-glow-filter);
-    }
 
 /* ============================================================
    CHANNEL LIST
    ============================================================ */
 
 
-    /* Channel list background */
+    /* Channel List Background */
     #app-mount .container__2637a {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
         background: var(--spook-bg-primary) !important;
         margin-bottom: 20px !important; /* Keep the DM list clear of the floating user panel */
     }
-
-/* ------------------------------------------------------------
-   Muted
-   ------------------------------------------------------------ */
-
-   #app-mount .icon__29444, /* Channel Expand Arrow */
-   #app-mount .icon__2ea32 /* Channel icon */ {
-       color: var(--spook-text-muted) !important;
-   }
-   
-   /* Server Guide, Events and Channels & Roles */
-   #app-mount .name__2ea32 {
-       color: var(--spook-text-muted) !important;
-   }
-   
-   /* Channel actions */
-   #app-mount .actionIcon_c69b6d {
-       color: var(--spook-text-muted) !important;
-   }
-   
-/* ------------------------------------------------------------
-   Strong
-   ------------------------------------------------------------ */
     
+    #app-mount .icon__2ea32, /* Channel Icon */
+    #app-mount .name__2ea32, /* Server Guide, Events and Channels & Roles */ 
+    #app-mount .icon__29444 /* Channel Expand Arrow */ {
+        color: var(--spook-text-muted) !important;
+    }
+      
     /* Unread Channel */
     #app-mount .modeUnreadImportant__2ea32 .name__2ea32, 
     #app-mount .modeUnreadImportant__2ea32 .icon__2ea32{
         color: var(--spook-text-strong) !important;
     }
 
-/* ------------------------------------------------------------
-   Glow
-   ------------------------------------------------------------ */
-
-    /* Selected channel */
+    /* Selected Channel */
     #app-mount .modeSelected__2ea32 .name__2ea32,
-    #app-mount .modeSelected__2ea32 .icon__2ea32 {
+    #app-mount .modeSelected__2ea32 .icon__2ea32,
+    #app-mount .selectedChannel_c69b6d .actionIcon_c69b6d { /* Selected channel action */
         color: var(--spook-text-strong) !important;
         text-shadow: var(--spook-glow-subtle);
         filter: var(--spook-glow-filter);
     }
-    /* Selected channel background */
-    #app-mount .containerDefault_c69b6d.selected_c69b6d .link__2ea32 {
-        background: rgba(var(--spook-glow-color), 0.1) !important;
-    }
 
-    /* Selected channel action */
-    #app-mount .selectedChannel_c69b6d .actionIcon_c69b6d {
-        color: var(--spook-highlight) !important;
-        filter: var(--spook-glow-filter);
-    }
-
-    /* Hovered channel */
-    #app-mount .containerDefault_c69b6d:hover .actionIcon_c69b6d, /* Channel actions hover */
-    #app-mount .containerDefault_c69b6d:hover .name__2ea32,
-    #app-mount .containerDefault_c69b6d:hover .icon__2ea32 {
+    /* Hovered Channel & Category */
+    #app-mount .containerDefault_c69b6d:hover .actionIcon_c69b6d, /* channel actions hover */
+    #app-mount .containerDefault_c69b6d:hover .name__2ea32, /* channel */
+    #app-mount .containerDefault_c69b6d:hover .icon__2ea32, /* channel */
+    #app-mount .containerDefault__29444:hover .name__29444, /* category */
+    #app-mount .containerDefault__29444:hover .icon__29444 { /* category */
         color: var(--spook-text-strong) !important;
         text-shadow: var(--spook-glow-subtle);
         filter: var(--spook-glow-filter);
+    }
+
+    /* Selected & Hovered Channel Background */
+    #app-mount .containerDefault_c69b6d.selected_c69b6d .link__2ea32, /* Selected */
+    #app-mount .containerDefault_c69b6d:hover .link__2ea32 { /* Hovered */
+        background: var(--spook-background-select) !important;
     }
     
-    /* Channel row hover background */
-    #app-mount .containerDefault_c69b6d:hover .link__2ea32 {
-        background: rgba(var(--spook-glow-color), 0.1) !important;
-    }
-
-    /* Hovered channel category */
-    #app-mount .containerDefault__29444:hover .name__29444,
-    #app-mount .containerDefault__29444:hover .icon__29444 {
-        color: var(--spook-text-strong) !important;
-        text-shadow: var(--spook-glow-subtle);
-        filter: var(--spook-glow-filter);
-    }
-
-    /* Unread indicator */
+    /* Unread Indicator */
     #app-mount .channelInfo_c69b6d .numberBadge__463b7,
     #app-mount .unread__2ea32.unreadImportant__2ea32 {
         background-color: var(--spook-highlight) !important;
@@ -402,65 +322,101 @@
 
     /* DM list background */
     #app-mount .privateChannels_e6b769 {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
         background: transparent !important;
     }
 
     /* DM scrolling background */
-    #app-mount .privateChannels_e6b769 .scrollerBase_d125d2 {
+    #app-mount .privateChannels_e6b769 .scrollerBase_d125d2,
+    #app-mount .privateChannels_e6b769 .searchBar_e6b769 { 
         background: var(--spook-bg-primary) !important;
-        margin-bottom: 70px !important; /* Keep the DM list clear of the floating user panel */
-    }
-    
-/* ------------------------------------------------------------
-   Muted
-   ------------------------------------------------------------ */
+    }    
 
-   /* Icons */
+    /* Keep the DM list clear of the floating user panel */
+    #app-mount .privateChannels_e6b769 .scrollerBase_d125d2 {
+        margin-bottom: 70px !important; 
+    }    
+    
+    #app-mount .subtext__972a0, /* Friend subtext */
     #app-mount svg.pinnedChannelsHeaderArrow_c32045, /* Pinned Channel Expand Icon */
     #app-mount .favoriteIcon__972a0, /* Pin Icon */
-    #app-mount .closeIcon__972a0 /* Hover Close Icon */ {
+    #app-mount .closeIcon__972a0 { /* Hover Close Icon */ 
         color: var(--spook-text-muted) !important;
     }
 
-    /* Muted DM text and icons */
-    #app-mount .subtext__972a0{ /* Friend subtext */
-        color: var(--spook-text-muted) !important;
-    }
-
-    /* ------------------------------------------------------------
-    Strong
-   ------------------------------------------------------------ */
-
-    /* Speaking participant */
     #app-mount .name__20a53, /* Header Text */
     #app-mount .linkButtonIcon__972a0, /* Header Icons */
-    #app-mount .overflow_b0dfc2 /* Friend Name */
-    {
+    #app-mount .overflow_b0dfc2 { /* Friend Name */
         color: var(--spook-text-strong) !important;
     }
-
-/* ------------------------------------------------------------
-   Glow
-   ------------------------------------------------------------ */
-
-    /* Selected friend / DM */
-    #app-mount .privateChannels_e6b769 .interactiveSelected__972a0 {
+    
+    /* Selected & Hovered DM */
+    #app-mount .privateChannels_e6b769 .interactiveSelected__972a0, /* Selected */
+    #app-mount .interactive__972a0:hover { /* Hover */
         color: var(--spook-text-strong) !important;
         text-shadow: var(--spook-glow-subtle);
         filter: var(--spook-glow-filter);
-    }
-
-    /* Friend Hover */
-    #app-mount .interactive__972a0:hover{
-        color: var(--spook-text-strong) !important;
-        text-shadow: var(--spook-glow-subtle);
-        filter: var(--spook-glow-filter);
+        background: var(--spook-background-select) !important;
     }
 
 
 /* ============================================================
    CHAT
    ============================================================ */
+
+
+    /* Glass styling */
+    #app-mount .bar__7aaec {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount .embedFull__623de {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount .pollContainer_b7e1cb {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
+    /* Glass styling */
+    #app-mount .content__908e2 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
+    /* Glass styling */
+    #app-mount .mosaicItem__6c706 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
+    /* Glass styling */
+    #app-mount .actionButton_f8fa06 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
+    /* Glass styling */
+    #app-mount .hoverButtonGroup__06ab4 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
 
         
     #app-mount .chatContent_f75fb0 {
@@ -607,6 +563,17 @@
    ============================================================ */
 
 
+    /* Glass styling */
+    #app-mount .container__9293f {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+
     /* Header: retain shared light-glass styling */
     #app-mount .container__9293f {
         border: none !important;
@@ -638,6 +605,31 @@
 /* ============================================================
    08. MESSAGE COMPOSER
    ============================================================ */
+
+
+    /* Glass styling */
+    #app-mount .channelTextArea__74017 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
+    /* Glass styling */
+    #app-mount .wrapper__44df5 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
+    /* Glass styling */
+    #app-mount .clipContainer__841c8 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
 
 
     /* Prevent messages overlapping composer */
@@ -678,6 +670,13 @@
    ============================================================ */
 
 
+    /* Glass styling */
+    #app-mount .members_c8ffbb {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+
     /* Member list background */
     #app-mount .members_c8ffbb {
         background: var(--spook-bg-primary) !important;
@@ -704,6 +703,33 @@
 /* ============================================================
    10. FORUMS
    ============================================================ */
+
+
+    /* Glass styling */
+    #app-mount .container_f369db {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount .container__34c2c {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount [class*="mainCard_"] {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
 
 
     /* BackgroundManager wallpaper */
@@ -827,6 +853,15 @@
    ============================================================ */
 
 
+    /* Glass styling */
+    #app-mount .container__9271d {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
+
     /* Muted search text */
     #app-mount .searchBar_c322aa [data-slate-placeholder="true"],
     #app-mount .clearSearchHistory__971b5,
@@ -856,6 +891,33 @@
 /* ============================================================
    SETTINGS
    ============================================================ */
+
+
+    /* Glass styling */
+    #app-mount .tabBody__133bf {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount [data-layer="CHANNEL_SETTINGS"] {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount .modal_e44912:has(.container_abd9a8) {
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount .contentHeader_e9e3ed {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
 
     /* Settings backgrounds */
     #app-mount .modal_e44912:has(.container_abd9a8),
@@ -916,6 +978,43 @@
    POPOVERS AND MENUS
    ============================================================ */
 
+
+    /* Glass styling */
+    #app-mount .popover_f84418 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount .browser_d98031 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount .popout__76f04 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
+    /* Glass styling */
+    #app-mount .header_d9c882 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
     /* More Active Posts popup */
     #app-mount .popout__76f04 {
         backdrop-filter: var(--spook-glass-filter) !important;
@@ -954,6 +1053,43 @@
    PICKERS
    ============================================================ */
 
+
+    /* Glass styling */
+    #app-mount .contentWrapper__08434 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount .inspector_aeaaeb {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
+    /* Glass styling */
+    #app-mount .container__16eb0 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
+
+    /* Glass styling */
+    #app-mount .container_e131a9 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+    }
+
     /* Transparent picker inner surfaces */
     #app-mount .wrapper__14245,
     #app-mount .scroller_affa7e,
@@ -986,6 +1122,17 @@
 /* ============================================================
    TOOLBARS
    ============================================================ */
+
+
+    /* Glass styling */
+    #app-mount .toolbar_bba883 {
+        background: var(--spook-glass-background) !important;
+        border: var(--spook-glass-border) !important;
+        border-radius: var(--spook-glass-border-radius);
+        box-shadow: var(--spook-glass-box-shadow) !important;
+        backdrop-filter: var(--spook-glass-filter);
+        -webkit-backdrop-filter: var(--spook-glass-filter);
+    }
 
 /* Remove toolbar decorations */
 #app-mount .toolbar_bba883::before,
