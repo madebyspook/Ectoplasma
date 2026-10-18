@@ -88,6 +88,10 @@
         0 0 24px rgba(54, 169, 255, 0.16);
 
     /* Text palette */
+    /* --spook-text-strong: #aaaaFF; */
+    /* --spook-text-default: #8888FF; */
+    /* --spook-text-subtle: #4444FF; */
+    /* --spook-text-muted: #0000aa; */
     --spook-text-strong: #ffffff;
     --spook-text-default: #e5edf8;
     --spook-text-subtle: #a8b9cc;
@@ -98,47 +102,6 @@
         0 1px 2px rgba(0, 0, 0, 0.85),
         0 0 3px rgba(255, 255, 255, 0.10);
 
-
-
-
-    /* Discord text palette */
-    --text-strong: var(--spook-text-strong);
-    --text-default: var(--spook-text-default);
-    --text-subtle: var(--spook-text-subtle);
-    --text-muted: var(--spook-text-muted);
-    --text-code: var(--spook-text-default);
-
-    /* Interactive text */
-    --interactive-text-active: var(--spook-text-strong);
-    --interactive-text-hover: var(--spook-text-strong);
-    --interactive-text-default: var(--spook-text-subtle);
-    --interactive-muted: var(--spook-text-muted);
-
-    /* Inputs */
-    --input-text-default: var(--spook-text-default);
-    --input-text-error-default: var(--spook-text-default);
-    --input-placeholder-text-default: var(--spook-text-muted);
-    --channel-text-area-placeholder: var(--spook-text-default);
-
-    /* Chat */
-    --chat-text-muted: var(--spook-text-muted);
-    --textbox-markdown-syntax: var(--spook-text-subtle);
-
-    /* Reactions */
-    --reaction-text-active: var(--spook-text-strong);
-    --reaction-text-hover: var(--spook-text-strong);
-    --reaction-text-default: var(--spook-text-subtle);
-
-    /* Secondary controls */
-    --control-secondary-text-active: var(--spook-text-strong);
-    --control-secondary-text-hover: var(--spook-text-strong);
-    --control-secondary-text-default: var(--spook-text-default);
-
-    /* Miscellaneous */
-    --badge-text-default: var(--spook-text-default);
-    --redesign-button-tertiary-text: var(--spook-text-default);
-    --redesign-button-tertiary-pressed-text: var(--spook-text-default);
-    --app-message-embed-secondary-text: var(--spook-text-subtle);
 }
 
 
@@ -219,6 +182,20 @@ body,
     filter: var(--spook-glow-filter-strong);
 }
 
+/* Server name */
+#app-mount .title_edbb22 .defaultColor__4bd52 {
+    color: var(--spook-text-strong) !important;
+}
+
+/* Server name in details */
+#app-mount .guildBadgeAndName_f37cb1 .name_f37cb1 {
+    color: var(--spook-text-strong) !important;
+}
+
+/* Server boost goal */
+#app-mount .textContentContainer__0d0f9 .text__0d0f9 {
+    color: var(--spook-text-default) !important;
+}
 
 /* ============================================================
    CHANNEL LIST
@@ -279,6 +256,10 @@ body,
     filter: var(--spook-glow-filter);
 }
 
+/* Channel list secondary labels */
+#app-mount .container__2637a .text-md\/medium_cf4812 {
+    color: var(--spook-text-strong) !important;
+}
 
 /* ============================================================
    DIRECT MESSAGES
@@ -325,6 +306,141 @@ body,
     background: var(--spook-background-select) !important;
 }
 
+/* ============================================================
+   FRIENDS LIST
+   ============================================================ */
+
+
+/* Friends list transparent background */
+#app-mount .tabBody__133bf,
+#app-mount .peopleColumn__133bf,
+#app-mount .peopleList__5ec2f,
+#app-mount .peopleListItem_cc6179 {
+    background: transparent !important;
+}
+
+/* Friends wallpaper container */
+#app-mount main.container__133bf {
+    position: relative;
+    isolation: isolate;
+    background: transparent !important;
+}
+
+/* BackgroundManager wallpaper behind Friends page */
+#app-mount main.container__133bf::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, var(--spook-bg-dark)),
+            rgba(0, 0, 0, var(--spook-bg-dark))
+        ),
+        var(--spook-background-image);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: blur(var(--spook-blur));
+}
+
+/* Transparent Friends inner surfaces */
+#app-mount .tabBody__133bf,
+#app-mount .peopleColumn__133bf,
+#app-mount .peopleList__5ec2f,
+#app-mount .peopleListItem_cc6179 {
+    background: transparent !important;
+}
+
+/* Transparent Friends surfaces */
+#app-mount .peopleColumn__133bf,
+#app-mount .peopleList__5ec2f,
+#app-mount .peopleListItem_cc6179 {
+    background: transparent !important;
+}
+
+/* Friend row hover */
+#app-mount .peopleListItem_cc6179:hover {
+    background: var(--spook-background-select) !important;
+}
+
+/* Friend name hover glow */
+#app-mount .peopleListItem_cc6179:hover .username__0a06e {
+    color: var(--spook-text-strong) !important;
+    text-shadow: var(--spook-glow-subtle);
+    filter: var(--spook-glow-filter);
+}
+
+/* Friend Name */
+#app-mount .username__0a06e {
+    color: var(--spook-text-strong);
+}
+
+/* Friend online status */
+#app-mount .subtext__0a06e {
+    color: var(--spook-text-subtle);
+}
+
+/* Friend Action Icons */
+#app-mount .actionButton_f8fa06 {
+    color: var(--spook-text-default);
+}
+
+/* Friends search field */
+#app-mount .searchBar__5ec2f .container__75098 {
+    background: var(--spook-bg-input) !important;
+    border: 1px solid var(--spook-border) !important;
+    box-shadow: var(--spook-glow-subtle);
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Friend Search */
+#app-mount .searchBar__5ec2f .input__75098::placeholder {
+    color: var(--spook-text-muted) !important;
+}
+
+/* Friends game activity */
+#app-mount .peopleListItem_cc6179 .statusText__19b6d {
+    color: var(--spook-text-subtle) !important;
+}
+
+/* Friends list section heading */
+#app-mount .peopleColumn__133bf .sectionTitle__5ec2f h2 {
+    color: var(--spook-text-subtle) !important;
+}
+
+/* Friends search icon */
+#app-mount .searchBar__5ec2f .icon__75098 svg path {
+    fill: var(--spook-text-muted) !important;
+}
+
+/* Friend action buttons */
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06 {
+    background: transparent !important;
+}
+
+/* Friend action button hover */
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06:hover,
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06.highlight_f8fa06 {
+    color: var(--spook-highlight) !important;
+}
+
+/* Friend action icon glow */
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06:hover .icon_f8fa06,
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06.highlight_f8fa06 .icon_f8fa06 {
+    color: var(--spook-highlight) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* Username revealed on hover */
+#app-mount .peopleListItem_cc6179:hover .discriminator__0a06e {
+    color: var(--spook-text-default) !important;
+}
 
 /* ============================================================
    MEMBER LIST
@@ -562,6 +678,42 @@ body,
     text-shadow: var(--spook-glow-medium);
 }
 
+/* Chat message text */
+#app-mount .message__5126c .markup__75297 {
+    color: var(--spook-text-default) !important;
+}
+
+/* Chat usernames */
+#app-mount .message__5126c .username_c19a55 {
+    color: var(--spook-text-strong) !important;
+}
+
+/* Reaction counts */
+#app-mount .reactionCount__23977 {
+    color: var(--spook-text-subtle) !important;
+}
+
+/* Edited message indicator */
+#app-mount .edited_c19a55 {
+    color: var(--spook-text-muted) !important;
+}
+
+/* Server tag text */
+#app-mount .message__5126c .tagText__10651 {
+    color: var(--spook-text-default) !important;
+}
+
+/* Code block text */
+#app-mount .codeContainer__75297 .hljs {
+    color: var(--spook-text-default) !important;
+}
+
+/* Message timestamps */
+#app-mount .timestamp_c19a55 {
+    color: var(--spook-text-subtle) !important;
+}
+
+
 /* ============================================================
    CHAT HEADERS AND NAVIGATION
    ============================================================ */
@@ -603,6 +755,12 @@ body,
 #app-mount .topic__6ec1a {
     color: var(--spook-text-default) !important;
 }
+
+/* Channel header secondary text */
+#app-mount .children__9293f .topic__6ec1a {
+    color: var(--spook-text-default) !important;
+}
+
 
 /* ============================================================
    MESSAGE COMPOSER
@@ -672,6 +830,16 @@ body,
     border-radius: var(--spook-glass-border-radius);
     backdrop-filter: var(--spook-glass-filter);
     -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Message composer placeholder */
+#app-mount .channelTextArea__74017 .placeholder__1b31f {
+    color: var(--spook-text-default) !important;
+}
+
+/* Message composer input text */
+#app-mount .channelTextArea__74017 .markup__75297 {
+    color: var(--spook-text-default) !important;
 }
 
 
@@ -861,6 +1029,15 @@ body,
     color: var(--spook-text-strong) !important;
 }
 
+/* Search input text */
+#app-mount .searchBar__97492 input {
+    color: var(--spook-text-strong) !important;
+}
+
+/* Search input placeholder */
+#app-mount .searchBar__97492 input::placeholder {
+    color: var(--spook-text-muted) !important;
+}
 
 /* ============================================================
    SETTINGS
@@ -879,7 +1056,6 @@ body,
 
 /* Settings backgrounds */
 #app-mount .modal_e44912:has(.container_abd9a8),
-#app-mount .tabBody__133bf,
 #app-mount [data-layer="CHANNEL_SETTINGS"] {
     background: var(--spook-bg-secondary) !important;
     backdrop-filter: var(--spook-glass-filter);
@@ -927,6 +1103,16 @@ body,
     stroke: var(--spook-text-muted) !important;
 }
 
+/* Settings sidebar navigation */
+#app-mount .sidebarRegion__23e6b .item__133bf {
+    color: var(--spook-text-subtle) !important;
+}
+
+/* Selected and hovered settings items */
+#app-mount .sidebarRegion__23e6b .item__133bf:hover,
+#app-mount .sidebarRegion__23e6b .selected_b3f026 {
+    color: var(--spook-text-strong) !important;
+}
 
 /* ============================================================
    POPOVERS AND MENUS
@@ -1016,11 +1202,38 @@ body,
     -webkit-backdrop-filter: var(--spook-glass-filter);
 }
 
+/* Tooltip text */
+.tooltip_fa450d,
+.tooltip_fa450d *,
+.bd-tooltip,
+.bd-tooltip * {
+    color: var(--spook-text-default) !important;
+}
+
 /* BetterDiscord tooltip pointer */
 #app-mount .bd-tooltip-pointer {
     border-color: transparent !important;
 }
 
+/* Emoji tooltip title */
+#app-mount .emojiTooltipText__040f0.text-sm\/medium_cf4812 {
+    color: var(--spook-text-strong) !important;
+}
+
+/* Emoji tooltip description */
+#app-mount .emojiTooltipText__040f0.text-xs\/normal_cf4812 {
+    color: var(--spook-text-default) !important;
+}
+
+/* Context menu labels */
+#app-mount .menu_c1e9c4 .label_c1e9c4 {
+    color: var(--spook-text-default) !important;
+}
+
+/* Hovered context menu labels */
+#app-mount .menu_c1e9c4 .item_c1e9c4:hover .label_c1e9c4 {
+    color: var(--spook-text-strong) !important;
+}
 
 /* ============================================================
    PICKERS
@@ -1093,4 +1306,9 @@ body,
 #app-mount #gif-picker-tab-panel .icon__75098,
 #app-mount #gif-picker-tab-panel .input__75098::placeholder {
     color: var(--spook-text-default) !important;
-}   
+}  
+
+/* Picker category labels */
+#app-mount .categoryName_dfa278 {
+    color: var(--spook-text-subtle) !important;
+}
