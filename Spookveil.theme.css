@@ -206,8 +206,11 @@ body,
 #app-mount .lowerBadge_cc5dd2,
 #app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
     --badge-notification-background: var(--spook-highlight);
-    background-color: var(--spook-highlight) !important; /*Only for [class*="numberBadge"] part*/
     filter: var(--spook-glow-filter-strong);
+}
+
+#app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
+    background-color: var(--spook-highlight) !important;
 }
 
 /* Server list unread and selected indicators */
