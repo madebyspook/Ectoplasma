@@ -632,6 +632,7 @@ body,
     width: 100% !important;
     max-width: none !important;
 }
+
 /* Code block background */
 #app-mount [class*="markup_"] code {
     background: var(--spook-bg-code) !important;
@@ -640,6 +641,10 @@ body,
     box-shadow: var(--spook-glass-box-shadow) !important;
 }
 
+/* Let code block shadows extend beyond the message text wrapper */
+#app-mount .markup__75297:has(> pre) {
+    overflow: visible !important;
+}
 
 /* Thread preview card */
 #app-mount .container__9271d {
@@ -842,6 +847,12 @@ body,
     color: var(--spook-text-default) !important;
 }
 
+/* Mentions in the message composer */
+#app-mount .channelTextArea__74017 .wrapper_f61d60 {
+    color: var(--spook-highlight) !important;
+    background: var(--spook-background-select) !important;
+    text-shadow: var(--spook-glow-subtle);
+}
 
 /* ============================================================
    FORUMS
@@ -877,6 +888,15 @@ body,
     background: transparent !important;
 }
 
+/* Forum post header actions */
+#app-mount .container__34c2c.header__34c2c {
+    background: var(--spook-glass-background) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
 
 /* Forum Post Cards */
 #app-mount [class*="mainCard_"] {
@@ -1010,6 +1030,16 @@ body,
 /* BetterDiscord search background */
 #app-mount .bd-search-wrapper {
     background: transparent !important;
+}
+
+/* Search suggestions dropdown: outer popout and scrollable inner layer */
+#app-mount .container__16eb0 {
+    background: var(--spook-glass-background) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
 }
 
 /* Text Muted */
