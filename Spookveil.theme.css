@@ -1,9 +1,11 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.1.8
+ * @version 1.2.0
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
+
+/* #region VARIABLES */
 
 
 /* ============================================================
@@ -104,11 +106,14 @@
         0 0 3px rgba(255, 255, 255, 0.10);
 
 }
+/* #endregion */
+/* #region GLOBAL */
 
 
 /* ============================================================
-   Global
+   GLOBAL
    ============================================================ */
+
 
 /* Global text readability */
 #app-mount { text-shadow: var(--spook-text-shadow);}
@@ -119,6 +124,9 @@
         0 0px 5px rgba(0, 0, 0, 0.5),
         0 -1px 2px rgba(255, 255, 255, 0.30);
 }
+
+/* #endregion */
+/* #region APPLICATION */
 
 
 /* ============================================================
@@ -172,6 +180,8 @@ body,
     margin-right: -1px !important;
     z-index: 1 !important;
 }
+/* #endregion */
+/* #region SERVER LIST */
 
 
 /* ============================================================
@@ -233,6 +243,10 @@ body,
 #app-mount .textContentContainer__0d0f9 .text__0d0f9 { /* Server boost goal */
     color: var(--spook-text-default-test) !important;
 }
+
+/* #endregion */
+/* #region CHANNEL LIST */
+
 
 /* ============================================================
    CHANNEL LIST
@@ -298,6 +312,11 @@ body,
     color: var(--spook-text-strong-test) !important;
 }
 
+
+/* #endregion */
+/* #region DIRECT MESSAGES */
+
+
 /* ============================================================
    DIRECT MESSAGES
    ============================================================ */
@@ -352,6 +371,11 @@ body,
     filter: var(--spook-glow-filter);
     background: var(--spook-background-select) !important;
 }
+
+
+/* #endregion */
+/* #region FRIEND LIST */
+
 
 /* ============================================================
    FRIENDS LIST
@@ -489,6 +513,11 @@ body,
     color: var(--spook-text-default-test) !important;
 }
 
+
+/* #endregion */
+/* #region MEMBER LIST */
+
+
 /* ============================================================
    MEMBER LIST
    ============================================================ */
@@ -520,6 +549,10 @@ body,
 #app-mount .membersGroupName_c8ffbb { /* Member group headings */
     color: var(--spook-text-muted-test) !important;
 }
+
+
+/* #endregion */
+/* #region CHAT */
 
 
 /* ============================================================
@@ -798,6 +831,10 @@ body,
 }
 
 
+/* #endregion */
+/* #region CHAT HEADERS AND NAVIGATION */
+
+
 /* ============================================================
    CHAT HEADERS AND NAVIGATION
    ============================================================ */
@@ -860,6 +897,10 @@ body,
     color: var(--spook-highlight) !important;
     filter: var(--spook-glow-filter-strong) !important;
 }
+
+
+/* #endregion */
+/* #region MESSAGE COMPOSER */
 
 
 /* ============================================================
@@ -957,6 +998,11 @@ body,
     color: var(--spook-highlight) !important;
     filter: var(--spook-glow-filter-strong);
 }
+
+
+/* #endregion */
+/* #region FORUMS */
+
 
 /* ============================================================
    FORUMS
@@ -1198,6 +1244,11 @@ body,
     color: var(--spook-text-muted-test) !important;
 }
 
+
+/* #endregion */
+/* #region VOICE CALLS */
+
+
 /* ============================================================
    VOICE CALLS
    ============================================================ */
@@ -1243,6 +1294,10 @@ body,
     text-shadow: var(--spook-glow-subtle);
     filter: var(--spook-glow-filter);
 }
+
+
+/* #endregion */
+/* #region SERCH */
 
 
 /* ============================================================
@@ -1338,6 +1393,11 @@ body,
     filter: var(--spook-glow-filter);
 }
 
+
+/* #endregion */
+/* #region SETTINGS */
+
+
 /* ============================================================
    SETTINGS
    ============================================================ */
@@ -1412,6 +1472,11 @@ body,
 #app-mount .sidebarRegion__23e6b .selected_b3f026 {
     color: var(--spook-text-strong-test) !important;
 }
+
+
+/* #endregion */
+/* #region POPOVERS AND MENUS */
+
 
 /* ============================================================
    POPOVERS AND MENUS
@@ -1548,6 +1613,11 @@ body,
     color: var(--spook-text-strong-test) !important;
 }
 
+
+/* #endregion */
+/* #region PICKERS */
+
+
 /* ============================================================
    PICKERS
    ============================================================ */
@@ -1625,3 +1695,4 @@ body,
 #app-mount .categoryName_dfa278 {
     color: var(--spook-text-subtle-test) !important;
 }
+/* #endregion */
