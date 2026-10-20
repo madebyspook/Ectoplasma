@@ -184,52 +184,19 @@ body,
     background: transparent !important;
 }
 
-/* Unread server notification badge */
-#app-mount .lowerBadge_cc5dd2,
-#app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
-    --badge-notification-background: var(--spook-accent);
-    filter: var(--spook-glow-filter-strong);
-}
-
-#app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
-    background-color: var(--spook-accent) !important;
-}
-
 /* Server list unread and selected indicators */
 #app-mount .wrapper__58105 .item__58105.visible__58105 {
     background-color: var(--spook-accent) !important;
     filter: var(--spook-glow-filter-strong);
 }
 
-/* Server name dropdown arrow */
-#app-mount .guildDropdown_f37cb1 .headerChildren_f37cb1 svg {
-    color: var(--spook-muted-test) !important;
-}
-
-/* Server name dropdown arrow hover */
-#app-mount .guildDropdown_f37cb1:hover .headerChildren_f37cb1 svg {
-    color: var(--spook-accent) !important;
+#app-mount .lowerBadge_cc5dd2, /* Unread server notification badge */
+#app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] { /* Unread server notification badge */
+    --badge-notification-background: var(--spook-accent);
     filter: var(--spook-glow-filter-strong);
 }
-
-/* Text Strong */
-#app-mount .title_edbb22 .primaryColor__4bd52, /* Server name */
-#app-mount .guildBadgeAndName_f37cb1 .name_f37cb1 { /* Server name in details */
-    color: var(--spook-highlight-test) !important;
-}
-
-/* Server details invite button */
-#app-mount .inviteButton_f37cb1 { 
-    color: var(--spook-muted-test) !important;
-}
-#app-mount .inviteButton_f37cb1:hover {
-    color: var(--spook-accent) !important;
-    filter: var(--spook-glow-filter-strong);
-}
-
-/* Text primary */
-#app-mount .textContentContainer__0d0f9 .text__0d0f9 { /* Server boost goal */
-    color: var(--spook-primary-test) !important;
+#app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
+    background-color: var(--spook-accent) !important;
 }
 
 /* #endregion */
@@ -254,7 +221,29 @@ body,
 #app-mount .icon__29444 /* Channel Expand Arrow */ {
     color: var(--spook-muted-test) !important;
 }
-    
+
+/* Text Primary */
+#app-mount .title_edbb22 .primaryColor__4bd52, /* Server name */
+#app-mount .guildBadgeAndName_f37cb1 .name_f37cb1,  /* Server name in details */
+#app-mount .textContentContainer__0d0f9 .text__0d0f9 { /* Server boost goal */
+    color: var(--spook-primary) !important;
+}
+
+/* Server name dropdown arrow */
+#app-mount .guildDropdown_f37cb1 .headerChildren_f37cb1 svg { color: var(--spook-muted-test) !important;}
+#app-mount .guildDropdown_f37cb1:hover .headerChildren_f37cb1 svg { color: var(--spook-accent) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* Server details invite button */
+#app-mount .inviteButton_f37cb1 { color: var(--spook-muted) !important;}
+#app-mount .inviteButton_f37cb1:hover { color: var(--spook-accent) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+
+
+
 /* Unread Channel */
 #app-mount .modeUnreadImportant__2ea32 .name__2ea32, 
 #app-mount .modeUnreadImportant__2ea32 .icon__2ea32{
