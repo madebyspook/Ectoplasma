@@ -1,10 +1,11 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.0
+ * @version 1.2.1
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
+/* ============================================================ */
 /* #region VARIABLES */
 
 
@@ -181,6 +182,7 @@ body,
     z-index: 1 !important;
 }
 /* #endregion */
+/* ============================================================ */
 /* #region SERVER LIST */
 
 
@@ -552,6 +554,75 @@ body,
 
 
 /* #endregion */
+/* ============================================================ */
+/* #region CHAT HEADERS AND NAVIGATION */
+
+
+/* ============================================================
+   CHAT HEADERS AND NAVIGATION
+   ============================================================ */
+
+
+/* Header */
+#app-mount .container__9293f {
+    background: var(--spook-glass-background) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Remove header decorations */
+#app-mount .container__9293f::before,
+#app-mount .children__9293f::after {
+    display: none !important;
+}
+
+/* Channel header icon */
+#app-mount .channelIcon__9293f.iconWrapper__9293f .icon__9293f {
+    color: var(--spook-text-muted-test) !important;
+}
+
+/* Header title */
+#app-mount .title__9293f {
+    color: var(--spook-text-strong-test) !important;
+}
+
+/* Header action icons */
+#app-mount .iconWrapper__9293f.clickable__9293f .icon__9293f {
+    color: var(--spook-text-muted-test) !important;
+}
+
+/* Header action icons hover */
+#app-mount .iconWrapper__9293f.clickable__9293f:hover .icon__9293f {
+    color: var(--spook-highlight) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* Channel topic text */
+#app-mount .topic__6ec1a {
+    color: var(--spook-text-default-test) !important;
+}
+
+/* Channel header secondary text */
+#app-mount .children__9293f .topic__6ec1a {
+    color: var(--spook-text-default-test) !important;
+}
+
+/* Show User Profile icon */
+#app-mount .iconWrapper__9293f.iconDisabled__9293f .icon__9293f {
+    color: var(--spook-text-muted-test) !important;
+}
+
+/* Show User Profile icon hover */
+#app-mount .iconWrapper__9293f.iconDisabled__9293f:hover .icon__9293f {
+    color: var(--spook-highlight) !important;
+    filter: var(--spook-glow-filter-strong) !important;
+}
+
+
+/* #endregion */
 /* #region CHAT */
 
 
@@ -828,74 +899,6 @@ body,
 #app-mount .hoverBarButton_f84418.button_f7ecac:hover svg {
     color: var(--spook-highlight) !important;
     filter: var(--spook-glow-filter-strong);
-}
-
-
-/* #endregion */
-/* #region CHAT HEADERS AND NAVIGATION */
-
-
-/* ============================================================
-   CHAT HEADERS AND NAVIGATION
-   ============================================================ */
-
-
-/* Header */
-#app-mount .container__9293f {
-    background: var(--spook-glass-background) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
-}
-
-/* Remove header decorations */
-#app-mount .container__9293f::before,
-#app-mount .children__9293f::after {
-    display: none !important;
-}
-
-/* Channel header icon */
-#app-mount .channelIcon__9293f.iconWrapper__9293f .icon__9293f {
-    color: var(--spook-text-muted-test) !important;
-}
-
-/* Header title */
-#app-mount .title__9293f {
-    color: var(--spook-text-strong-test) !important;
-}
-
-/* Header action icons */
-#app-mount .iconWrapper__9293f.clickable__9293f .icon__9293f {
-    color: var(--spook-text-muted-test) !important;
-}
-
-/* Header action icons hover */
-#app-mount .iconWrapper__9293f.clickable__9293f:hover .icon__9293f {
-    color: var(--spook-highlight) !important;
-    filter: var(--spook-glow-filter-strong);
-}
-
-/* Channel topic text */
-#app-mount .topic__6ec1a {
-    color: var(--spook-text-default-test) !important;
-}
-
-/* Channel header secondary text */
-#app-mount .children__9293f .topic__6ec1a {
-    color: var(--spook-text-default-test) !important;
-}
-
-/* Show User Profile icon */
-#app-mount .iconWrapper__9293f.iconDisabled__9293f .icon__9293f {
-    color: var(--spook-text-muted-test) !important;
-}
-
-/* Show User Profile icon hover */
-#app-mount .iconWrapper__9293f.iconDisabled__9293f:hover .icon__9293f {
-    color: var(--spook-highlight) !important;
-    filter: var(--spook-glow-filter-strong) !important;
 }
 
 
@@ -1297,7 +1300,8 @@ body,
 
 
 /* #endregion */
-/* #region SERCH */
+/* ============================================================ */
+/* #region SEARCH */
 
 
 /* ============================================================
@@ -1696,3 +1700,4 @@ body,
     color: var(--spook-text-subtle-test) !important;
 }
 /* #endregion */
+/* ============================================================ */
