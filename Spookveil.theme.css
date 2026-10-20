@@ -891,7 +891,6 @@ body,
 /* Forum post header actions */
 #app-mount .container__34c2c.header__34c2c {
     background: var(--spook-glass-background) !important;
-    border: var(--spook-glass-border) !important;
     border-radius: var(--spook-glass-border-radius);
     box-shadow: var(--spook-glass-box-shadow) !important;
     backdrop-filter: var(--spook-glass-filter);
