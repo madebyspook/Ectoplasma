@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.1
+ * @version 1.2.3
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -77,9 +77,9 @@
         drop-shadow(0 0 4px rgba(from var(--spook-accent) r g b / 0.5));
 
     --spook-glow-filter-strong:
-        drop-shadow(0 0 3px rgba(from var(--spook-accent) r g b / 0.8))
-        drop-shadow(0 0 8px rgba(vfrom var(--spook-accent) r g b / 0.5));
-
+        drop-shadow(0 0 3px rgb(from var(--spook-accent) r g b / 0.8))
+        drop-shadow(0 0 8px rgb(from var(--spook-accent) r g b / 0.5));
+    
     /* Glass shadows */
     --spook-glass-shadow:
         inset 0 1px 0 rgba(125, 197, 255, 0.12),
@@ -148,36 +148,25 @@ body,
 /* Hide BackgroundManager's global wallpaper layer. Its image remains available through --bgm-url. */
 #app-mount .BGM-bg_container { display: none !important; }
 
-/* Header actions */
-#app-mount .clickable__81391
-{       
-    color: var(--spook-muted-test) !important; 
-}
-#app-mount .clickable__81391:hover { 
-    color: var(--spook-accent) !important;
-    filter: var(--spook-glow-filter-strong);
-}
-
-/* Window back and forward navigation buttons */
-#app-mount .backForwardButtons__63abb .button__63abb {
-    color: var(--spook-muted-test) !important;
-}
-#app-mount .backForwardButtons__63abb .button__63abb:not(.disabled__63abb):hover {
-    color: var(--spook-accent) !important;
-    filter: var(--spook-glow-filter-strong);
-}
-/* Disabled navigation buttons */
-#app-mount .backForwardButtons__63abb .button__63abb.disabled__63abb {
-    color: var(--spook-muted-test) !important;
-    filter: none !important;
-}
-
 /* Remove sidebar/chat seam */
 #app-mount .container__2637a,
 #app-mount .privateChannels_e6b769 {
     margin-right: -1px !important;
     z-index: 1 !important;
 }
+
+/* Header Icons */
+#app-mount .clickable__81391, /* Header actions */
+#app-mount .backForwardButtons__63abb .button__63abb.disabled__63abb, /* Disabled navigation buttons */
+#app-mount .backForwardButtons__63abb .button__63abb { /* Window back and forward navigation buttons */
+    color: var(--spook-muted) !important; 
+}
+#app-mount .clickable__81391:hover, /* Header actions */
+#app-mount .backForwardButtons__63abb .button__63abb:not(.disabled__63abb):hover {  /* Window back and forward navigation buttons */
+    color: var(--spook-accent) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
 /* #endregion */
 /* ============================================================ */
 /* #region SERVER LIST */
@@ -309,6 +298,20 @@ body,
 /* Channel list secondary labels */
 #app-mount .container__2637a .text-md\/medium_cf4812 {
     color: var(--spook-highlight-test) !important;
+}
+
+/* New unreads pill glass */
+#app-mount .bar__7aaec {
+    background: rgba(185, 215, 255, 0.32) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius) !important;
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* New unreads pill label */
+#app-mount .bar__7aaec .barText__7aaec, 
+#app-mount .bar__7aaec .unreadIcon__7aaec {
+    color: var(--spook-primary-test) !important;
 }
 
 
@@ -724,13 +727,11 @@ body,
     fill: var(--spook-accent) !important;
 }
 
-
 /* New messages bar */
 #app-mount .newMessagesBar__0f481 {
     background: var(--spook-accent) !important;
     box-shadow: var(--spook-glow-strong) !important;
 }
-
 
 /* Jump to present bar */
 #app-mount .jumpToPresentBar__0f481 {
@@ -747,14 +748,12 @@ body,
     box-shadow: var(--spook-glow-medium) !important;
 }
 
-
 /* Embed */
 #app-mount .embedFull__623de {
     background: var(--spook-bg-primary) !important;
     border-left-color: var(--spook-accent) !important;
     filter: drop-shadow(-3px 0 5px rgba(from var(--spook-accent) r g b / 0.65));
 }
-
 
 /* Poll Embed */
 #app-mount .pollContainer_b7e1cb {
@@ -763,16 +762,17 @@ body,
     border-radius: var(--spook-glass-border-radius);
     box-shadow: var(--spook-glass-box-shadow) !important;
 }
+
 /* Winning poll answer frame */
 #app-mount .pollContainer_b7e1cb .answer__4c520.victorStyles_a1443c .answerInner__4c520 {
     border: 1px solid var(--spook-accent) !important;
     box-shadow: var(--spook-glow-secondary) !important;
 }
+
 /* Winning poll answer percentage fill */
 #app-mount .pollContainer_b7e1cb .answer__4c520.victorStyles_a1443c .votePercentageBar__4c520 {
     background-color: color-mix(in srgb, var(--spook-accent) 25%, transparent) !important;    
 }
-
 
 /* Code container sizing */
 #app-mount [class*="markup_"] pre,
@@ -1121,7 +1121,6 @@ body,
 #app-mount .tagsContainer_f369db .tagsButton_f369db *,
 #app-mount .tagsContainer_f369db .pill_a2c9e8{
     color: var(--spook-primary-test) !important;
-    text-shadow: var(--spook-text-shadow);
 }
 
 /* Forum post title */
@@ -1244,6 +1243,10 @@ body,
     color: var(--spook-muted-test) !important;
 }
 
+/* Forum post card tag label */
+#app-mount .pill_a2c9e8 .lineClamp1__4bd52.text-xs\/semibold_cf4812 {
+    color: var(--spook-primary-test) !important;
+}
 
 /* #endregion */
 /* #region VOICE CALLS */
