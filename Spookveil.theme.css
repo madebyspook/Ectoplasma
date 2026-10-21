@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.4
+ * @version 1.2.5
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -93,7 +93,7 @@
     --spook-secondary-test: #4444FF;
     --spook-muted-test: #0000aa;
 
-    --spook-highlight: var(--spook-accent);
+    --spook-highlight: #ffffff;
     --spook-primary: #e5edf8;
     --spook-secondary: #a8b9cc;
     --spook-muted: #b4c7dc;
@@ -215,11 +215,6 @@ body,
     margin-bottom: 20px !important;
 }
 
-
-/* ============================================================
-   SERVER HEADER
-   ============================================================ */
-
 /* Server name and details */
 #app-mount .title_edbb22 .primaryColor__4bd52,
 #app-mount .guildBadgeAndName_f37cb1 .name_f37cb1,
@@ -240,89 +235,68 @@ body,
     filter: var(--spook-glow-filter-strong);
 }
 
-/* ============================================================
-   CHANNEL & CATEGORY COLORS
-   ============================================================ */
-
-/* Read channels and categories */
-#app-mount .container__2637a .link__2ea32 .name__2ea32,
-#app-mount .container__2637a .link__2ea32 .icon__2ea32,
-#app-mount .container__2637a .containerDefault__29444 .name__29444,
-#app-mount .container__2637a .containerDefault__29444 .icon__29444 {
+/* Read & Muted channel, icon, category and collapse arrow */
+#app-mount .container__2637a .link__2ea32 .name__2ea32, 
+#app-mount .container__2637a .link__2ea32 .icon__2ea32, 
+#app-mount .container__2637a .containerDefault__29444 .icon__29444 { 
     color: var(--spook-secondary) !important;
 }
 
-/* Muted channels and categories */
-#app-mount .container__2637a .modeMuted__2ea32 .name__2ea32,
-#app-mount .container__2637a .modeMuted__2ea32 .icon__2ea32,
-#app-mount .container__2637a .containerDefault__29444.muted__29444 .name__29444,
-#app-mount .container__2637a .containerDefault__29444.muted__29444 .icon__29444,
-#app-mount .container__2637a .containerDefault__29444:has(.muted__29444) .name__29444,
-#app-mount .container__2637a .containerDefault__29444:has(.muted__29444) .icon__29444 {
-    color: var(--spook-muted) !important;
-}
-
-/* Unread channels */
-#app-mount .container__2637a .modeUnreadImportant__2ea32 .name__2ea32,
-#app-mount .container__2637a .modeUnreadImportant__2ea32 .icon__2ea32 {
+/* Unread channel, icon and category */
+#app-mount .container__2637a .modeUnreadImportant__2ea32 .name__2ea32, 
+#app-mount .container__2637a .modeUnreadImportant__2ea32 .icon__2ea32,  
+#app-mount .container__2637a .containerDefault__29444 .name__29444 {
     color: var(--spook-primary) !important;
 }
 
-/* Unread channel icon glow */
+/* Unread channel Glow */
+#app-mount .container__2637a .modeUnreadImportant__2ea32 .name__2ea32, 
 #app-mount .container__2637a .modeUnreadImportant__2ea32 .icon__2ea32 {
     filter: var(--spook-glow-filter-strong);
 }
 
-/* Selected channels */
-#app-mount .container__2637a .modeSelected__2ea32 .name__2ea32,
+/* Selected & hovered channel rows: background and glow */
+#app-mount .container__2637a .containerDefault__29444:hover .icon__29444,
+#app-mount .container__2637a .selectedChannel_c69b6d .actionIcon_c69b6d,
+#app-mount .container__2637a .containerprimary_c69b6d:hover .actionIcon_c69b6d,
 #app-mount .container__2637a .modeSelected__2ea32 .icon__2ea32,
-#app-mount .container__2637a .selectedChannel_c69b6d .actionIcon_c69b6d {
-    color: var(--spook-highlight) !important;
+#app-mount .container__2637a .modeSelected__2ea32 .link__2ea32,
+#app-mount .container__2637a .wrapper__2ea32:hover .icon__2ea32,
+#app-mount .container__2637a .wrapper__2ea32:hover .link__2ea32 {
+    background: var(--spook-background-select) !important;
     text-shadow: var(--spook-glow-strong);
+    filter: var(--spook-glow-filter);
 }
 
-/* Hovered channels and categories */
-#app-mount .container__2637a .wrapper__2ea32:hover .name__2ea32,
+/* Selected & hovered channel names */
+#app-mount .container__2637a .modeSelected__2ea32 .name__2ea32,
+#app-mount .container__2637a .wrapper__2ea32:hover .name__2ea32 {
+    color: var(--spook-highlight) !important;
+}
+
+/* Selected & hovered channel icons and action icons */
+#app-mount .container__2637a .modeSelected__2ea32 .icon__2ea32,
 #app-mount .container__2637a .wrapper__2ea32:hover .icon__2ea32,
-#app-mount .container__2637a .containerprimary_c69b6d:hover .actionIcon_c69b6d,
+#app-mount .container__2637a .selectedChannel_c69b6d .actionIcon_c69b6d,
+#app-mount .container__2637a .wrapper__2ea32:hover .actionIcon_c69b6d {
+    color: var(--spook-highlight) !important;
+}
+
+/* Hovered category name and collapse arrow */
 #app-mount .container__2637a .containerDefault__29444:hover .name__29444,
 #app-mount .container__2637a .containerDefault__29444:hover .icon__29444 {
     color: var(--spook-highlight) !important;
     text-shadow: var(--spook-glow-strong);
-}
-
-/* Selected and hovered icon glow */
-#app-mount .container__2637a .modeSelected__2ea32 .icon__2ea32,
-#app-mount .container__2637a .wrapper__2ea32:hover .icon__2ea32,
-#app-mount .container__2637a .containerDefault__29444:hover .icon__29444,
-#app-mount .container__2637a .selectedChannel_c69b6d .actionIcon_c69b6d,
-#app-mount .container__2637a .containerprimary_c69b6d:hover .actionIcon_c69b6d {
-    filter: var(--spook-glow-filter-strong);
-}
-
-
-/* ============================================================
-   CHANNEL BACKGROUNDS & INDICATORS
-   ============================================================ */
-
-/* Selected & Hovered Channel Background */
-#app-mount .containerprimary_c69b6d.selected_c69b6d .link__2ea32,
-#app-mount .containerprimary_c69b6d:hover .link__2ea32 {
-    background: var(--spook-background-select) !important;
+    filter: var(--spook-glow-filter);
 }
 
 /* Unread Indicator */
 #app-mount .channelInfo_c69b6d .numberBadge__463b7,
 #app-mount .unread__2ea32.unreadImportant__2ea32 {
     background-color: var(--spook-accent) !important;
-    box-shadow: var(--spook-glow-medium);
-    filter: var(--spook-glow-filter);
+    box-shadow: var(--spook-glow-strong);
+    filter: var(--spook-glow-filter-strong);
 }
-
-
-/* ============================================================
-   NEW UNREADS PILL
-   ============================================================ */
 
 /* New unreads pill glass */
 #app-mount .bar__7aaec {
@@ -355,15 +329,10 @@ body,
     background: transparent !important;
 }
 
-/* DM section headers */
-#app-mount .privateChannelsHeaderContainer__99e7c .headerText__99e7c {
-    color: var(--spook-secondary-test) !important;
-}
-#app-mount .privateChannelsHeaderContainer__99e7c .headerText__99e7c:hover {
-    color: var(--spook-accent) !important;
-    text-shadow: var(--spook-glow-secondary);
-    filter: var(--spook-glow-filter);
-}
+/* Keep the DM list clear of the floating user panel */
+#app-mount .privateChannels_e6b769 .scrollerBase_d125d2 {
+    margin-bottom: 70px !important; 
+}    
 
 /* DM scrolling background */
 #app-mount .privateChannels_e6b769 .scrollerBase_d125d2,
@@ -371,33 +340,47 @@ body,
     background: var(--spook-bg-primary) !important;
 }    
 
-/* Keep the DM list clear of the floating user panel */
-#app-mount .privateChannels_e6b769 .scrollerBase_d125d2 {
-    margin-bottom: 70px !important; 
-}    
-
-#app-mount .subtext__972a0, /* Friend subtext */
-#app-mount svg.pinnedChannelsHeaderArrow_c32045, /* Pinned Channel Expand Icon */
-#app-mount .favoriteIcon__972a0, /* Pin Icon */
-#app-mount .closeIcon__972a0 { /* Hover Close Icon */ 
-    color: var(--spook-muted-test) !important;
+/* DM Section */
+#app-mount .privateChannelsHeaderContainer__99e7c .headerText__99e7c {
+    color: var(--spook-primary) !important;
 }
 
-#app-mount .name__20a53, /* Header Text */
-#app-mount .linkButtonIcon__972a0, /* Header Icons */
-#app-mount .privateChannels_e6b769 .overflow_b0dfc2 { /* Friend Name */
-    color: var(--spook-highlight-test) !important;
+/* Friend Name, Header text & icon, Pin, Close Icons, Collapse Icon */
+#app-mount .name__20a53,
+#app-mount .linkButtonIcon__972a0,
+#app-mount .favoriteIcon__972a0, 
+#app-mount .closeIcon__972a0 { 
+    color: var(--spook-secondary) !important;
+}
+/* Header action icons */
+#app-mount .iconWrapper__9293f.clickable__9293f .icon__9293f {
+    color: var(--spook-secondary) !important;
+}
+
+/* DM sub text*/
+#app-mount .subtext__972a0 {
+    color: var(--spook-muted) !important;
+}
+
+/* DM Section Hover */
+#app-mount .privateChannelsHeaderContainer__99e7c .headerText__99e7c:hover {
+    color: var(--spook-accent) !important;
+    text-shadow: var(--spook-glow-strong);
 }
 
 /* Selected & Hovered DM */
-#app-mount .privateChannels_e6b769 .interactiveSelected__972a0, /* Selected */
-#app-mount .interactive__972a0:hover { /* Hover */
-    color: var(--spook-highlight-test) !important;
-    text-shadow: var(--spook-glow-secondary);
+#app-mount .privateChannels_e6b769 .interactiveSelected__972a0,
+#app-mount .privateChannels_e6b769 .interactive__972a0:hover {
+    text-shadow: var(--spook-glow-strong);
     filter: var(--spook-glow-filter);
     background: var(--spook-background-select) !important;
 }
 
+/* Selected & Hovered DM Names */
+#app-mount .privateChannels_e6b769 .interactiveSelected__972a0 .overflow_b0dfc2,
+#app-mount .privateChannels_e6b769 .interactive__972a0:hover .overflow_b0dfc2 {
+    color: var(--spook-highlight) !important;
+}
 
 /* #endregion */
 /* #region FRIEND LIST */
@@ -407,14 +390,6 @@ body,
    FRIENDS LIST
    ============================================================ */
 
-
-/* Friends list transparent background */
-#app-mount .tabBody__133bf,
-#app-mount .peopleColumn__133bf,
-#app-mount .peopleList__5ec2f,
-#app-mount .peopleListItem_cc6179 {
-    background: transparent !important;
-}
 
 /* Friends wallpaper container */
 #app-mount main.container__133bf {
@@ -453,92 +428,60 @@ body,
     background: transparent !important;
 }
 
-/* Transparent Friends surfaces */
-#app-mount .peopleColumn__133bf,
-#app-mount .peopleList__5ec2f,
-#app-mount .peopleListItem_cc6179 {
+/* Friends list section heading */
+#app-mount .peopleColumn__133bf .sectionTitle__5ec2f h2 {
+    color: var(--spook-primary) !important;
+}
+
+/* Friend names */
+#app-mount .username__0a06e {
+    color: var(--spook-secondary);
+}
+
+/* Friend online status & game activity */
+#app-mount .subtext__0a06e,
+#app-mount .peopleListItem_cc6179 .statusText__19b6d {
+    color: var(--spook-muted);
+}
+
+/* Friend action buttons */
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06 {
+    color: var(--spook-secondary);
     background: transparent !important;
 }
 
 /* Friend row hover */
 #app-mount .peopleListItem_cc6179:hover {
     background: var(--spook-background-select) !important;
-}
-
-/* Friend name hover glow */
-#app-mount .peopleListItem_cc6179:hover .username__0a06e {
-    color: var(--spook-highlight-test) !important;
-    text-shadow: var(--spook-glow-secondary);
+    text-shadow: var(--spook-glow-strong);
     filter: var(--spook-glow-filter);
 }
 
-/* Friend Name */
-#app-mount .username__0a06e {
-    color: var(--spook-highlight-test);
+/* Friend action icon hover and highlight */
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06:hover .icon_f8fa06,
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06.highlight_f8fa06 .icon_f8fa06 {
+    color: var(--spook-highlight) !important;
+    filter: var(--spook-glow-filter-strong);
 }
 
-/* Friend online status */
-#app-mount .subtext__0a06e {
-    color: var(--spook-secondary-test);
-}
-
-/* Friend Action Icons */
-#app-mount .actionButton_f8fa06 {
-    color: var(--spook-primary-test);
+/* Username revealed on hover */
+#app-mount .peopleListItem_cc6179:hover .discriminator__0a06e {
+    color: var(--spook-secondary) !important;
 }
 
 /* Friends search field */
 #app-mount .searchBar__5ec2f .container__75098 {
     background: var(--spook-bg-input) !important;
     border: 1px solid var(--spook-border) !important;
-    box-shadow: var(--spook-glow-secondary);
     backdrop-filter: var(--spook-glass-filter);
     -webkit-backdrop-filter: var(--spook-glass-filter);
 }
 
-/* Friend Search */
-#app-mount .searchBar__5ec2f .input__75098::placeholder {
-    color: var(--spook-muted-test) !important;
-}
-
-/* Friends game activity */
-#app-mount .peopleListItem_cc6179 .statusText__19b6d {
-    color: var(--spook-secondary-test) !important;
-}
-
-/* Friends list section heading */
-#app-mount .peopleColumn__133bf .sectionTitle__5ec2f h2 {
-    color: var(--spook-secondary-test) !important;
-}
-
-/* Friends search icon */
+/* Friends search placeholder and icon */
+#app-mount .searchBar__5ec2f .input__75098::placeholder,
 #app-mount .searchBar__5ec2f .icon__75098 svg path {
-    fill: var(--spook-muted-test) !important;
+    color: var(--spook-muted) !important;
 }
-
-/* Friend action buttons */
-#app-mount .peopleListItem_cc6179 .actionButton_f8fa06 {
-    background: transparent !important;
-}
-
-/* Friend action button hover */
-#app-mount .peopleListItem_cc6179 .actionButton_f8fa06:hover,
-#app-mount .peopleListItem_cc6179 .actionButton_f8fa06.highlight_f8fa06 {
-    color: var(--spook-accent) !important;
-}
-
-/* Friend action icon glow */
-#app-mount .peopleListItem_cc6179 .actionButton_f8fa06:hover .icon_f8fa06,
-#app-mount .peopleListItem_cc6179 .actionButton_f8fa06.highlight_f8fa06 .icon_f8fa06 {
-    color: var(--spook-accent) !important;
-    filter: var(--spook-glow-filter-strong);
-}
-
-/* Username revealed on hover */
-#app-mount .peopleListItem_cc6179:hover .discriminator__0a06e {
-    color: var(--spook-primary-test) !important;
-}
-
 
 /* #endregion */
 /* #region MEMBER LIST */
@@ -556,24 +499,28 @@ body,
     -webkit-backdrop-filter: var(--spook-glass-filter);
 }
 
-#app-mount .member__5d473, /* Transparent member rows */
-#app-mount .container_c8ffbb { /* Transparent outer surfaces */
+/* Transparent member rows and outer surfaces */
+#app-mount .member__5d473, 
+#app-mount .container_c8ffbb {
     background: transparent !important;
 }
 
 /* Stronger member row hover */
 #app-mount .member__5d473:hover {
-    color: var(--spook-highlight-test) !important;
+    background: var(--spook-background-select) !important;
     text-shadow: var(--spook-glow-secondary);
     filter: var(--spook-glow-filter);
-    background: var(--spook-background-select) !important;
 }
 
-/* Text Muted */
-#app-mount .members_c8ffbb .truncated_c9d15c, /* Member status */
-#app-mount .membersGroupHeader_c8ffbb, /* Member group headings */
-#app-mount .membersGroupName_c8ffbb { /* Member group headings */
-    color: var(--spook-muted-test) !important;
+/* Member group headings */
+#app-mount .membersGroupHeader_c8ffbb, 
+#app-mount .membersGroupName_c8ffbb { 
+    color: var(--spook-primary) !important;
+}
+
+/* Member status */
+#app-mount .members_c8ffbb .truncated_c9d15c {
+    color: var(--spook-muted) !important;
 }
 
 
@@ -611,11 +558,6 @@ body,
 /* Header title */
 #app-mount .title__9293f {
     color: var(--spook-highlight-test) !important;
-}
-
-/* Header action icons */
-#app-mount .iconWrapper__9293f.clickable__9293f .icon__9293f {
-    color: var(--spook-muted-test) !important;
 }
 
 /* Header action icons hover */
