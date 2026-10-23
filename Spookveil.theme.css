@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.12
+ * @version 1.2.13
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -1150,9 +1150,14 @@ body,
 }
 
 
-/* ============================================================
-   POST CARDS
-   ============================================================ */
+
+/* Forum search icon & text */
+#app-mount .prefixElement_d9be46 .icon__0c4c4,
+#app-mount .form_d9be46 textarea.title_d9be46::placeholder {
+    color: var(--spook-muted) !important;
+}
+
+
 
 /* Forum Post Cards */
 #app-mount [class*="mainCard_"] {
@@ -1180,25 +1185,6 @@ body,
     color: var(--spook-primary) !important;
 }
 
-/* Forum post details: reply count, separator, date */
-#app-mount .footer_faa96b .messageCountIcon_faa96b,
-#app-mount .footer_faa96b .messageCountText_faa96b,
-#app-mount .footer_faa96b .bullet_faa96b,
-#app-mount .footer_faa96b .text-sm\/normal_cf4812 {
-    color: var(--spook-muted) !important;
-}
-
-
-
-/* Forum post header actions */
-#app-mount .container__34c2c.header__34c2c {
-    background: var(--spook-glass-background) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
-}
-
 /* Forum title text */
 #app-mount .postTitleText_faa96b {
     color: var(--spook-primary) !important;
@@ -1209,7 +1195,24 @@ body,
     color: var(--spook-secondary) !important;
 }
 
+/* Forum post details: reply count, separator, date */
+#app-mount .footer_faa96b .messageCountIcon_faa96b,
+#app-mount .footer_faa96b .messageCountText_faa96b,
+#app-mount .footer_faa96b .bullet_faa96b,
+#app-mount .footer_faa96b .text-sm\/normal_cf4812 {
+    color: var(--spook-muted) !important;
+}
 
+
+
+/* Forum post header: Background */
+#app-mount .container__34c2c.header__34c2c {
+    background: var(--spook-glass-background) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
 
 /* Forum post Header: Reaction icon, text, following text, checkmark & link buttons, reaction count */
 #app-mount .reactionBtn_f8896c .icon_f8896c,
@@ -1234,14 +1237,6 @@ body,
 #app-mount .container__34c2c .reactionBtn_f8896c.addReactButton__34c2c:hover .icon_f8896c {
     color: var(--spook-highlight) !important;
     filter: var(--spook-glow-filter-strong) !important;
-}
-
-
-
-/* Forum search icon & text */
-#app-mount .prefixElement_d9be46 .icon__0c4c4,
-#app-mount .form_d9be46 textarea.title_d9be46::placeholder {
-    color: var(--spook-muted) !important;
 }
 
 
