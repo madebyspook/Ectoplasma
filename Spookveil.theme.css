@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.14
+ * @version 1.2.15
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -1315,67 +1315,50 @@ body,
 
 
 
-/* Text Subtile */
-#app-mount .groupHeader__971b5 [data-text-variant="text-xs/semibold"] { /* Search group headers */
-    color: var(--spook-secondary-test) !important;
+/* Search group headers */
+#app-mount .groupHeader__971b5 [data-text-variant="text-xs/semibold"] { 
+    color: var(--spook-primary) !important;
 }
 
-/* Text Strong */
-#app-mount .itemIcon__971b5, /* Search Icons */
-#app-mount .nonText__971b5, /* Serach text */
-#app-mount .item__971b5 > div > [data-text-variant="text-sm/medium"] { /* "In:" text */
-    color: var(--spook-highlight-test) !important;
-}
-
-/* Search input text */
-#app-mount .searchBar__97492 input {
-    color: var(--spook-highlight-test) !important;
-}
-
-/* Search input placeholder */
-#app-mount .searchBar__97492 input::placeholder {
-    color: var(--spook-muted-test) !important;
+/* Search Icon, Text, In: text */
+#app-mount .itemIcon__971b5, 
+#app-mount .nonText__971b5, 
+#app-mount .item__971b5 > div > [data-text-variant="text-sm/medium"] {
+    color: var(--spook-secondary) !important;
 }
 
 /* Search history clear button */
 #app-mount .clearSearchHistory__971b5 .clearSearchHistoryIcon__971b5 {
-    color: var(--spook-muted-test) !important;
+    color: var(--spook-secondary) !important;
 }
 #app-mount .clearSearchHistory__971b5:hover .clearSearchHistoryIcon__971b5 {
-    color: var(--spook-accent) !important;
+    color: var(--spook-highlight) !important;
     filter: var(--spook-glow-filter-strong);
 }
 
 /* Search filter sublabels: in:, has:, mentions: */
-#app-mount .filterSublabelTextContainer__971b5 .text-sm\/semibold_cf4812 {
-    color: var(--spook-secondary-test) !important;
-}
+#app-mount .filterSublabelTextContainer__971b5 .text-sm\/semibold_cf4812,
 #app-mount .filterSublabelTextContainer__971b5 .text-sm\/medium_cf4812 {
-    color: var(--spook-muted-test) !important;
+    color: var(--spook-primary) !important;
 }
 
-/* Search history suggestion hover */
-#app-mount .itemContainer__971b5:hover .autocompletePillContainer__971b5 .nonText__971b5 {
-    color: var(--spook-accent) !important;
-    filter: var(--spook-glow-filter-strong);
-}
-
-/* Search filter and history row hover */
+/* Search row hover */
 #app-mount .itemContainer__971b5:hover,
 #app-mount .itemContainer__971b5[aria-selected="true"] {
     background: var(--spook-background-select) !important;
 }
 
-/* Search row text and icons hover */
+/* Search hover */
+#app-mount .itemContainer__971b5:hover .autocompletePillContainer__971b5 .nonText__971b5,
 #app-mount .itemContainer__971b5:hover .itemIcon__971b5,
 #app-mount .itemContainer__971b5:hover [data-text-variant],
 #app-mount .itemContainer__971b5:hover .nonText__971b5,
 #app-mount .itemContainer__971b5[aria-selected="true"] .itemIcon__971b5,
 #app-mount .itemContainer__971b5[aria-selected="true"] [data-text-variant],
 #app-mount .itemContainer__971b5[aria-selected="true"] .nonText__971b5 {
-    color: var(--spook-highlight-test) !important;
-    text-shadow: var(--spook-glow-secondary);
-    filter: var(--spook-glow-filter);
+    color: var(--spook-highlight) !important;
+    text-shadow: var(--spook-glow-strong);
+    filter: var(--spook-glow-filter-strong);
 }
 
 
