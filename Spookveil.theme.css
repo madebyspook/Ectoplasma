@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.15
+ * @version 1.2.16
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -1398,48 +1398,34 @@ body,
     background: transparent !important;
 }
 
-/* Strong settings text */
+/* Category */
 #app-mount .modal_e44912 .label__409aa,
 #app-mount .tabBar__133bf .item__133bf.selected_a8da2 {
-    color: var(--spook-highlight-test) !important;
+    color: var(--spook-primary) !important;
 }
 
-/* secondary settings text */
+/* muted settings text */
 #app-mount .tabBar__133bf .item__133bf,
 #app-mount .modal_e44912 .item_caf372 [data-text-variant],
 #app-mount .modal_e44912 .item_e4d939 [data-text-variant],
 #app-mount .modal_e44912 [data-text-variant="text-sm/normal"] {
-    color: var(--spook-secondary-test) !important;
+    color: var(--spook-muted) !important;
 }
 
-/* primary settings text */
-#app-mount .modal_e44912 .button_a22cb0 [data-text-variant] {
-    color: var(--spook-primary-test) !important;
-}
-
-/* Muted settings icons and labels */
+/* secondary settings text */
+#app-mount .modal_e44912 .button_a22cb0 [data-text-variant],
 #app-mount .modal_e44912 .icon_caf372,
 #app-mount .modal_e44912 .item_caf372 .text-md\/medium_cf4812,
 #app-mount .modal_e44912 .item_e4d939 .text-md\/normal_cf4812,
 #app-mount .modal_e44912 .baseControlItem_dbfbe0 svg[fill="none"] {
-    color: var(--spook-muted-test) !important;
+    color: var(--spook-secondary) !important;
 }
 
 /* Settings navigation arrows */
 #app-mount .modal_e44912 .baseControlItem_dbfbe0 svg[fill="none"] {
-    stroke: var(--spook-muted-test) !important;
+    stroke: var(--spook-muted) !important;
 }
 
-/* Settings sidebar navigation */
-#app-mount .sidebarRegion__23e6b .item__133bf {
-    color: var(--spook-secondary-test) !important;
-}
-
-/* Selected and hovered settings items */
-#app-mount .sidebarRegion__23e6b .item__133bf:hover,
-#app-mount .sidebarRegion__23e6b .selected_b3f026 {
-    color: var(--spook-highlight-test) !important;
-}
 
 
 /* #endregion */
