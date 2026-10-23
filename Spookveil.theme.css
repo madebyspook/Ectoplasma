@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.11
+ * @version 1.2.12
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -1180,19 +1180,11 @@ body,
     color: var(--spook-primary) !important;
 }
 
-/* Forum post details: reply count */
+/* Forum post details: reply count, separator, date */
 #app-mount .footer_faa96b .messageCountIcon_faa96b,
-#app-mount .footer_faa96b .messageCountText_faa96b {
-    color: var(--spook-muted) !important;
-}
-
-/* Forum post date */
+#app-mount .footer_faa96b .messageCountText_faa96b,
+#app-mount .footer_faa96b .bullet_faa96b,
 #app-mount .footer_faa96b .text-sm\/normal_cf4812 {
-    color: var(--spook-muted) !important;
-}
-
-/* Forum post details separator */
-#app-mount .footer_faa96b .bullet_faa96b {
     color: var(--spook-muted) !important;
 }
 
