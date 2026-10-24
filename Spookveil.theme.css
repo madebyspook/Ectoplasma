@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.16
+ * @version 1.2.17
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -1520,51 +1520,50 @@ body,
     -webkit-backdrop-filter: var(--spook-glass-filter);
 }
 
-/* Tooltip text */
-.tooltip_fa450d,
-.tooltip_fa450d *,
-.bd-tooltip,
-.bd-tooltip * {
-    color: var(--spook-primary-test) !important;
-}
-
-/* BetterDiscord tooltip pointer */
+/* tooltip pointer */
 #app-mount .bd-tooltip-pointer {
     border-color: transparent !important;
 }
 
-/* Emoji tooltip title */
+/* Tooltip text */
+.tooltip_fa450d,
+.tooltip_fa450d *,
+.bd-tooltip,
+.bd-tooltip *,
 #app-mount .emojiTooltipText__040f0.text-sm\/medium_cf4812 {
-    color: var(--spook-highlight-test) !important;
+    color: var(--spook-primary) !important;
 }
-
 /* Emoji tooltip description */
 #app-mount .emojiTooltipText__040f0.text-xs\/normal_cf4812 {
-    color: var(--spook-primary-test) !important;
+    color: var(--spook-muted) !important;
 }
+
+
 
 /* Context menu icons */
 #app-mount .menu_c1e9c4 .item_c1e9c4 .icon_c1e9c4 {
-    color: var(--spook-muted-test) !important;
+    color: var(--spook-secondary) !important;
     filter: none !important;
 }
 
 /* Context menu icons hover */
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4,
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4 path[fill="currentColor"] {
-    color: var(--spook-accent) !important;
-    fill: var(--spook-accent) !important;
+    color: var(--spook-highlight) !important;
+    fill: var(--spook-highlight) !important;
     filter: var(--spook-glow-filter-strong) !important;
 }
 
 /* Context menu labels */
 #app-mount .menu_c1e9c4 .label_c1e9c4 {
-    color: var(--spook-primary-test) !important;
+    color: var(--spook-secondary) !important;
 }
 
 /* Hovered context menu labels */
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .label_c1e9c4 {
-    color: var(--spook-highlight-test) !important;
+    color: var(--spook-highlight) !important;
+    text-shadow: var(--spook-glow-strong);
+    filter: var(--spook-glow-filter);
 }
 
 
