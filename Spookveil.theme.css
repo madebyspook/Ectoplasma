@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.18
+ * @version 1.2.19
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -699,18 +699,18 @@ body,
 
 /* Reply attachment placeholder text */
 #app-mount .repliedTextPlaceholder_c19a55 {
-    color: var(--spook-muted-test) !important;
+    color: var(--spook-secondary) !important;
 }
 /* Reply attachment text hover */
 #app-mount .repliedTextPreview_c19a55:hover .repliedTextPlaceholder_c19a55 {
-    color: var(--spook-accent) !important;
-    text-shadow: var(--spook-glow-secondary) !important;
+    color: var(--spook-highlight) !important;
+    text-shadow: var(--spook-glow-strong) !important;
 }
-
 /* Reply attachment icon */
 #app-mount .repliedTextContentTrailingIcon_c19a55 {
-    color: var(--spook-muted-test) !important;
+    color: var(--spook-secondary) !important;
 }
+
 
 /* Reply connector: highlight color and glow */
 #app-mount .repliedMessageClickableSpine_c19a55,
@@ -771,11 +771,11 @@ body,
 
 /* Chat message hover toolbar buttons */
 #app-mount .hoverBarButton_f84418.button_f7ecac {
-    color: var(--spook-muted-test) !important;
+    color: var(--spook-secondary) !important;
 }
 /* Chat message hover toolbar buttons hover */
 #app-mount .hoverBarButton_f84418.button_f7ecac:hover svg {
-    color: var(--spook-accent) !important;
+    color: var(--spook-highlight) !important;
     filter: var(--spook-glow-filter-strong);
 }
 
