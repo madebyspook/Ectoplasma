@@ -14,8 +14,9 @@
    ============================================================ */
 
 :root {
-    /* Accent */
-    --spook-accent: #36a9ff;
+    /* Accent */    
+    --spook-accent: #4163FF;
+    /* --spook-accent: #36a9ff; */
 
     /* Wallpaper */
     --spook-background-image: var(--bgm-url);
