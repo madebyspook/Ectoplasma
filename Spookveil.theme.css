@@ -1,7 +1,7 @@
 /**
  * @name Spookveil
  * @author Made By Spook
- * @version 1.2.24
+ * @version 1.2.25
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -40,6 +40,8 @@
         saturate(1.25);
     --spook-glass-dark:  rgb(from color-mix(in srgb, var(--spook-accent) 7%, black) r g b / 0.20);
     --spook-glass-light: rgb(from color-mix(in srgb, var(--spook-accent) 25%, white) r g b / 0.14);    
+    --spook-glass-card:       rgb(from color-mix(in srgb, var(--spook-accent) 25%, white) r g b / 0.20);
+    --spook-glass-card-hover: rgb(from color-mix(in srgb, var(--spook-accent) 25%, white) r g b / 0.33);
     --spook-glass-border: 1px solid rgb(from color-mix(in srgb, var(--spook-accent) 20%, white) r g b / 0.32);    
     --spook-glass-border-radius: 12px;
     --spook-glass-box-shadow:
@@ -91,8 +93,8 @@
 /* Global text readability */
 #app-mount { 
     text-shadow: 
-    0 1px 2px rgba(0, 0, 0, 0.85),
-    0 0 3px rgba(255, 255, 255, 0.10);
+        0 1px 2px rgba(0, 0, 0, 0.85),
+        0 0 3px rgba(255, 255, 255, 0.10);
 }
 
 /* Keep usernames free of the global text shadow */
@@ -121,7 +123,7 @@ body,
 /* Global dark background */
 #app-mount .bg__960e4 {
     background-image: none !important;
-    background-color: rgb(3 6 13 / 0.5) !important;
+    background-color: var(--spook-glass-dark) !important;
 }
 
 /* Hide BackgroundManager's global wallpaper layer. Its image remains available through --bgm-url. */
@@ -278,7 +280,7 @@ body,
 
 /* New unreads pill glass */
 #app-mount .bar__7aaec {
-    background: rgba(185, 215, 255, 0.32) !important;
+    background: var(--spook-glass-light) !important;
     border: var(--spook-glass-border) !important;
     border-radius: var(--spook-glass-border-radius) !important;
     box-shadow: var(--spook-glass-box-shadow) !important;
@@ -600,9 +602,9 @@ body,
 
 /* Message Background for hover, mentioned & reply */
 #app-mount .message__5126c:hover,
-    #app-mount .mentioned__5126c,
-    #app-mount .message__5126c.replying__5126c {
-        background: var(--spook-background-select) !important;
+#app-mount .mentioned__5126c,
+#app-mount .message__5126c.replying__5126c {
+    background: var(--spook-background-select) !important;
 }
 
 /* Mentioned Bar */
@@ -991,8 +993,7 @@ body,
 
 
 /* Reply bar */
-#app-mount .replyBar__841c8
-{
+#app-mount .replyBar__841c8 {
     background: var(--spook-glass-light) !important;
     border: var(--spook-glass-border) !important;
     border-radius: var(--spook-glass-border-radius);
@@ -1141,7 +1142,7 @@ body,
 
 /* Forum Post Cards */
 #app-mount [class*="mainCard_"] {
-    background: rgba(185, 215, 255, 0.2) !important;
+    background: var(--spook-glass-card) !important;
     border: var(--spook-glass-border) !important;
     border-radius: var(--spook-glass-border-radius);
     box-shadow: var(--spook-glass-box-shadow) !important;
@@ -1151,7 +1152,7 @@ body,
 
 /* Forum Post Cards Hover */
 #app-mount [class*="mainCard_"]:hover {
-    background: rgba(185, 215, 255, 0.33) !important;
+    background: var(--spook-glass-card-hover) !important;
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.65),
         inset 1px 0 0 rgba(255, 255, 255, 0.22),
@@ -1569,12 +1570,6 @@ body,
     border: var(--spook-glass-border) !important;
     border-radius: var(--spook-glass-border-radius);
     box-shadow: var(--spook-glass-box-shadow) !important;
-}
-
-/* More Active Posts popup */
-#app-mount .popout__76f04 {
-    backdrop-filter: var(--spook-glass-filter) !important;
-    -webkit-backdrop-filter: var(--spook-glass-filter) !important;
 }
 
 /* Context menu */
