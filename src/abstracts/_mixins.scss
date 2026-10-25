@@ -1,1 +1,17 @@
-// Reserved for mixins styles during the future SCSS migration.
+@mixin wallpaper-layer {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        var(--spook-background-color),
+        var(--spook-background-image);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: var(--spook-glass-filter);
+}

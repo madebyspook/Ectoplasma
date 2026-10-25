@@ -1,11 +1,3 @@
-/* #region SERVER LIST */
-
-
-/* ============================================================
-   SERVER LIST
-   ============================================================ */
-
-
 /* Server list: use global background without additional tint */
 #app-mount .guilds_c48ade,
 #app-mount .wrapper_ef3116,
@@ -27,5 +19,3 @@
 #app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
     background-color: var(--spook-accent) !important;
 }
-
-/* #endregion */

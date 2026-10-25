@@ -74,10 +74,6 @@
 }
 
 /* #endregion */
-/* #region GLOBAL */
-/* ============================================================
-   GLOBAL
-   ============================================================ */
 /* Global text readability */
 #app-mount {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85), 0 0 3px rgba(255, 255, 255, 0.1);
@@ -88,11 +84,6 @@
   text-shadow: 0 0px 5px rgba(0, 0, 0, 0.5), 0 -1px 2px rgba(255, 255, 255, 0.3);
 }
 
-/* #endregion */
-/* #region APPLICATION */
-/* ============================================================
-   APPLICATION
-   ============================================================ */
 /* Transparent application layers */
 body,
 #app-mount,
@@ -131,12 +122,6 @@ body,
   filter: var(--spook-glow-filter-strong);
 }
 
-/* #endregion */
-/* ============================================================ */
-/* #region SERVER LIST */
-/* ============================================================
-   SERVER LIST
-   ============================================================ */
 /* Server list: use global background without additional tint */
 #app-mount .guilds_c48ade,
 #app-mount .wrapper_ef3116,
@@ -160,11 +145,6 @@ body,
   background-color: var(--spook-accent) !important;
 }
 
-/* #endregion */
-/* #region CHANNEL LIST */
-/* ============================================================
-   CHANNEL LIST
-   ============================================================ */
 /* Channel List Background */
 #app-mount .container__2637a {
   backdrop-filter: var(--spook-glass-filter);
@@ -269,11 +249,6 @@ body,
   color: var(--spook-highlight) !important;
 }
 
-/* #endregion */
-/* #region DIRECT MESSAGES */
-/* ============================================================
-   DIRECT MESSAGES
-   ============================================================ */
 /* DM list background */
 #app-mount .privateChannels_e6b769 {
   backdrop-filter: var(--spook-glass-filter);
@@ -331,11 +306,6 @@ body,
   color: var(--spook-neon) !important;
 }
 
-/* #endregion */
-/* #region FRIEND LIST */
-/* ============================================================
-   FRIENDS LIST
-   ============================================================ */
 /* Friends wallpaper container */
 #app-mount main.container__133bf {
   position: relative;
@@ -420,11 +390,6 @@ body,
   color: var(--spook-secondary) !important;
 }
 
-/* #endregion */
-/* #region MEMBER LIST */
-/* ============================================================
-   MEMBER LIST
-   ============================================================ */
 /* Member list background */
 #app-mount .members_c8ffbb,
 #app-mount .membersWrap_c8ffbb.container__7641b {
@@ -458,12 +423,6 @@ body,
   color: var(--spook-secondary) !important;
 }
 
-/* #endregion */
-/* ============================================================ */
-/* #region CHAT HEADERS AND NAVIGATION */
-/* ============================================================
-   CHAT HEADERS AND NAVIGATION
-   ============================================================ */
 /* Header */
 #app-mount .container__9293f {
   background: var(--spook-glass-light) !important;
@@ -509,11 +468,6 @@ body,
   color: var(--spook-secondary) !important;
 }
 
-/* #endregion */
-/* #region CHAT */
-/* ============================================================
-   CHAT
-   ============================================================ */
 /* BackgroundManager wallpaper behind the entire chat */
 #app-mount .chat_f75fb0::before {
   content: "";
@@ -855,11 +809,6 @@ body,
   overflow: visible !important;
 }
 
-/* #endregion */
-/* #region MESSAGE COMPOSER */
-/* ============================================================
-   MESSAGE COMPOSER
-   ============================================================ */
 /* Glass styling */
 #app-mount .channelTextArea__74017 {
   background: var(--spook-glass-light) !important;
@@ -964,11 +913,6 @@ body,
   -webkit-backdrop-filter: var(--spook-glass-filter);
 }
 
-/* #endregion */
-/* #region FORUMS */
-/* ============================================================
-   FORUMS
-   ============================================================ */
 /* BackgroundManager wallpaper */
 #app-mount .container_f369db::before {
   content: "";
@@ -1120,11 +1064,6 @@ body,
   filter: var(--spook-glow-filter-strong) !important;
 }
 
-/* #endregion */
-/* #region FORUM EDIT */
-/* ============================================================
-   FORUM EDIT
-   ============================================================ */
 /* Forum edit wallpaper */
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0)::before {
   content: "";
@@ -1225,11 +1164,6 @@ body,
   filter: var(--spook-glow-filter-strong);
 }
 
-/* #endregion */
-/* #region VOICE CALLS */
-/* ============================================================
-   VOICE CALLS
-   ============================================================ */
 /* BackgroundManager wallpaper */
 #app-mount .wrapper_cb9592 .root_bfe55a::before {
   content: "";
@@ -1263,12 +1197,6 @@ body,
   filter: var(--spook-glow-filter-weak);
 }
 
-/* #endregion */
-/* ============================================================ */
-/* #region SEARCH */
-/* ============================================================
-   SEARCH
-   ============================================================ */
 /* BetterDiscord search background */
 #app-mount .bd-search-wrapper {
   background: transparent !important;
@@ -1331,11 +1259,6 @@ body,
   filter: var(--spook-glow-filter-strong);
 }
 
-/* #endregion */
-/* #region SETTINGS */
-/* ============================================================
-   SETTINGS
-   ============================================================ */
 /* Glass styling */
 #app-mount .contentHeader_e9e3ed,
 #app-mount .bd-store-card,
@@ -1391,11 +1314,6 @@ body,
   stroke: var(--spook-secondary) !important;
 }
 
-/* #endregion */
-/* #region POPOVERS AND MENUS */
-/* ============================================================
-   POPOVERS AND MENUS
-   ============================================================ */
 /* Glass styling */
 #app-mount .popover_f84418 {
   background: var(--spook-glass-light) !important;
@@ -1508,11 +1426,6 @@ body,
   filter: var(--spook-glow-filter-weak);
 }
 
-/* #endregion */
-/* #region PICKERS */
-/* ============================================================
-   PICKERS
-   ============================================================ */
 /* Glass styling */
 #app-mount .inspector_aeaaeb,
 #app-mount .contentWrapper__08434 {
@@ -1585,6 +1498,3 @@ body,
 #app-mount .categoryName_dfa278 {
   color: var(--spook-highlight) !important;
 }
-
-/* #endregion */
-/* ============================================================ */

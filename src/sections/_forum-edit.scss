@@ -1,27 +1,8 @@
-/* #region FORUM EDIT */
-
-/* ============================================================
-   FORUM EDIT
-   ============================================================ */
-
+@use "../abstracts/mixins";
 
 /* Forum edit wallpaper */
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0)::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-
-    background-image:
-        var(--spook-background-color),
-        var(--spook-background-image);
-
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    filter: var(--spook-glass-filter);
+    @include mixins.wallpaper-layer();
 }
 
 /* Forum edit main container */
@@ -111,6 +92,3 @@
     color: var(--spook-neon) !important;
     filter: var(--spook-glow-filter-strong);
 }
-
-
-/* #endregion */

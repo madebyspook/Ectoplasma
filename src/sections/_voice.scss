@@ -1,28 +1,8 @@
-/* #region VOICE CALLS */
-
-
-/* ============================================================
-   VOICE CALLS
-   ============================================================ */
-
+@use "../abstracts/mixins";
 
 /* BackgroundManager wallpaper */
 #app-mount .wrapper_cb9592 .root_bfe55a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-
-    background-image:
-        var(--spook-background-color),
-        var(--spook-background-image);
-
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    filter: var(--spook-glass-filter);
+    @include mixins.wallpaper-layer();
 }
 
 /* Voice call background */
@@ -43,7 +23,3 @@
     text-shadow: var(--spook-glow-neon-strong);
     filter: var(--spook-glow-filter-weak);
 }
-
-
-/* #endregion */
-/* ============================================================ */

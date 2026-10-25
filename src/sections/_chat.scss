@@ -1,28 +1,8 @@
-/* #region CHAT */
-
-
-/* ============================================================
-   CHAT
-   ============================================================ */
-
+@use "../abstracts/mixins";
 
 /* BackgroundManager wallpaper behind the entire chat */
 #app-mount .chat_f75fb0::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-
-    background-image:
-        var(--spook-background-color),
-        var(--spook-background-image);
-
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    filter: var(--spook-glass-filter);
+    @include mixins.wallpaper-layer();
 }
 
 /* Transparent chat surfaces */
@@ -365,6 +345,3 @@
 #app-mount .markup__75297:has(> pre) {
     overflow: visible !important;
 }
-
-
-/* #endregion */
