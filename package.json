@@ -5,8 +5,8 @@
   "description": "Development tooling for the Ectoplasma BetterDiscord theme.",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "sass --no-source-map src/main.scss dist/Ectoplasma.css",
-    "watch": "sass --watch --no-source-map src/main.scss:dist/Ectoplasma.css"
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch"
   },
   "engines": {
     "node": ">=22"

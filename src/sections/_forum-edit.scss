@@ -1,1 +1,116 @@
-// Reserved for forum edit styles during the future SCSS migration.
+/* #region FORUM EDIT */
+
+/* ============================================================
+   FORUM EDIT
+   ============================================================ */
+
+
+/* Forum edit wallpaper */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        var(--spook-background-color),
+        var(--spook-background-image);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: var(--spook-glass-filter);
+}
+
+/* Forum edit main container */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) {
+    background: transparent !important;
+}
+
+/* Forum edit sidebar glass */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .sidebarRegionScroller__23e6b {
+    background: var(--spook-glass-dark) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Forum edit content tint without a backdrop boundary */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .contentRegionScroller__23e6b {
+    background: var(--spook-glass-dark) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Transparent outer surfaces */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .sidebarRegion__23e6b,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .contentRegion__23e6b {
+    background: transparent !important;
+}
+
+
+/* Sidebar heading and main section headings */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .headerText_aa8da2,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .contentColumn__23e6b h2 {
+    color: var(--spook-highlight) !important;
+}
+
+/* Channel name, form labels and navigation text */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .category__3ddc0,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .label__5a838,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .item_aa8da2:not(.destructive_aa8da2) {
+    color: var(--spook-primary) !important;
+}
+
+/* Form descriptions, helper text and ESC label */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .description__5a838,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .helperTextContainer__5a838 [class*="text-xs"],
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .keybind_c2b141 {
+    color: var(--spook-secondary) !important;
+}
+
+/* Selected and hovered navigation items */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .item_aa8da2.selected_aa8da2,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .item_aa8da2.themed_aa8da2:hover {
+    background: var(--spook-background-select) !important;
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+}
+
+
+/* Post title input and dropdown glass */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .wrapper__72c38.container__75098,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .wrapper__72c38.selectField__0edde,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .selectDropdown__0edde {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter) !important;
+    -webkit-backdrop-filter: var(--spook-glass-filter) !important;
+}
+
+/* Input and dropdown text */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .input__75098,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .singleSelectOption__0edde,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .listBoxItemContent__2e223 {
+    color: var(--spook-primary) !important;
+}
+
+/* Input placeholder, dropdown arrow and close button */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .input__75098::placeholder,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .chevronIcon__0edde,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .closeButton_c2b141 {
+    color: var(--spook-secondary) !important;
+}
+
+/* Dropdown arrow and close button hover */
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .chevronButton__0edde:hover .chevronIcon__0edde,
+#app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .closeButton_c2b141:hover {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+
+/* #endregion */

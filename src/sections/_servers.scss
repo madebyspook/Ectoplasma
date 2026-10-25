@@ -1,1 +1,31 @@
-// Reserved for servers styles during the future SCSS migration.
+/* #region SERVER LIST */
+
+
+/* ============================================================
+   SERVER LIST
+   ============================================================ */
+
+
+/* Server list: use global background without additional tint */
+#app-mount .guilds_c48ade,
+#app-mount .wrapper_ef3116,
+#app-mount .sidebar__5e434::after /* Server list bottom fix */ {
+    background: transparent !important;
+}
+
+/* Server list unread and selected indicators */
+#app-mount .wrapper__58105 .item__58105.visible__58105 {
+    background-color: var(--spook-accent) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+#app-mount .lowerBadge_cc5dd2, /* Unread server notification badge */
+#app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] { /* Unread server notification badge */
+    --badge-notification-background: var(--spook-accent);
+    filter: var(--spook-glow-filter-strong);
+}
+#app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
+    background-color: var(--spook-accent) !important;
+}
+
+/* #endregion */

@@ -1,0 +1,54 @@
+/* #region CHAT HEADERS AND NAVIGATION */
+
+
+/* ============================================================
+   CHAT HEADERS AND NAVIGATION
+   ============================================================ */
+
+
+/* Header */
+#app-mount .container__9293f {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Remove header decorations */
+#app-mount .container__9293f::before,
+#app-mount .children__9293f::after {
+    display: none !important;
+}
+
+/* Header title */
+#app-mount .title__9293f {
+    color: var(--spook-highlight) !important;
+}
+/* Channel header secondary text */
+#app-mount .children__9293f .topic__6ec1a {
+    color: var(--spook-secondary) !important;
+}
+
+/* Channel header icons */
+#app-mount .channelIcon__9293f.iconWrapper__9293f .icon__9293f,
+#app-mount .iconWrapper__9293f.iconDisabled__9293f .icon__9293f {
+    color: var(--spook-secondary) !important;
+}
+
+/* Header action icons hover */
+#app-mount .iconWrapper__9293f.clickable__9293f:hover .icon__9293f,
+#app-mount .iconWrapper__9293f.iconDisabled__9293f:hover .icon__9293f {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* Search field and Icon */
+#app-mount .searchBar_c322aa [data-slate-placeholder="true"],
+#app-mount .searchBar_c322aa .icon__0c4c4 {
+    color: var(--spook-secondary) !important;
+}
+
+
+/* #endregion */

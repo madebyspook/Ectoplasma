@@ -1,1 +1,66 @@
-// Reserved for direct messages styles during the future SCSS migration.
+/* #region DIRECT MESSAGES */
+
+
+/* ============================================================
+   DIRECT MESSAGES
+   ============================================================ */
+
+
+/* DM list background */
+#app-mount .privateChannels_e6b769 {
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+    background: transparent !important;
+}
+
+/* Keep the DM list clear of the floating user panel */
+#app-mount .privateChannels_e6b769 .scrollerBase_d125d2 {
+    margin-bottom: 70px !important; 
+}    
+
+/* DM scrolling background */
+#app-mount .privateChannels_e6b769 .scrollerBase_d125d2,
+#app-mount .privateChannels_e6b769 .searchBar_e6b769 { 
+    background: var(--spook-glass-dark) !important;
+}    
+
+/* DM Section */
+#app-mount .privateChannelsHeaderContainer__99e7c .headerText__99e7c {
+    color: var(--spook-highlight) !important;
+}
+
+/* Friend Name, Header text & icon, Pin, Close Icons, Collapse Icon */
+#app-mount .name__20a53,
+#app-mount .linkButtonIcon__972a0,
+#app-mount .favoriteIcon__972a0, 
+#app-mount .closeIcon__972a0 { 
+    color: var(--spook-primary) !important;
+}
+
+/* DM sub text*/
+#app-mount .subtext__972a0 {
+    color: var(--spook-secondary) !important;
+}
+
+/* DM Section Hover */
+#app-mount .privateChannelsHeaderContainer__99e7c .headerText__99e7c:hover {
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+    filter: var(--spook-glow-filter-weak);
+}
+
+/* Selected & Hovered DM */
+#app-mount .privateChannels_e6b769 .interactiveSelected__972a0,
+#app-mount .privateChannels_e6b769 .interactive__972a0:hover {
+    text-shadow: var(--spook-glow-neon-strong);
+    filter: var(--spook-glow-filter-weak);
+    background: var(--spook-background-select) !important;
+}
+
+/* Selected & Hovered DM Names */
+#app-mount .privateChannels_e6b769 .interactiveSelected__972a0 .overflow_b0dfc2,
+#app-mount .privateChannels_e6b769 .interactive__972a0:hover .overflow_b0dfc2 {
+    color: var(--spook-neon) !important;
+}
+
+/* #endregion */

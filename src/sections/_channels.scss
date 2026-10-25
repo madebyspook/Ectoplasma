@@ -1,1 +1,113 @@
-// Reserved for channels styles during the future SCSS migration.
+/* #region CHANNEL LIST */
+
+/* ============================================================
+   CHANNEL LIST
+   ============================================================ */
+
+
+/* Channel List Background */
+#app-mount .container__2637a {
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+    background: var(--spook-glass-dark) !important;
+    margin-bottom: 20px !important;
+}
+
+/* Server name and details */
+#app-mount .title_edbb22 .primaryColor__4bd52,
+#app-mount .guildBadgeAndName_f37cb1 .name_f37cb1,
+#app-mount .textContentContainer__0d0f9 .text__0d0f9 {
+    color: var(--spook-highlight) !important;
+}
+
+#app-mount .inviteButton_f37cb1, /* Server invite button */
+#app-mount .guildDropdown_f37cb1 .headerChildren_f37cb1 svg { /* Server dropdown arrow */
+    color: var(--spook-secondary) !important;
+}
+
+/* Server header hover */
+#app-mount .guildDropdown_f37cb1:hover .headerChildren_f37cb1 svg,
+#app-mount .inviteButton_f37cb1:hover {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* Read & Muted channel, icon, category and collapse arrow */
+#app-mount .container__2637a .link__2ea32 .name__2ea32, 
+#app-mount .container__2637a .link__2ea32 .icon__2ea32, 
+#app-mount .container__2637a .containerDefault__29444 .icon__29444 { 
+    color: var(--spook-primary) !important;
+}
+
+/* Unread channel, icon and category */
+#app-mount .container__2637a .modeUnreadImportant__2ea32 .name__2ea32, 
+#app-mount .container__2637a .modeUnreadImportant__2ea32 .icon__2ea32,  
+#app-mount .container__2637a .containerDefault__29444 .name__29444 {
+    color: var(--spook-highlight) !important;
+}
+
+/* Unread channel Glow */
+#app-mount .container__2637a .modeUnreadImportant__2ea32 .name__2ea32, 
+#app-mount .container__2637a .modeUnreadImportant__2ea32 .icon__2ea32 {
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* Selected & hovered channel rows: background and glow */
+#app-mount .container__2637a .containerDefault__29444:hover .icon__29444,
+#app-mount .container__2637a .selectedChannel_c69b6d .actionIcon_c69b6d,
+#app-mount .container__2637a .containerprimary_c69b6d:hover .actionIcon_c69b6d,
+#app-mount .container__2637a .modeSelected__2ea32 .icon__2ea32,
+#app-mount .container__2637a .modeSelected__2ea32 .link__2ea32,
+#app-mount .container__2637a .wrapper__2ea32:hover .icon__2ea32,
+#app-mount .container__2637a .wrapper__2ea32:hover .link__2ea32 {
+    background: var(--spook-background-select) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+    filter: var(--spook-glow-filter-weak);
+}
+
+/* Selected & hovered channel names */
+#app-mount .container__2637a .modeSelected__2ea32 .name__2ea32,
+#app-mount .container__2637a .wrapper__2ea32:hover .name__2ea32 {
+    color: var(--spook-neon) !important;
+}
+
+/* Selected & hovered channel icons and action icons */
+#app-mount .container__2637a .modeSelected__2ea32 .icon__2ea32,
+#app-mount .container__2637a .wrapper__2ea32:hover .icon__2ea32,
+#app-mount .container__2637a .selectedChannel_c69b6d .actionIcon_c69b6d,
+#app-mount .container__2637a .wrapper__2ea32:hover .actionIcon_c69b6d {
+    color: var(--spook-neon) !important;
+}
+
+/* Hovered category name and collapse arrow */
+#app-mount .container__2637a .containerDefault__29444:hover .name__29444,
+#app-mount .container__2637a .containerDefault__29444:hover .icon__29444 {
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+    filter: var(--spook-glow-filter-weak);
+}
+
+/* Unread Indicator */
+#app-mount .channelInfo_c69b6d .numberBadge__463b7,
+#app-mount .unread__2ea32.unreadImportant__2ea32 {
+    background-color: var(--spook-neon) !important;
+    box-shadow: var(--spook-glow-accent);
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* New unreads pill glass */
+#app-mount .bar__7aaec {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius) !important;
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* New unreads pill label */
+#app-mount .bar__7aaec .barText__7aaec,
+#app-mount .bar__7aaec .unreadIcon__7aaec {
+    color: var(--spook-highlight) !important;
+}
+
+
+/* #endregion */

@@ -1,1 +1,73 @@
-// Reserved for search styles during the future SCSS migration.
+/* #region SEARCH */
+
+
+/* ============================================================
+   SEARCH
+   ============================================================ */
+
+
+/* BetterDiscord search background */
+#app-mount .bd-search-wrapper {
+    background: transparent !important;
+}
+
+/* Search suggestions dropdown: outer popout and scrollable inner layer */
+#app-mount .container__16eb0 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+
+
+/* Search group headers */
+#app-mount .groupHeader__971b5 [data-text-variant="text-xs/semibold"] { 
+    color: var(--spook-highlight) !important;
+}
+
+/* Search Icon, Text, In: text */
+#app-mount .itemIcon__971b5, 
+#app-mount .nonText__971b5, 
+#app-mount .item__971b5 > div > [data-text-variant="text-sm/medium"] {
+    color: var(--spook-primary) !important;
+}
+
+/* Search history clear button */
+#app-mount .clearSearchHistory__971b5 .clearSearchHistoryIcon__971b5 {
+    color: var(--spook-primary) !important;
+}
+#app-mount .clearSearchHistory__971b5:hover .clearSearchHistoryIcon__971b5 {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* Search filter sublabels: in:, has:, mentions: */
+#app-mount .filterSublabelTextContainer__971b5 .text-sm\/semibold_cf4812,
+#app-mount .filterSublabelTextContainer__971b5 .text-sm\/medium_cf4812 {
+    color: var(--spook-highlight) !important;
+}
+
+/* Search row hover */
+#app-mount .itemContainer__971b5:hover,
+#app-mount .itemContainer__971b5[aria-selected="true"] {
+    background: var(--spook-background-select) !important;
+}
+
+/* Search hover */
+#app-mount .itemContainer__971b5:hover .autocompletePillContainer__971b5 .nonText__971b5,
+#app-mount .itemContainer__971b5:hover .itemIcon__971b5,
+#app-mount .itemContainer__971b5:hover [data-text-variant],
+#app-mount .itemContainer__971b5:hover .nonText__971b5,
+#app-mount .itemContainer__971b5[aria-selected="true"] .itemIcon__971b5,
+#app-mount .itemContainer__971b5[aria-selected="true"] [data-text-variant],
+#app-mount .itemContainer__971b5[aria-selected="true"] .nonText__971b5 {
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+    filter: var(--spook-glow-filter-strong);
+}
+
+
+/* #endregion */

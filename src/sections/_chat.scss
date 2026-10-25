@@ -1,1 +1,370 @@
-// Reserved for chat styles during the future SCSS migration.
+/* #region CHAT */
+
+
+/* ============================================================
+   CHAT
+   ============================================================ */
+
+
+/* BackgroundManager wallpaper behind the entire chat */
+#app-mount .chat_f75fb0::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        var(--spook-background-color),
+        var(--spook-background-image);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: var(--spook-glass-filter);
+}
+
+/* Transparent chat surfaces */
+#app-mount .chatContent_f75fb0,
+#app-mount .chat_f75fb0 {
+    position: relative;
+    isolation: isolate;
+    background: transparent !important;
+}
+
+/* Remove chat gradients */
+#app-mount .chatGradient__36d07,
+#app-mount .chatTypingGradientAtBottom__36d07,
+#app-mount .chatTypingGradientNotAtBottom__36d07 {
+    background: transparent !important;
+}
+
+
+
+/* Message Background for hover, mentioned & reply */
+#app-mount .message__5126c:hover,
+#app-mount .mentioned__5126c,
+#app-mount .message__5126c.replying__5126c {
+    background: var(--spook-background-select) !important;
+}
+
+/* Mentioned Bar */
+#app-mount .mentioned__5126c::before,
+#app-mount .message__5126c.replying__5126c::before {
+    background: var(--spook-accent) !important;
+    box-shadow: var(--spook-glow-accent) !important;
+}
+
+/* User and channel mentions */
+#app-mount .mention.wrapper_f61d60,
+#app-mount .roleMention__75297.wrapper_f61d60,
+#app-mount .channelMention.wrapper_f61d60 {
+    color: var(--spook-neon) !important;
+    background: var(--spook-background-select) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+}
+
+
+
+/* Server tag text */
+#app-mount .message__5126c .tagText__10651 {
+    color: var(--spook-primary) !important;
+}
+/* Original Poster badge glass background */
+#app-mount .message__5126c .botTagOP__82f07 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+/* Original Poster badge text */
+#app-mount .message__5126c .botTagOP__82f07 .botText__82f07 {
+    color: var(--spook-primary) !important;
+}
+/* Message timestamps */
+#app-mount .timestamp_c19a55 {
+    color: var(--spook-secondary) !important;
+}
+/* Chat message text */
+#app-mount .message__5126c .markup__75297 {
+    color: var(--spook-primary) !important;
+}
+
+/* Edited message indicator */
+#app-mount .edited_c19a55 {
+    color: var(--spook-secondary) !important;
+}
+
+/* Chat links */
+#app-mount .message__5126c .anchor__14d82 {
+    color: var(--spook-accent) !important;
+    text-shadow: var(--spook-glow-neon-weak);
+}
+
+/* Chat links hover */
+#app-mount .message__5126c .anchor__14d82:hover {
+    color: var(--spook-accent) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+}
+
+
+
+/* Reply attachment placeholder text */
+#app-mount .repliedTextPlaceholder_c19a55 {
+    color: var(--spook-primary) !important;
+}
+/* Reply attachment text hover */
+#app-mount .repliedTextPreview_c19a55:hover .repliedTextPlaceholder_c19a55 {
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong) !important;
+}
+/* Reply attachment icon */
+#app-mount .repliedTextContentTrailingIcon_c19a55 {
+    color: var(--spook-primary) !important;
+}
+
+
+/* Reply connector: highlight color and glow */
+#app-mount .repliedMessageClickableSpine_c19a55,
+#app-mount .repliedMessageClickableSpine_c19a55:hover {
+    border-color: var(--spook-neon) !important;
+    background: transparent !important;
+    filter: var(--spook-glow-filter-accent);
+}
+
+
+
+/* System message text */
+#app-mount .message__5126c.systemMessage__5126c .content__235ca {
+    color: var(--spook-secondary) !important;
+}
+/* System message links */
+#app-mount .message__5126c.systemMessage__5126c .content__235ca .anchor_14d82 {
+    color: var(--spook-accent) !important;
+    text-shadow: var(--spook-glow-neon-weak);
+}
+/* System message timestamp */
+#app-mount .message__5126c.systemMessage__5126c .timestamp_c19a55 {
+    color: var(--spook-secondary) !important;
+}
+
+
+
+/* Own reaction: accent border and glow */
+#app-mount .reaction__23977.reactionMe__23977 {
+    border-color: var(--spook-accent) !important;
+    box-shadow: var(--spook-glow-neon-weak) !important;
+}
+
+/* Own reaction: accent count */
+#app-mount .reaction__23977.reactionMe__23977 .reactionCount__23977 {
+    color: var(--spook-highlight) !important;
+}
+
+/* Reaction counts */
+#app-mount .reactionCount__23977 {
+    color: var(--spook-secondary) !important;
+}
+/* Chat reaction count hover */
+#app-mount .reaction__23977:hover .reactionCount__23977 {
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong) !important;
+}
+
+/* Chat add reaction icon */
+#app-mount .reactionBtn__23977 .icon__23977 {
+    color: var(--spook-secondary) !important;
+}
+/* Chat add reaction icon hover */
+#app-mount .reactionBtn__23977:hover .icon__23977 {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* Chat message hover toolbar buttons */
+#app-mount .hoverBarButton_f84418.button_f7ecac {
+    color: var(--spook-primary) !important;
+}
+/* Chat message hover toolbar buttons hover */
+#app-mount .hoverBarButton_f84418.button_f7ecac:hover svg {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+
+
+/* Thread preview card */
+#app-mount .container__9271d {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* Thread preview card title */
+#app-mount .container__9271d .name__9271d {
+    color: var(--spook-highlight) !important;
+}
+
+/* Thread preview card message count link */
+#app-mount .container__9271d .cta__9271d {
+    color: var(--spook-accent) !important;
+    text-shadow: var(--spook-glow-neon-weak);
+}
+
+/* Thread preview card content */
+#app-mount .container__9271d .bottomLine__9271d {
+    color: var(--spook-primary) !important;
+}
+
+/* Thread preview card timestamp */
+#app-mount .container__9271d .timestamp__9271d {
+    color: var(--spook-secondary) !important;
+}
+
+/* Thread connector: retain Discord's rounded L-shape */
+#app-mount .message__5126c.hasThread_c19a55::after {
+    background: transparent !important;
+    border-left-color: var(--spook-neon) !important;
+    border-bottom-color: var(--spook-neon) !important;
+    box-shadow: none !important;
+    filter: var(--spook-glow-filter-accent);
+}
+
+
+
+/* Unread divider */
+#app-mount .divider__908e2.hasContent__908e2,
+#app-mount .divider__908e2.isUnread__908e2 {
+    border-color: var(--spook-neon) !important;
+    box-shadow: var(--spook-glow-accent) !important;
+}
+
+/* Unread divider date text */
+#app-mount .divider__908e2.hasContent__908e2 .content__908e2,
+#app-mount .divider__908e2.isUnread__908e2 .content__908e2 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-weak);
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Unread Divider Right New Tag */
+#app-mount .unreadPill__908e2 {
+    background-color: var(--spook-neon) !important;
+    box-shadow: var(--spook-glow-accent) !important;
+    color: var(--spook-accent) !important;
+    text-shadow: 
+        0 0px 5px rgba(0, 0, 0, 0),
+        0 -1px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* Unread divider cap */
+#app-mount .unreadPillCapStroke__908e2 {
+    stroke: var(--spook-neon) !important;
+    fill: var(--spook-neon) !important;
+}
+
+/* New messages bar */
+#app-mount .newMessagesBar__0f481 {
+    background: var(--spook-accent) !important;
+    box-shadow: var(--spook-glow-accent) !important;
+}
+
+/* Jump to present bar */
+#app-mount .jumpToPresentBar__0f481 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Jump to present button */
+#app-mount .jumpToPresentBar__0f481 .button_a22cb0 {
+    background: var(--spook-accent) !important;
+    box-shadow: var(--spook-glow-accent) !important;
+}
+
+
+
+/* Embed: accent bar */
+#app-mount .embedFull__623de {
+    position: relative;
+    background: var(--spook-glass-dark) !important;
+    border-left-color: var(--spook-neon) !important;
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+/* Left-side glow, clipped vertically */
+#app-mount .embedFull__623de::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    pointer-events: none;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(from var(--spook-accent) r g b / 0.65)
+    );
+}
+
+/* Poll Embed */
+#app-mount .pollContainer_b7e1cb {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* Winning poll answer frame */
+#app-mount .pollContainer_b7e1cb .answer__4c520.victorStyles_a1443c .answerInner__4c520 {
+    border: 1px solid var(--spook-accent) !important;
+    box-shadow: var(--spook-glow-neon-weak) !important;
+}
+
+/* Winning poll answer percentage fill */
+#app-mount .pollContainer_b7e1cb .answer__4c520.victorStyles_a1443c .votePercentageBar__4c520 {
+    background-color: color-mix(in srgb, var(--spook-accent) 25%, transparent) !important;
+}
+
+
+
+/* Code container sizing */
+#app-mount [class*="markup_"] pre,
+#app-mount [class*="codeContainer_"] {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Code block background */
+#app-mount [class*="markup_"] code {
+    background: var(--spook-glass-dark) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* Code block text */
+#app-mount .codeContainer__75297 .hljs {
+    color: var(--spook-primary) !important;
+}
+
+/* Let code block shadows extend beyond the message text wrapper */
+#app-mount .markup__75297:has(> pre) {
+    overflow: visible !important;
+}
+
+
+/* #endregion */
