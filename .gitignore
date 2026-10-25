@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Sass caches and source maps
+.sass-cache/
+*.css.map
+
+# Local logs, environment files, and temporary files
+*.log
+.env
+.env.*
+!.env.example
+*.tmp
+*.swp
+*.swo
+*~
+coverage/
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
