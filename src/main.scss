@@ -1,0 +1,25 @@
+// Scaffold only. The existing theme remains in Ectoplasma.theme.css.
+// No theme styles have been migrated into these modules yet.
+
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "components/glass";
+@use "components/glow";
+@use "sections/global";
+@use "sections/application";
+@use "sections/servers";
+@use "sections/channels";
+@use "sections/direct-messages";
+@use "sections/friends";
+@use "sections/members";
+@use "sections/chat";
+@use "sections/composer";
+@use "sections/forums";
+@use "sections/forum-edit";
+@use "sections/voice";
+@use "sections/search";
+@use "sections/settings";
+@use "sections/popovers";
+@use "sections/pickers";
+
+/* Ectoplasma SCSS scaffold: theme migration pending. */

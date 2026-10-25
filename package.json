@@ -1,0 +1,17 @@
+{
+  "name": "ectoplasma",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Development tooling for the Ectoplasma BetterDiscord theme.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "sass --no-source-map src/main.scss dist/Ectoplasma.css",
+    "watch": "sass --watch --no-source-map src/main.scss:dist/Ectoplasma.css"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}
