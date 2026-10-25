@@ -1,1 +1,84 @@
-// Reserved for variables styles during the future SCSS migration.
+/**
+ * @name Ectoplasma
+ * @author Made By Spook
+ * @version 1.2.28
+ * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
+ */
+
+/* ============================================================ */
+/* #region VARIABLES */
+
+
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+
+:root {
+    /* Accent */    
+    --spook-accent: #3C86ff; 
+
+    /* Wallpaper */
+    --spook-background-image: var(--bgm-url);
+    --spook-background-color:
+        linear-gradient(
+            rgb(from color-mix(in srgb, var(--spook-accent) 0%, black) r g b / 0.15),
+            rgb(from color-mix(in srgb, var(--spook-accent) 0%, black) r g b / 0.15)
+        );
+
+    /* Text palette */
+    --spook-neon:      color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 25%, white) 100%, black);
+    --spook-highlight: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 15%, white) 95%, black);
+    --spook-primary:   color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 25%, white) 85%, black);
+    --spook-secondary: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 35%, white) 55%, black);
+
+    /* Select Background */
+    --spook-background-select: rgba(from var(--spook-accent) r g b / 0.1);
+    
+    /* Glass appearance */
+    --spook-glass-filter:
+        blur(8px)
+        saturate(1.25);
+    --spook-glass-dark:  rgb(from color-mix(in srgb, var(--spook-accent) 7%, black) r g b / 0.20);
+    --spook-glass-light: rgb(from color-mix(in srgb, var(--spook-accent) 25%, white) r g b / 0.14);    
+    --spook-glass-card:       rgb(from color-mix(in srgb, var(--spook-accent) 25%, white) r g b / 0.20);
+    --spook-glass-card-hover: rgb(from color-mix(in srgb, var(--spook-accent) 25%, white) r g b / 0.33);
+    --spook-glass-border: 1px solid rgb(from color-mix(in srgb, var(--spook-accent) 20%, white) r g b / 0.32);    
+    --spook-glass-border-radius: 12px;
+    --spook-glass-box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.65),
+        inset 1px 0 0 rgba(255, 255, 255, 0.22),
+        inset -1px 0 0 rgb(from color-mix(in srgb, var(--spook-accent) 12%, black 88%) r g b / 0.20),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.10),
+        0 1px 3px rgba(0, 0, 0, 0.24),
+        0 0 12px rgba(from var(--spook-accent) r g b / 0.30),
+        0 0 24px rgba(from var(--spook-accent) r g b / 0.12);
+
+    /* Glow */
+    --spook-glow-neon-weak:
+        0 0 4px rgba(from var(--spook-accent) r g b / 0.65),
+        0 0 12px rgba(from var(--spook-accent) r g b / 0.40),
+        0 0 24px rgba(from var(--spook-accent) r g b / 0.20);
+    --spook-glow-neon-strong:
+        0 0 3px rgba(from var(--spook-accent) r g b / 1),
+        0 0 9px rgba(from var(--spook-accent) r g b / 0.95),
+        0 0 22px rgba(from var(--spook-accent) r g b / 0.75),
+        0 0 45px rgba(from var(--spook-accent) r g b / 0.48),
+        0 0 70px rgba(from var(--spook-accent) r g b / 0.23);
+    --spook-glow-accent:
+        0 0 3px rgba(from var(--spook-accent) r g b / 1),
+        0 0 6px 1px rgba(from var(--spook-accent) r g b / 1),
+        0 0 8px 1px rgba(from var(--spook-accent) r g b / 1),
+        0 0 12px 1px rgba(from var(--spook-accent) r g b / 0.55),
+        0 0 20px rgba(from var(--spook-accent) r g b / 0.3);
+    --spook-glow-filter-weak:
+        drop-shadow(0 0 4px rgba(from var(--spook-accent) r g b / 0.5));
+    --spook-glow-filter-strong:
+        drop-shadow(0 0 3px rgb(from var(--spook-accent) r g b / 0.8))
+        drop-shadow(0 0 8px rgb(from var(--spook-accent) r g b / 0.5));    
+    --spook-glow-filter-accent:
+        drop-shadow(0 0 1px rgb(from var(--spook-accent) r g b / 1))
+        drop-shadow(0 0 2px rgb(from var(--spook-accent) r g b / 0.9))
+        drop-shadow(0 0 4px rgb(from var(--spook-accent) r g b / 0.8))
+        drop-shadow(0 0 8px rgb(from var(--spook-accent) r g b / 0.7));    
+    }
+/* #endregion */

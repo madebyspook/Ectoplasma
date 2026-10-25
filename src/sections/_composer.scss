@@ -1,1 +1,121 @@
-// Reserved for composer styles during the future SCSS migration.
+/* #region MESSAGE COMPOSER */
+
+
+/* ============================================================
+   MESSAGE COMPOSER
+   ============================================================ */
+
+
+/* Glass styling */
+#app-mount .channelTextArea__74017 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* Composer */
+#app-mount .wrapperAudio_cf09d8,
+#app-mount .channelTextArea__74017 .scrollableContainer__74017 {
+    background: transparent !important;
+}
+
+/* Prevent messages overlapping composer */
+#app-mount .messagesWrapper__36d07 {
+    margin-bottom: 18px !important;
+}
+
+
+
+/* Message composer placeholder */
+#app-mount .channelTextArea__74017 .placeholder__1b31f {
+    color: var(--spook-primary) !important;
+}
+
+/* Message composer input text */
+#app-mount .channelTextArea__74017 .markup__75297 {
+    color: var(--spook-highlight) !important;
+}
+
+/* Message composer mentions */
+#app-mount .channelTextArea__74017 .wrapper_f61d60 {
+    color: var(--spook-neon) !important;
+    background: var(--spook-background-select) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+}
+
+
+
+/* Action buttons: attachment, stickers, emoji, and apps */
+#app-mount .attachButtonInner__0923f svg,
+#app-mount .channelTextArea__74017 .button__74017,
+#app-mount .channelTextArea__74017 .emojiButton__74017,
+#app-mount .channelTextArea__74017 .button_e6e74f {
+    color: var(--spook-primary) !important;
+}
+/* Action buttons hover */
+#app-mount .attachButtonInner__0923f:hover svg,
+#app-mount .channelTextArea__74017 .button__74017:hover,
+#app-mount .channelTextArea__74017 .emojiButton__74017:hover,
+#app-mount .channelTextArea__74017 .button_e6e74f:hover {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}    
+
+
+
+/* Reply bar */
+#app-mount .replyBar__841c8 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    margin-top: -2px !important;
+}
+#app-mount .stackedBars__74017 {
+    background: transparent !important;
+}
+
+/* Reply bar label */
+#app-mount .replyBar__841c8 .replyLabel__841c8 {
+    color: var(--spook-secondary) !important;
+}
+
+/* Reply bar username */
+#app-mount .replyBar__841c8 .replyLabel__841c8 [data-text-variant] {
+    color: var(--spook-primary) !important;
+}
+
+/* Reply bar close button */
+#app-mount .replyBar__841c8 .closeButton_e876a8 {
+    color: var(--spook-primary) !important;
+}
+
+/* Reply bar close button hover */
+#app-mount .replyBar__841c8 .closeButton_e876a8:hover {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+
+
+/* Attachment preview glass styling */
+#app-mount .upload_aa605f {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* Attachment action bar background */
+#app-mount .upload_aa605f .actionBar_aa605f,
+#app-mount .upload_aa605f .wrapper_f7ecac {
+    background: transparent !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+
+
+/* #endregion */

@@ -1,1 +1,123 @@
-// Reserved for popovers styles during the future SCSS migration.
+/* #region POPOVERS AND MENUS */
+
+
+/* ============================================================
+   POPOVERS AND MENUS
+   ============================================================ */
+
+
+/* Glass styling */
+#app-mount .popover_f84418 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Glass styling */
+#app-mount .browser_d98031 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Glass styling */
+#app-mount .popout__76f04 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* Glass styling */
+#app-mount .header_d9c882 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* Context menu */
+#app-mount .menu_c1e9c4 {
+    background: transparent !important;
+}
+
+/* Context menu glass */
+#app-mount .menu_c1e9c4::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+
+}
+
+/* Tooltips */
+#app-mount .tooltip_fa450d, 
+#app-mount .bd-tooltip,
+#app-mount .reactionTooltip_bbcccb {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+/* Tooltip pointer and triangle */
+#app-mount .caretIcon_fa450d .caretFill_fa450d, 
+#app-mount .bd-tooltip-pointer {
+    fill: transparent !important;
+}
+
+/* Tooltip text */
+.tooltip_fa450d,
+.tooltip_fa450d *,
+.bd-tooltip,
+.bd-tooltip *,
+#app-mount .emojiTooltipText__040f0.text-sm\/medium_cf4812 {
+    color: var(--spook-highlight) !important;
+}
+/* Emoji tooltip description */
+#app-mount .emojiTooltipText__040f0.text-xs\/normal_cf4812 {
+    color: var(--spook-secondary) !important;
+}
+
+
+
+/* Context menu icons */
+#app-mount .menu_c1e9c4 .item_c1e9c4 .icon_c1e9c4 {
+    color: var(--spook-primary) !important;
+    filter: none !important;
+}
+
+/* Context menu icons hover */
+#app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4,
+#app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4 path[fill="currentColor"] {
+    color: var(--spook-neon) !important;
+    fill: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong) !important;
+}
+
+/* Context menu labels */
+#app-mount .menu_c1e9c4 .label_c1e9c4 {
+    color: var(--spook-primary) !important;
+}
+
+/* Hovered context menu labels */
+#app-mount .menu_c1e9c4 .item_c1e9c4:hover .label_c1e9c4 {
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+    filter: var(--spook-glow-filter-weak);
+}
+
+
+/* #endregion */

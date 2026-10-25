@@ -1,1 +1,82 @@
-// Reserved for pickers styles during the future SCSS migration.
+/* #region PICKERS */
+
+
+/* ============================================================
+   PICKERS
+   ============================================================ */
+
+
+/* Glass styling */
+#app-mount .inspector_aeaaeb,
+#app-mount .contentWrapper__08434 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Transparent picker inner surfaces */
+#app-mount .header_fed6d3, /* Gif Header */
+#app-mount .container_fed6d3, /* Gif Grid Background */
+#app-mount .header__8ef02, /* Sticker Header */
+#app-mount .categoryList__3ad28, /* Sticker left vertical categories */
+#app-mount .stickerCategoryGenericSelected__3ad28, /* Sticker Selected category */
+#app-mount .categoryItemDefaultCategorySelected_b9ee0c, /* Emoji Selected category */
+#app-mount .wrapper__14245, /* Emoji Horizontal dividers */
+#app-mount .categoryList_c0e32c { /* Emoji Left vertical categories*/
+    background: transparent !important;
+}
+
+/* Active picker tab */
+#app-mount .navButtonActive__08434 {
+    background: var(--spook-glass-dark) !important;
+}
+
+/* Picker scrollbar */
+#app-mount .scroller_affa7e::-webkit-scrollbar-thumb,
+#app-mount .container_d02962::-webkit-scrollbar-thumb {
+    background-color: var(--spook-accent) !important;
+}
+
+/* Picker search glass styling */
+#app-mount #emoji-picker-tab-panel .container__72c38,
+#app-mount #sticker-picker-tab-panel .container__72c38,
+#app-mount #gif-picker-tab-panel .container__72c38 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Remove Search primary blue frame */
+#app-mount #emoji-picker-tab-panel .container__75098,
+#app-mount #sticker-picker-tab-panel .container__75098,
+#app-mount #gif-picker-tab-panel .container__75098 {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* Picker search text and icon */
+#app-mount #emoji-picker-tab-panel .input__75098,
+#app-mount #emoji-picker-tab-panel .icon__75098,
+#app-mount #emoji-picker-tab-panel .input__75098::placeholder,
+#app-mount #sticker-picker-tab-panel .input__75098,
+#app-mount #sticker-picker-tab-panel .icon__75098,
+#app-mount #sticker-picker-tab-panel .input__75098::placeholder,
+#app-mount #gif-picker-tab-panel .input__75098,
+#app-mount #gif-picker-tab-panel .icon__75098,
+#app-mount #gif-picker-tab-panel .input__75098::placeholder {
+    color: var(--spook-primary) !important;
+}  
+
+/* Picker category labels */
+#app-mount .categoryName_dfa278 {
+    color: var(--spook-highlight) !important;
+}
+/* #endregion */
+/* ============================================================ */

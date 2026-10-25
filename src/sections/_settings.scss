@@ -1,1 +1,66 @@
-// Reserved for settings styles during the future SCSS migration.
+/* #region SETTINGS */
+
+
+/* ============================================================
+   SETTINGS
+   ============================================================ */
+
+
+/* Glass styling */
+#app-mount .contentHeader_e9e3ed, /* Header */
+#app-mount .bd-store-card,
+#app-mount .primaryKeybindGroup_f82450 { /* Keyboard shortcuts  */
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* Settings backgrounds */
+#app-mount .modal_e44912:has(.container_abd9a8),
+#app-mount [data-layer="CHANNEL_SETTINGS"] {
+    background: var(--spook-glass-dark) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Transparent settings inner surfaces */
+#app-mount .modal_e44912 .fixedContent__409aa::after, /* Remove settings navigation scroll fade */
+#app-mount .scrim__40128, /* Remove modal dimming */
+#app-mount .modal_e44912:has(.container_abd9a8) .modalContentInner_e44912,
+#app-mount .modal_e44912:has(.container_abd9a8) .sidebar__409aa, /* Settings side panel */
+#app-mount .modal_e44912:has(.container_abd9a8) .content_e9e3ed { /* Sttings main panel */
+    background: transparent !important;
+}
+
+/* Category */
+#app-mount .modal_e44912 .label__409aa,
+#app-mount .tabBar__133bf .item__133bf.selected_a8da2 {
+    color: var(--spook-highlight) !important;
+}
+
+/* muted settings text */
+#app-mount .tabBar__133bf .item__133bf,
+#app-mount .modal_e44912 .item_caf372 [data-text-variant],
+#app-mount .modal_e44912 .item_e4d939 [data-text-variant],
+#app-mount .modal_e44912 [data-text-variant="text-sm/normal"] {
+    color: var(--spook-secondary) !important;
+}
+
+/* secondary settings text */
+#app-mount .modal_e44912 .button_a22cb0 [data-text-variant],
+#app-mount .modal_e44912 .icon_caf372,
+#app-mount .modal_e44912 .item_caf372 .text-md\/medium_cf4812,
+#app-mount .modal_e44912 .item_e4d939 .text-md\/normal_cf4812,
+#app-mount .modal_e44912 .baseControlItem_dbfbe0 svg[fill="none"] {
+    color: var(--spook-primary) !important;
+}
+
+/* Settings navigation arrows */
+#app-mount .modal_e44912 .baseControlItem_dbfbe0 svg[fill="none"] {
+    stroke: var(--spook-secondary) !important;
+}
+
+
+
+/* #endregion */

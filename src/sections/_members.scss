@@ -1,1 +1,44 @@
-// Reserved for members styles during the future SCSS migration.
+/* #region MEMBER LIST */
+
+
+/* ============================================================
+   MEMBER LIST
+   ============================================================ */
+
+
+/* Member list background */
+#app-mount .members_c8ffbb,
+#app-mount .membersWrap_c8ffbb.container__7641b {
+    background: var(--spook-glass-dark) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Transparent member rows and outer surfaces */
+#app-mount .member__5d473,
+#app-mount .membersWrap_c8ffbb.container__7641b .members_c8ffbb,
+#app-mount .container_c8ffbb {
+    background: transparent !important;
+}
+
+/* Stronger member row hover */
+#app-mount .member__5d473:hover {
+    background: var(--spook-background-select) !important;
+    text-shadow: var(--spook-glow-neon-weak);
+    filter: var(--spook-glow-filter-weak);
+}
+
+/* Member group headings */
+#app-mount .membersGroupHeader_c8ffbb, 
+#app-mount .membersGroupName_c8ffbb { 
+    color: var(--spook-highlight) !important;
+}
+
+/* Member status */
+#app-mount .members_c8ffbb .truncated_c9d15c {
+    color: var(--spook-secondary) !important;
+}
+
+
+/* #endregion */
+/* ============================================================ */

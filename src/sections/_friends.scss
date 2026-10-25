@@ -1,1 +1,98 @@
-// Reserved for friends styles during the future SCSS migration.
+/* #region FRIEND LIST */
+
+
+/* ============================================================
+   FRIENDS LIST
+   ============================================================ */
+
+
+/* Friends wallpaper container */
+#app-mount main.container__133bf {
+    position: relative;
+    isolation: isolate;
+    background: transparent !important;
+}
+
+/* Friends search field */
+#app-mount .searchBar__5ec2f .container__75098 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+}
+
+/* BackgroundManager wallpaper behind Friends page */
+#app-mount main.container__133bf::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        var(--spook-background-color),
+        var(--spook-background-image);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: var(--spook-glass-filter);
+}
+
+/* Transparent Friends inner surfaces */
+#app-mount .tabBody__133bf,
+#app-mount .peopleColumn__133bf,
+#app-mount .peopleList__5ec2f,
+#app-mount .peopleListItem_cc6179 {
+    background: transparent !important;
+}
+
+/* Friends list section heading */
+#app-mount .peopleColumn__133bf .sectionTitle__5ec2f h2 {
+    color: var(--spook-highlight) !important;
+}
+
+/* Friend names */
+#app-mount .username__0a06e {
+    color: var(--spook-primary);
+}
+
+/* Friend online status & game activity */
+#app-mount .subtext__0a06e,
+#app-mount .peopleListItem_cc6179 .statusText__19b6d {
+    color: var(--spook-secondary);
+}
+
+/* Friend action buttons */
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06 {
+    color: var(--spook-primary);
+    background: transparent !important;
+}
+
+/* Friend row hover */
+#app-mount .peopleListItem_cc6179:hover {
+    background: var(--spook-background-select) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+    filter: var(--spook-glow-filter-weak);
+}
+
+/* Friend action icon hover and highlight */
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06:hover .icon_f8fa06,
+#app-mount .peopleListItem_cc6179 .actionButton_f8fa06.highlight_f8fa06 .icon_f8fa06 {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* Username revealed on hover */
+#app-mount .peopleListItem_cc6179:hover .discriminator__0a06e {
+    color: var(--spook-primary) !important;
+}
+
+/* Friends search placeholder and icon */
+#app-mount .searchBar__5ec2f .input__75098::placeholder,
+#app-mount .searchBar__5ec2f .icon__75098 svg path {
+    color: var(--spook-secondary) !important;
+}
+
+/* #endregion */

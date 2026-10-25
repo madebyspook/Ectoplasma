@@ -4,9 +4,9 @@ Ectoplasma is a BetterDiscord theme with a near-black palette, icy blue accents,
 
 ## Current status
 
-The active theme is `Ectoplasma.theme.css`. The SCSS migration has **not** happened yet: `src/` contains placeholders, and `dist/Ectoplasma.css` contains only a scaffold comment. Do not install the compiled placeholder as the theme.
+The theme styles live in `src/`. `npm run build` generates the complete installable `Ectoplasma.theme.css` and an identical `dist/Ectoplasma.css` copy.
 
-This setup prepares development tooling for a future migration and eventual BetterDiscord theme library submission. It does not indicate submission readiness or library approval.
+This is a structural migration: the original CSS regions, selectors, declarations, custom properties, and comments remain in their original order. No mixins or nesting have been introduced.
 
 ## Project structure
 
@@ -14,7 +14,7 @@ This setup prepares development tooling for a future migration and eventual Bett
 Ectoplasma/
 ├── .vscode/settings.json        # Existing editor configuration, preserved
 ├── src/
-│   ├── main.scss               # Scaffold entry point
+│   ├── main.scss               # Ordered SCSS entry point
 │   ├── abstracts/
 │   │   ├── _variables.scss
 │   │   └── _mixins.scss
@@ -29,6 +29,7 @@ Ectoplasma/
 │       ├── _direct-messages.scss
 │       ├── _friends.scss
 │       ├── _members.scss
+│       ├── _chat-headers.scss
 │       ├── _chat.scss
 │       ├── _composer.scss
 │       ├── _forums.scss
@@ -39,8 +40,8 @@ Ectoplasma/
 │       ├── _popovers.scss
 │       └── _pickers.scss
 ├── dist/
-│   └── Ectoplasma.css           # Tracked build output; currently a placeholder
-├── Ectoplasma.theme.css         # Active BetterDiscord theme
+│   └── Ectoplasma.css           # Generated copy of the installable theme
+├── Ectoplasma.theme.css         # Generated BetterDiscord theme
 ├── package.json
 ├── package-lock.json
 ├── .gitignore
@@ -59,7 +60,7 @@ Install the locked dependencies:
 npm ci
 ```
 
-Compile the SCSS entry point to `dist/Ectoplasma.css`:
+Compile the SCSS entry point to `Ectoplasma.theme.css` and `dist/Ectoplasma.css`:
 
 ```sh
 npm run build
@@ -71,13 +72,27 @@ Rebuild automatically when SCSS files change:
 npm run watch
 ```
 
-Stop the watcher with Ctrl+C. Source maps are disabled; the compiled CSS stays tracked for future public distribution.
+Stop the watcher with Ctrl+C. The watcher polls SCSS files every 500 ms without additional dependencies. Source maps are disabled; both generated CSS files stay tracked.
+
+`scripts/build.mjs` uses standard Dart Sass compilation. The BetterDiscord metadata header is preserved. Sass normalizes whitespace, numeric spelling, and some attribute quotes, and omits comments inside selectors; the original SCSS remains unchanged.
+
+Watch mode detects new SCSS files and continues watching after compilation errors, including errors on startup. Failed compilation leaves the last successful outputs installed. Each output is published with an atomic rename after compilation succeeds.
+
+Edit the SCSS partials rather than the generated CSS files.
 
 ## BetterDiscord workflow
 
-Continue using the existing `Ectoplasma.theme.css` and your current Cursor Run on Save synchronization workflow. These npm scripts only write to `dist/Ectoplasma.css`; they do not replace or synchronize the active theme.
+On macOS, opt into automatic installation after every successful watch build:
 
-The checked-in `.vscode/settings.json` currently references `Spookveil` in its Run on Save command. That configuration is preserved exactly during this setup.
+```sh
+npm run watch -- --betterdiscord
+```
+
+This writes to `~/Library/Application Support/BetterDiscord/themes/Ectoplasma.theme.css`, using the current user's home directory. The themes directory is created if needed. Copy failures are reported and the watcher stays running; another SCSS change retries the build and copy. The flag is rejected outside macOS or without watch mode. Plain `npm run build` and `npm run watch` only generate repository outputs.
+
+The existing editor Run on Save configuration is unchanged. Automatic installation with the flag above requires no editor save or copy step.
+
+Verify the installed theme in BetterDiscord after building; compilation and source comparisons do not constitute visual testing.
 
 ## License
 

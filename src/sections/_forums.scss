@@ -1,1 +1,177 @@
-// Reserved for forums styles during the future SCSS migration.
+/* #region FORUMS */
+
+
+/* ============================================================
+   FORUMS
+   ============================================================ */
+
+
+/* BackgroundManager wallpaper */
+#app-mount .container_f369db::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        var(--spook-background-color),
+        var(--spook-background-image);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: var(--spook-glass-filter);
+}
+
+/* Forum wallpaper container */
+#app-mount .container_f369db {
+    position: relative;
+    isolation: isolate;
+    background: transparent !important;
+}
+
+
+
+/* Forum tag filter pills */
+#app-mount .tagsContainer_f369db .sortDropdown_f369db,
+#app-mount .tagsContainer_f369db .tagsButton_f369db,
+#app-mount .tagsContainer_f369db .pill_a2c9e8 {
+    background: var(--spook-glass-light) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Forum sort and all-tags labels/icons */
+#app-mount .tagsContainer_f369db .sortDropdown_f369db *,
+#app-mount .tagsContainer_f369db .tagsButton_f369db *,
+#app-mount .tagsContainer_f369db .pill_a2c9e8 {
+    color: var(--spook-primary) !important;
+}
+/* Forum sort and all-tags labels/icons Hover */
+#app-mount .tagsContainer_f369db .sortDropdown_f369db:hover *,
+#app-mount .tagsContainer_f369db .tagsButton_f369db:hover *,
+#app-mount .tagsContainer_f369db .pill_a2c9e8:hover {
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+}
+
+/* New post count */
+#app-mount .newPostCount__599fa {
+    color: var(--spook-accent) !important;
+    text-shadow: var(--spook-glow-neon-strong);
+}
+
+/* Forum New Post button */
+#app-mount .container_f369db button.primary_a22cb0 {
+    background: var(--spook-accent) !important;
+}
+/* Forum New Post button hover */
+#app-mount .container_f369db button.primary_a22cb0:hover {
+    box-shadow: var(--spook-glow-neon-strong) !important;
+}
+
+/* Forum new post shortcut row */
+#app-mount .matchingPostsRow_f369db {
+    background: transparent !important;
+    border: transparent !important;
+}
+
+
+
+/* Forum search icon & text */
+#app-mount .prefixElement_d9be46 .icon__0c4c4,
+#app-mount .form_d9be46 textarea.title_d9be46::placeholder {
+    color: var(--spook-secondary) !important;
+}
+
+
+
+/* Forum Post Cards */
+#app-mount [class*="mainCard_"] {
+    background: var(--spook-glass-card) !important;
+    border: var(--spook-glass-border) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Forum Post Cards Hover */
+#app-mount [class*="mainCard_"]:hover {
+    background: var(--spook-glass-card-hover) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.65),
+        inset 1px 0 0 rgba(255, 255, 255, 0.22),
+        inset -1px 0 0 rgba(5, 15, 30, 0.20),
+        0 0 14px rgba(from var(--spook-accent) r g b / 0.45),
+        0 0 30px rgba(from var(--spook-accent) r g b / 0.20) !important;
+}
+
+/* Forum post card tag label */
+#app-mount .pill_a2c9e8 .lineClamp1__4bd52.text-xs\/semibold_cf4812 {
+    color: var(--spook-highlight) !important;
+}
+
+/* Forum title text */
+#app-mount .postTitleText_faa96b {
+    color: var(--spook-highlight) !important;
+}
+
+/* Forum text */
+#app-mount .messageFocusBlock_faa96b [data-text-variant] {
+    color: var(--spook-primary) !important;
+}
+
+/* Forum post details: reply count, separator, date */
+#app-mount .footer_faa96b .messageCountIcon_faa96b,
+#app-mount .footer_faa96b .messageCountText_faa96b,
+#app-mount .footer_faa96b .bullet_faa96b,
+#app-mount .footer_faa96b .text-sm\/normal_cf4812 {
+    color: var(--spook-secondary) !important;
+}
+
+
+
+/* Forum post header (top and scrolled): Background */
+#app-mount .container__34c2c,
+#app-mount .container__34c2c.header__34c2c {
+    background: var(--spook-glass-light) !important;
+    border-radius: var(--spook-glass-border-radius);
+    box-shadow: var(--spook-glass-box-shadow) !important;
+    backdrop-filter: var(--spook-glass-filter);
+    -webkit-backdrop-filter: var(--spook-glass-filter);
+}
+
+/* Forum post Header: Reaction icon, text, following text, checkmark & link buttons, reaction count */
+#app-mount .reactionBtn_f8896c .icon_f8896c,
+#app-mount .container__34c2c .reactionBtn_f8896c.addReactButton__34c2c,
+#app-mount .buttons__34c2c .lineClamp1__4bd52,
+#app-mount .buttons__34c2c .icon_a22cb0,
+#app-mount .reactionCount_f8896c {
+    color: var(--spook-primary) !important;
+}
+
+/* Forum post Header: Hover Text */
+#app-mount .reactionBtn_f8896c:hover .icon_f8896c,
+#app-mount .container__34c2c .reactionBtn_f8896c.addReactButton__34c2c:hover,
+#app-mount .reaction_f8896c:hover .reactionCount_f8896c {
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong) !important;
+}
+/* Forum post Header: Hover Icons */
+#app-mount .buttons__34c2c .button_a22cb0.secondary_a22cb0:hover,
+#app-mount .buttons__34c2c .button_a22cb0.secondary_a22cb0:hover svg,
+#app-mount .buttons__34c2c .button_a22cb0.secondary_a22cb0:hover [class*="lineClamp"],
+#app-mount .container__34c2c .reactionBtn_f8896c.addReactButton__34c2c:hover .icon_f8896c {
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong) !important;
+}
+
+
+
+/* #endregion */

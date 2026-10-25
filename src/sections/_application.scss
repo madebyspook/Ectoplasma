@@ -1,1 +1,45 @@
-// Reserved for application styles during the future SCSS migration.
+/* #region APPLICATION */
+
+
+/* ============================================================
+   APPLICATION
+   ============================================================ */
+
+
+/* Transparent application layers */
+body,
+#app-mount, 
+.app__160d8 { 
+    background: transparent; 
+}
+
+/* Global dark background */
+#app-mount .bg__960e4 {
+    background-image: none !important;
+    background-color: var(--spook-glass-dark) !important;
+}
+
+/* Hide BackgroundManager's global wallpaper layer. Its image remains available through --bgm-url. */
+#app-mount .BGM-bg_container { display: none !important; }
+
+/* Remove sidebar/chat seam */
+#app-mount .container__2637a,
+#app-mount .privateChannels_e6b769 {
+    margin-right: -1px !important;
+    z-index: 1 !important;
+}
+
+/* Header Icons */
+#app-mount .clickable__81391, /* Header actions */
+#app-mount .backForwardButtons__63abb .button__63abb.disabled__63abb, /* Disabled navigation buttons */
+#app-mount .backForwardButtons__63abb .button__63abb { /* Window back and forward navigation buttons */
+    color: var(--spook-secondary) !important; 
+}
+#app-mount .clickable__81391:hover, /* Header actions */
+#app-mount .backForwardButtons__63abb .button__63abb:not(.disabled__63abb):hover {  /* Window back and forward navigation buttons */
+    color: var(--spook-neon) !important;
+    filter: var(--spook-glow-filter-strong);
+}
+
+/* #endregion */
+/* ============================================================ */
