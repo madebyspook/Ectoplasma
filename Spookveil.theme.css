@@ -1,7 +1,7 @@
 /**
- * @name Spookveil
+ * @name Ectoplasma
  * @author Made By Spook
- * @version 1.2.27
+ * @version 1.2.28
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 
@@ -15,7 +15,8 @@
 
 :root {
     /* Accent */    
-    --spook-accent: #4163FF;
+    --spook-accent: #3C86FF;
+    /* --spook-accent: #4163FF; */
     /* --spook-accent: #36a9ff; */
 
     /* Wallpaper */
