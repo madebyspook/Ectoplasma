@@ -19,3 +19,6 @@ coverage/
 # Operating system metadata
 .DS_Store
 Thumbs.db
+
+# Local editor configuration
+.vscode/
