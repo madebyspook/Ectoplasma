@@ -54,3 +54,10 @@
 #app-mount .privateChannels_e6b769 .interactive__972a0:hover .overflow_b0dfc2 {
     color: var(--spook-neon) !important;
 }
+
+/* Unread DM indicator */
+#app-mount .privateChannels_e6b769 .unreadPill__972a0 {
+    background-color: var(--spook-neon) !important;
+    box-shadow: var(--spook-glow-accent) !important;
+    filter: var(--spook-glow-filter-strong);
+}

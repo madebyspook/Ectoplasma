@@ -11,11 +11,11 @@
     filter: var(--spook-glow-filter-strong);
 }
 
-#app-mount .lowerBadge_cc5dd2, /* Unread server notification badge */
-#app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] { /* Unread server notification badge */
-    --badge-notification-background: var(--spook-accent);
-    filter: var(--spook-glow-filter-strong);
-}
 #app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
-    background-color: var(--spook-accent) !important;
+    background-color: var(--spook-neon) !important;
+    box-shadow: var(--spook-glow-accent);
+    filter: var(--spook-glow-filter-strong);
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 1),
+        0 0 5px rgba(0, 0, 0, 0.9) !important;
 }

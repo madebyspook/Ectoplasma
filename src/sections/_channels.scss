@@ -88,6 +88,13 @@
     filter: var(--spook-glow-filter-strong);
 }
 
+/* Unread message count readability */
+#app-mount .channelInfo_c69b6d .numberBadge__463b7 {
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 1),
+        0 0 5px rgba(0, 0, 0, 0.9) !important;
+}
+
 /* New unreads pill glass */
 #app-mount .bar__7aaec {
     background: var(--spook-glass-light) !important;
