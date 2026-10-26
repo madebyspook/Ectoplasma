@@ -135,14 +135,11 @@ body,
   filter: var(--spook-glow-filter-strong);
 }
 
-#app-mount .lowerBadge_cc5dd2,
-#app-mount .lowerBadge_cc5dd2 [class*=numberBadge] { /* Unread server notification badge */
-  --badge-notification-background: var(--spook-accent);
-  filter: var(--spook-glow-filter-strong);
-}
-
 #app-mount .lowerBadge_cc5dd2 [class*=numberBadge] {
-  background-color: var(--spook-accent) !important;
+  background-color: var(--spook-neon) !important;
+  box-shadow: var(--spook-glow-accent);
+  filter: var(--spook-glow-filter-strong);
+  text-shadow: 0 1px 3px rgb(0, 0, 0), 0 0 5px rgba(0, 0, 0, 0.9) !important;
 }
 
 /* Channel List Background */
@@ -235,6 +232,11 @@ body,
   filter: var(--spook-glow-filter-strong);
 }
 
+/* Unread message count readability */
+#app-mount .channelInfo_c69b6d .numberBadge__463b7 {
+  text-shadow: 0 1px 3px rgb(0, 0, 0), 0 0 5px rgba(0, 0, 0, 0.9) !important;
+}
+
 /* New unreads pill glass */
 #app-mount .bar__7aaec {
   background: var(--spook-glass-light) !important;
@@ -304,6 +306,13 @@ body,
 #app-mount .privateChannels_e6b769 .interactiveSelected__972a0 .overflow_b0dfc2,
 #app-mount .privateChannels_e6b769 .interactive__972a0:hover .overflow_b0dfc2 {
   color: var(--spook-neon) !important;
+}
+
+/* Unread DM indicator */
+#app-mount .privateChannels_e6b769 .unreadPill__972a0 {
+  background-color: var(--spook-neon) !important;
+  box-shadow: var(--spook-glow-accent) !important;
+  filter: var(--spook-glow-filter-strong);
 }
 
 /* Friends wallpaper container */
