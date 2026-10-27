@@ -1,5 +1,4 @@
 import { mkdirSync, readdirSync, renameSync, statSync, writeFileSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as sass from 'sass';
@@ -7,12 +6,8 @@ import * as sass from 'sass';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const source = join(root, 'src');
 const watching = process.argv.includes('--watch');
-const betterDiscord = process.argv.includes('--betterdiscord');
-if (betterDiscord && (!watching || process.platform !== 'darwin')) {
-  throw new Error('--betterdiscord requires watch mode on macOS.');
-}
 
-// Publish complete files with a rename, including the installed theme.
+// Publish the compiled stylesheet atomically.
 function writeAtomic(path, css) {
   const temporary = `${path}.${process.pid}.tmp`;
   writeFileSync(temporary, css);
@@ -24,15 +19,10 @@ function build() {
     style: 'expanded',
     sourceMap: false,
   });
-  writeAtomic(join(root, 'Ectoplasma.theme.css'), css);
+
+  mkdirSync(join(root, 'dist'), { recursive: true });
   writeAtomic(join(root, 'dist/Ectoplasma.css'), css);
-  console.log('Built Ectoplasma.theme.css and dist/Ectoplasma.css.');
-  if (betterDiscord) {
-    const themes = join(homedir(), 'Library/Application Support/BetterDiscord/themes');
-    mkdirSync(themes, { recursive: true });
-    writeAtomic(join(themes, 'Ectoplasma.theme.css'), css);
-    console.log('Copied theme to BetterDiscord.');
-  }
+  console.log('Built dist/Ectoplasma.css.');
 }
 
 // Rescan the directory tree so new files are detected, even after a failed build.
@@ -47,6 +37,7 @@ function snapshot() {
 
 if (watching) {
   let previous;
+
   function rebuildIfChanged() {
     try {
       const current = snapshot();
@@ -57,6 +48,7 @@ if (watching) {
       console.error(error.message);
     }
   }
+
   rebuildIfChanged();
   setInterval(rebuildIfChanged, 500);
   console.log('Watching src/ for SCSS changes (polling).');
