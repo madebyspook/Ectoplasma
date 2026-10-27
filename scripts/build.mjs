@@ -1,4 +1,5 @@
-import { mkdirSync, readdirSync, renameSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, renameSync, statSync, writeFileSync } from 'node:fs';
+import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as sass from 'sass';
@@ -6,8 +7,12 @@ import * as sass from 'sass';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const source = join(root, 'src');
 const watching = process.argv.includes('--watch');
+const development = process.argv.includes('--dev');
 
-// Publish the compiled stylesheet atomically.
+const themes = join(homedir(), 'Library/Application Support/BetterDiscord/themes');
+const devTheme = join(themes, 'EctoplasmaDev.theme.css');
+
+// Write files atomically to avoid partial updates.
 function writeAtomic(path, css) {
   const temporary = `${path}.${process.pid}.tmp`;
   writeFileSync(temporary, css);
@@ -23,16 +28,37 @@ function build() {
   mkdirSync(join(root, 'dist'), { recursive: true });
   writeAtomic(join(root, 'dist/Ectoplasma.css'), css);
   console.log('Built dist/Ectoplasma.css.');
+
+  if (development) {
+    if (!existsSync(themes)) {
+      throw new Error(`BetterDiscord themes directory not found: ${themes}`);
+    }
+
+    const metadata = [
+      '/**',
+      ' * @name EctoplasmaDev',
+      ' * @author Made By Spook',
+      ' * @version 0.0.0',
+      ' * @description Local development build of Ectoplasma. Do not enable alongside Ectoplasma.',
+      ' */',
+      '',
+    ].join('\n');
+
+    writeFileSync(devTheme, `${metadata}${css}`);
+    console.log(`Updated ${devTheme}.`);
+  }
 }
 
-// Rescan the directory tree so new files are detected, even after a failed build.
-// Polling avoids native file-watcher limits and needs no extra dependency.
+// Detect changes to SCSS files.
 function snapshot() {
-  return readdirSync(source, { recursive: true }).filter(name => name.endsWith('.scss'))
-    .sort().map(name => {
+  return readdirSync(source, { recursive: true })
+    .filter(name => name.endsWith('.scss'))
+    .sort()
+    .map(name => {
       const stat = statSync(join(source, name));
       return `${name}:${stat.mtimeMs}:${stat.ctimeMs}:${stat.size}`;
-    }).join('\n');
+    })
+    .join('\n');
 }
 
 if (watching) {
@@ -51,7 +77,10 @@ if (watching) {
 
   rebuildIfChanged();
   setInterval(rebuildIfChanged, 500);
-  console.log('Watching src/ for SCSS changes (polling).');
+
+  console.log(
+    `Watching src/ for SCSS changes${development ? ' (BetterDiscord dev theme)' : ''} (polling).`
+  );
 } else {
   build();
 }
