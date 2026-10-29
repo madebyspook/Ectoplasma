@@ -1,9 +1,10 @@
+@use "../components/glass";
+
 /* Member list background */
 #app-mount .members_c8ffbb,
 #app-mount .membersWrap_c8ffbb.container__7641b {
     background: var(--spook-glass-dark) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.backdrop-blur();
 }
 
 /* Transparent member rows and outer surfaces */

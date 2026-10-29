@@ -15,3 +15,9 @@
 
     filter: var(--spook-glass-filter);
 }
+
+@mixin wallpaper-host {
+    position: relative;
+    isolation: isolate;
+    background: transparent !important;
+}

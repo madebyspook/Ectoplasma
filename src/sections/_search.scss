@@ -1,3 +1,6 @@
+@use "../components/glass";
+@use "../components/glow";
+
 /* BetterDiscord search background */
 #app-mount .bd-search-wrapper {
     background: transparent !important;
@@ -5,12 +8,8 @@
 
 /* Search suggestions dropdown: outer popout and scrollable inner layer */
 #app-mount .container__16eb0 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.glass-panel();
+    @include glass.backdrop-blur();
 }
 
 
@@ -32,8 +31,7 @@
     color: var(--spook-primary) !important;
 }
 #app-mount .clearSearchHistory__971b5:hover .clearSearchHistoryIcon__971b5 {
-    color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    @include glow.icon-hover-glow();
 }
 
 /* Search filter sublabels: in:, has:, mentions: */
@@ -56,7 +54,6 @@
 #app-mount .itemContainer__971b5[aria-selected="true"] .itemIcon__971b5,
 #app-mount .itemContainer__971b5[aria-selected="true"] [data-text-variant],
 #app-mount .itemContainer__971b5[aria-selected="true"] .nonText__971b5 {
-    color: var(--spook-neon) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include glow.glowing-text();
     filter: var(--spook-glow-filter-strong);
 }

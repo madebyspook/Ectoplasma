@@ -1,3 +1,6 @@
+@use "../components/glass";
+@use "../components/glow";
+
 @use "../abstracts/mixins";
 
 /* BackgroundManager wallpaper */
@@ -7,9 +10,7 @@
 
 /* Forum wallpaper container */
 #app-mount .container_f369db {
-    position: relative;
-    isolation: isolate;
-    background: transparent !important;
+    @include mixins.wallpaper-host();
 }
 
 
@@ -18,12 +19,8 @@
 #app-mount .tagsContainer_f369db .sortDropdown_f369db,
 #app-mount .tagsContainer_f369db .tagsButton_f369db,
 #app-mount .tagsContainer_f369db .pill_a2c9e8 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.glass-panel();
+    @include glass.backdrop-blur();
 }
 
 /* Forum sort and all-tags labels/icons */
@@ -36,8 +33,7 @@
 #app-mount .tagsContainer_f369db .sortDropdown_f369db:hover *,
 #app-mount .tagsContainer_f369db .tagsButton_f369db:hover *,
 #app-mount .tagsContainer_f369db .pill_a2c9e8:hover {
-    color: var(--spook-neon) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include glow.glowing-text();
 }
 
 /* New post count */
@@ -77,8 +73,7 @@
     border: var(--spook-glass-border) !important;
     border-radius: var(--spook-glass-border-radius);
     box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.backdrop-blur();
 }
 
 /* Forum Post Cards Hover */
@@ -123,8 +118,7 @@
     background: var(--spook-glass-light) !important;
     border-radius: var(--spook-glass-border-radius);
     box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.backdrop-blur();
 }
 
 /* Forum post Header: Reaction icon, text, following text, checkmark & link buttons, reaction count */

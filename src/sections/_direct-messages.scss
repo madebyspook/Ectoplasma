@@ -1,7 +1,9 @@
+@use "../components/glass";
+@use "../components/glow";
+
 /* DM list background */
 #app-mount .privateChannels_e6b769 {
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.backdrop-blur();
     background: transparent !important;
 }
 
@@ -36,8 +38,7 @@
 
 /* DM Section Hover */
 #app-mount .privateChannelsHeaderContainer__99e7c .headerText__99e7c:hover {
-    color: var(--spook-neon) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include glow.glowing-text();
     filter: var(--spook-glow-filter-weak);
 }
 

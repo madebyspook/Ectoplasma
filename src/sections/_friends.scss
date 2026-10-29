@@ -1,18 +1,16 @@
+@use "../components/glass";
+@use "../components/glow";
+
 @use "../abstracts/mixins";
 
 /* Friends wallpaper container */
 #app-mount main.container__133bf {
-    position: relative;
-    isolation: isolate;
-    background: transparent !important;
+    @include mixins.wallpaper-host();
 }
 
 /* Friends search field */
 #app-mount .searchBar__5ec2f .container__75098 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
+    @include glass.glass-panel();
 }
 
 /* BackgroundManager wallpaper behind Friends page */
@@ -52,16 +50,14 @@
 
 /* Friend row hover */
 #app-mount .peopleListItem_cc6179:hover {
-    background: var(--spook-background-select) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include glow.selection-highlight();
     filter: var(--spook-glow-filter-weak);
 }
 
 /* Friend action icon hover and highlight */
 #app-mount .peopleListItem_cc6179 .actionButton_f8fa06:hover .icon_f8fa06,
 #app-mount .peopleListItem_cc6179 .actionButton_f8fa06.highlight_f8fa06 .icon_f8fa06 {
-    color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    @include glow.icon-hover-glow();
 }
 
 /* Username revealed on hover */

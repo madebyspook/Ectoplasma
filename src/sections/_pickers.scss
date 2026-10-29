@@ -1,12 +1,10 @@
+@use "../components/glass";
+
 /* Glass styling */
 #app-mount .inspector_aeaaeb,
 #app-mount .contentWrapper__08434 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.glass-panel();
+    @include glass.backdrop-blur();
 }
 
 /* Transparent picker inner surfaces */
@@ -36,12 +34,8 @@
 #app-mount #emoji-picker-tab-panel .container__72c38,
 #app-mount #sticker-picker-tab-panel .container__72c38,
 #app-mount #gif-picker-tab-panel .container__72c38 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.glass-panel();
+    @include glass.backdrop-blur();
 }
 
 /* Remove Search primary blue frame */

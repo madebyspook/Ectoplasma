@@ -1,3 +1,6 @@
+@use "../components/glass";
+@use "../components/glow";
+
 @use "../abstracts/mixins";
 
 /* BackgroundManager wallpaper behind the entire chat */
@@ -8,9 +11,7 @@
 /* Transparent chat surfaces */
 #app-mount .chatContent_f75fb0,
 #app-mount .chat_f75fb0 {
-    position: relative;
-    isolation: isolate;
-    background: transparent !important;
+    @include mixins.wallpaper-host();
 }
 
 /* Remove chat gradients */
@@ -32,8 +33,7 @@
 /* Mentioned Bar */
 #app-mount .mentioned__5126c::before,
 #app-mount .message__5126c.replying__5126c::before {
-    background: var(--spook-accent) !important;
-    box-shadow: var(--spook-glow-accent) !important;
+    @include glow.accent-surface-glow();
 }
 
 /* User and channel mentions */
@@ -41,8 +41,7 @@
 #app-mount .roleMention__75297.wrapper_f61d60,
 #app-mount .channelMention.wrapper_f61d60 {
     color: var(--spook-neon) !important;
-    background: var(--spook-background-select) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include glow.selection-highlight();
 }
 
 
@@ -56,8 +55,7 @@
     background: var(--spook-glass-light) !important;
     border: var(--spook-glass-border) !important;
     box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.backdrop-blur();
 }
 /* Original Poster badge text */
 #app-mount .message__5126c .botTagOP__82f07 .botText__82f07 {
@@ -110,8 +108,7 @@
 #app-mount .repliedMessageClickableSpine_c19a55,
 #app-mount .repliedMessageClickableSpine_c19a55:hover {
     border-color: var(--spook-neon) !important;
-    background: transparent !important;
-    filter: var(--spook-glow-filter-accent);
+    @include glow.connector-glow();
 }
 
 
@@ -159,8 +156,7 @@
 }
 /* Chat add reaction icon hover */
 #app-mount .reactionBtn__23977:hover .icon__23977 {
-    color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    @include glow.icon-hover-glow();
 }
 
 /* Chat message hover toolbar buttons */
@@ -169,18 +165,14 @@
 }
 /* Chat message hover toolbar buttons hover */
 #app-mount .hoverBarButton_f84418.button_f7ecac:hover svg {
-    color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    @include glow.icon-hover-glow();
 }
 
 
 
 /* Thread preview card */
 #app-mount .container__9271d {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
+    @include glass.glass-panel();
 }
 
 /* Thread preview card title */
@@ -225,14 +217,10 @@
 /* Unread divider date text */
 #app-mount .divider__908e2.hasContent__908e2 .content__908e2,
 #app-mount .divider__908e2.isUnread__908e2 .content__908e2 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
+    @include glass.glass-panel();
     color: var(--spook-neon) !important;
     filter: var(--spook-glow-filter-weak);
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.backdrop-blur();
 }
 
 /* Unread Divider Right New Tag */
@@ -253,24 +241,18 @@
 
 /* New messages bar */
 #app-mount .newMessagesBar__0f481 {
-    background: var(--spook-accent) !important;
-    box-shadow: var(--spook-glow-accent) !important;
+    @include glow.accent-surface-glow();
 }
 
 /* Jump to present bar */
 #app-mount .jumpToPresentBar__0f481 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include glass.glass-panel();
+    @include glass.backdrop-blur();
 }
 
 /* Jump to present button */
 #app-mount .jumpToPresentBar__0f481 .button_a22cb0 {
-    background: var(--spook-accent) !important;
-    box-shadow: var(--spook-glow-accent) !important;
+    @include glow.accent-surface-glow();
 }
 
 
@@ -302,10 +284,7 @@
 
 /* Poll Embed */
 #app-mount .pollContainer_b7e1cb {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
+    @include glass.glass-panel();
 }
 
 /* Winning poll answer frame */
