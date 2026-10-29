@@ -20,3 +20,17 @@
     @include mixins.glowing-text();
     filter: var(--spook-glow-filter-weak);
 }
+
+/* Collapsible voice-channel text chat */
+#app-mount .container__01ae2.floating__01ae2 {
+    background: var(--spook-glass-dark) !important;
+    @include mixins.backdrop-blur();
+}
+
+/* Remove opaque backgrounds from nested voice-chat surfaces */
+#app-mount .container__01ae2.floating__01ae2 .chat_ee72fa,
+#app-mount .container__01ae2.floating__01ae2 .chatContent_f75fb0,
+#app-mount .container__01ae2.floating__01ae2 .messagesWrapper__36d07,
+#app-mount .container__01ae2.floating__01ae2 .scroller__36d07 {
+    background: transparent !important;
+}
