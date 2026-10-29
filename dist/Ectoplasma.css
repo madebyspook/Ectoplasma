@@ -294,9 +294,9 @@ body,
 /* Selected & Hovered DM */
 #app-mount .privateChannels_e6b769 .interactiveSelected__972a0,
 #app-mount .privateChannels_e6b769 .interactive__972a0:hover {
+  background: var(--spook-background-select) !important;
   text-shadow: var(--spook-glow-neon-strong);
   filter: var(--spook-glow-filter-weak);
-  background: var(--spook-background-select) !important;
 }
 
 /* Selected & Hovered DM Names */
@@ -689,10 +689,10 @@ body,
 /* Thread connector: retain Discord's rounded L-shape */
 #app-mount .message__5126c.hasThread_c19a55::after {
   background: transparent !important;
+  filter: var(--spook-glow-filter-accent);
   border-left-color: var(--spook-neon) !important;
   border-bottom-color: var(--spook-neon) !important;
   box-shadow: none !important;
-  filter: var(--spook-glow-filter-accent);
 }
 
 /* Unread divider */
@@ -1424,8 +1424,8 @@ body,
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4,
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4 path[fill=currentColor] {
   color: var(--spook-neon) !important;
-  fill: var(--spook-neon) !important;
   filter: var(--spook-glow-filter-strong) !important;
+  fill: var(--spook-neon) !important;
 }
 
 /* Context menu labels */

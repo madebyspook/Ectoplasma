@@ -136,8 +136,7 @@
 }
 /* Chat reaction count hover */
 #app-mount .reaction__23977:hover .reactionCount__23977 {
-    color: var(--spook-neon) !important;
-    text-shadow: var(--spook-glow-neon-strong) !important;
+    @include mixins.glowing-text($shadow: var(--spook-glow-neon-strong) !important);
 }
 
 /* Chat add reaction icon */
@@ -187,11 +186,10 @@
 
 /* Thread connector: retain Discord's rounded L-shape */
 #app-mount .message__5126c.hasThread_c19a55::after {
-    background: transparent !important;
+    @include mixins.connector-glow();
     border-left-color: var(--spook-neon) !important;
     border-bottom-color: var(--spook-neon) !important;
     box-shadow: none !important;
-    filter: var(--spook-glow-filter-accent);
 }
 
 
@@ -199,8 +197,7 @@
 /* Unread divider */
 #app-mount .divider__908e2.hasContent__908e2,
 #app-mount .divider__908e2.isUnread__908e2 {
-    border-color: var(--spook-neon) !important;
-    box-shadow: var(--spook-glow-accent) !important;
+    @include mixins.accent-outline-glow(border-color, var(--spook-neon), $shadow: var(--spook-glow-accent));
 }
 
 /* Unread divider date text */
@@ -215,10 +212,13 @@
 /* Unread Divider Right New Tag */
 #app-mount .unreadPill__908e2 {
     @include mixins.accent-surface-glow-neon();
-    color: var(--spook-accent) !important;
-    text-shadow: 
-        0 0px 5px rgba(0, 0, 0, 0),
-        0 -1px 2px rgba(255, 255, 255, 0.7);
+    @include mixins.glowing-text(
+        $color: var(--spook-accent),
+        $shadow: (
+            0 0px 5px rgba(0, 0, 0, 0),
+            0 -1px 2px rgba(255, 255, 255, 0.7)
+        )
+    );
 }
 
 /* Unread divider cap */

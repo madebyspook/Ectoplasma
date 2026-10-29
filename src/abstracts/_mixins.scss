@@ -26,10 +26,13 @@
 
 // Glass
 
-@mixin glass-panel($background: var(--spook-glass-light)) {
+@mixin glass-panel(
+    $background: var(--spook-glass-light),
+    $radius: var(--spook-glass-border-radius)
+) {
     background: $background !important;
     border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
+    border-radius: $radius;
     box-shadow: var(--spook-glass-box-shadow) !important;
 }
 
@@ -40,9 +43,9 @@
 
 // Glow
 
-@mixin icon-hover-glow() {
+@mixin icon-hover-glow($filter: var(--spook-glow-filter-strong)) {
     color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    filter: $filter;
 }
 
 @mixin glowing-text(
@@ -74,7 +77,17 @@
     filter: var(--spook-glow-filter-accent);
 }
 
-@mixin accent-outline-glow($border-property, $border-value) {
+@mixin accent-outline-glow(
+    $border-property,
+    $border-value,
+    $shadow: var(--spook-glow-neon-weak)
+) {
     #{$border-property}: $border-value !important;
-    box-shadow: var(--spook-glow-neon-weak) !important;
+    box-shadow: $shadow !important;
+}
+
+@mixin badge-readability {
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 1),
+        0 0 5px rgba(0, 0, 0, 0.9) !important;
 }

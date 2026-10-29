@@ -16,7 +16,5 @@
 #app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
     @include mixins.accent-surface-glow-neon();
     filter: var(--spook-glow-filter-strong);
-    text-shadow:
-        0 1px 3px rgba(0, 0, 0, 1),
-        0 0 5px rgba(0, 0, 0, 0.9) !important;
+    @include mixins.badge-readability();
 }
