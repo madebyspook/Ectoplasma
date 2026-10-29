@@ -24,8 +24,8 @@
     /* Text palette */
     --spook-neon:      color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 25%, white) 100%, black);
     --spook-highlight: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 15%, white) 95%, black);
-    --spook-primary:   color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 25%, white) 85%, black);
-    --spook-secondary: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 35%, white) 55%, black);
+    --spook-primary:   color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 25%, white) 95%, black);
+    --spook-secondary: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 35%, white) 60%, black);
 
     /* Select Background */
     --spook-background-select: rgba(from var(--spook-accent) r g b / 0.1);

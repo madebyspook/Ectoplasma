@@ -64,6 +64,11 @@
 #app-mount .message__5126c .markup__75297 {
     color: var(--spook-primary) !important;
 }
+/* Chat message headings */
+#app-mount .message__5126c .markup__75297 h1,
+#app-mount .message__5126c .markup__75297 h2 {
+    color: var(--spook-primary) !important;
+}
 
 /* Edited message indicator */
 #app-mount .edited_c19a55 {

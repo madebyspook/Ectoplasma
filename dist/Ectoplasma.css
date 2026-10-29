@@ -20,8 +20,8 @@
   /* Text palette */
   --spook-neon: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 25%, white) 100%, black);
   --spook-highlight: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 15%, white) 95%, black);
-  --spook-primary: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 25%, white) 85%, black);
-  --spook-secondary: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 35%, white) 55%, black);
+  --spook-primary: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 25%, white) 95%, black);
+  --spook-secondary: color-mix(in srgb, color-mix(in srgb, var(--spook-accent) 35%, white) 60%, black);
   /* Select Background */
   --spook-background-select: rgba(from var(--spook-accent) r g b / 0.1);
   /* Glass appearance */
@@ -553,6 +553,12 @@ body,
 
 /* Chat message text */
 #app-mount .message__5126c .markup__75297 {
+  color: var(--spook-primary) !important;
+}
+
+/* Chat message headings */
+#app-mount .message__5126c .markup__75297 h1,
+#app-mount .message__5126c .markup__75297 h2 {
   color: var(--spook-primary) !important;
 }
 
