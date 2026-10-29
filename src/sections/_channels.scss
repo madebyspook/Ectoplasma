@@ -92,7 +92,7 @@
 
 /* New unreads pill glass */
 #app-mount .bar__7aaec {
-    @include mixins.glass-panel($radius: var(--spook-glass-border-radius) !important);
+    @include mixins.glass-panel();
 }
 
 /* New unreads pill label */

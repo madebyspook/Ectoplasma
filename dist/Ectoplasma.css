@@ -238,7 +238,7 @@ body,
 #app-mount .bar__7aaec {
   background: var(--spook-glass-light) !important;
   border: var(--spook-glass-border) !important;
-  border-radius: var(--spook-glass-border-radius) !important;
+  border-radius: var(--spook-glass-border-radius);
   box-shadow: var(--spook-glass-box-shadow) !important;
 }
 
@@ -581,7 +581,7 @@ body,
 /* Reply attachment text hover */
 #app-mount .repliedTextPreview_c19a55:hover .repliedTextPlaceholder_c19a55 {
   color: var(--spook-neon) !important;
-  filter: var(--spook-glow-filter-strong);
+  text-shadow: var(--spook-glow-neon-strong) !important;
 }
 
 /* Reply attachment icon */
@@ -1064,7 +1064,7 @@ body,
 #app-mount .container__34c2c .reactionBtn_f8896c.addReactButton__34c2c:hover,
 #app-mount .reaction_f8896c:hover .reactionCount_f8896c {
   color: var(--spook-neon) !important;
-  filter: var(--spook-glow-filter-strong);
+  text-shadow: var(--spook-glow-neon-strong) !important;
 }
 
 /* Forum post Header: Hover Icons */

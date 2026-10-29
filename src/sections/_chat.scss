@@ -88,7 +88,8 @@
 }
 /* Reply attachment text hover */
 #app-mount .repliedTextPreview_c19a55:hover .repliedTextPlaceholder_c19a55 {
-    @include mixins.icon-hover-glow();
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong) !important;
 }
 /* Reply attachment icon */
 #app-mount .repliedTextContentTrailingIcon_c19a55 {

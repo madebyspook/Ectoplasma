@@ -125,7 +125,8 @@
 #app-mount .reactionBtn_f8896c:hover .icon_f8896c,
 #app-mount .container__34c2c .reactionBtn_f8896c.addReactButton__34c2c:hover,
 #app-mount .reaction_f8896c:hover .reactionCount_f8896c {
-    @include mixins.icon-hover-glow();
+    color: var(--spook-neon) !important;
+    text-shadow: var(--spook-glow-neon-strong) !important;
 }
 /* Forum post Header: Hover Icons */
 #app-mount .buttons__34c2c .button_a22cb0.secondary_a22cb0:hover,

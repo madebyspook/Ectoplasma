@@ -28,11 +28,10 @@
 
 @mixin glass-panel(
     $background: var(--spook-glass-light),
-    $radius: var(--spook-glass-border-radius)
 ) {
     background: $background !important;
     border: var(--spook-glass-border) !important;
-    border-radius: $radius;
+    border-radius: var(--spook-glass-border-radius);
     box-shadow: var(--spook-glass-box-shadow) !important;
 }
 
