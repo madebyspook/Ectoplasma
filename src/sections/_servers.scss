@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 /* Server list: use global background without additional tint */
 #app-mount .guilds_c48ade,
 #app-mount .wrapper_ef3116,
@@ -12,10 +14,7 @@
 }
 
 #app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
-    background-color: var(--spook-neon) !important;
-    box-shadow: var(--spook-glow-accent);
+    @include mixins.accent-surface-glow-neon();
     filter: var(--spook-glow-filter-strong);
-    text-shadow:
-        0 1px 3px rgba(0, 0, 0, 1),
-        0 0 5px rgba(0, 0, 0, 0.9) !important;
+    @include mixins.badge-readability();
 }

@@ -1,7 +1,8 @@
+@use "../abstracts/mixins";
+
 /* DM list background */
 #app-mount .privateChannels_e6b769 {
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include mixins.backdrop-blur();
     background: transparent !important;
 }
 
@@ -36,17 +37,15 @@
 
 /* DM Section Hover */
 #app-mount .privateChannelsHeaderContainer__99e7c .headerText__99e7c:hover {
-    color: var(--spook-neon) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include mixins.glowing-text();
     filter: var(--spook-glow-filter-weak);
 }
 
 /* Selected & Hovered DM */
 #app-mount .privateChannels_e6b769 .interactiveSelected__972a0,
 #app-mount .privateChannels_e6b769 .interactive__972a0:hover {
-    text-shadow: var(--spook-glow-neon-strong);
+    @include mixins.selection-highlight();
     filter: var(--spook-glow-filter-weak);
-    background: var(--spook-background-select) !important;
 }
 
 /* Selected & Hovered DM Names */
@@ -57,7 +56,6 @@
 
 /* Unread DM indicator */
 #app-mount .privateChannels_e6b769 .unreadPill__972a0 {
-    background-color: var(--spook-neon) !important;
-    box-shadow: var(--spook-glow-accent) !important;
+    @include mixins.accent-surface-glow-neon();
     filter: var(--spook-glow-filter-strong);
 }

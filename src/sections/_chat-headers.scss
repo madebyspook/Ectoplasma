@@ -1,11 +1,9 @@
+@use "../abstracts/mixins";
+
 /* Header */
 #app-mount .container__9293f {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 }
 
 /* Remove header decorations */
@@ -32,8 +30,7 @@
 /* Header action icons hover */
 #app-mount .iconWrapper__9293f.clickable__9293f:hover .icon__9293f,
 #app-mount .iconWrapper__9293f.iconDisabled__9293f:hover .icon__9293f {
-    color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    @include mixins.icon-hover-glow();
 }
 
 /* Search field and Icon */

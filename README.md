@@ -18,9 +18,6 @@ Ectoplasma/
 │   ├── abstracts/
 │   │   ├── _variables.scss
 │   │   └── _mixins.scss
-│   ├── components/
-│   │   ├── _glass.scss
-│   │   └── _glow.scss
 │   └── sections/
 │       ├── _global.scss
 │       ├── _application.scss

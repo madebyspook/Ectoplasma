@@ -1,37 +1,25 @@
+@use "../abstracts/mixins";
+
 /* Glass styling */
 #app-mount .popover_f84418 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 }
 
 /* Glass styling */
 #app-mount .browser_d98031 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 }
 
 /* Glass styling */
 #app-mount .popout__76f04 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
+    @include mixins.glass-panel();
 }
 
 /* Glass styling */
 #app-mount .header_d9c882 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
+    @include mixins.glass-panel();
 }
 
 /* Context menu */
@@ -44,12 +32,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 
 }
 
@@ -57,12 +41,8 @@
 #app-mount .tooltip_fa450d, 
 #app-mount .bd-tooltip,
 #app-mount .reactionTooltip_bbcccb {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 }
 /* Tooltip pointer and triangle */
 #app-mount .caretIcon_fa450d .caretFill_fa450d, 
@@ -94,9 +74,8 @@
 /* Context menu icons hover */
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4,
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4 path[fill="currentColor"] {
-    color: var(--spook-neon) !important;
+    @include mixins.icon-hover-glow($filter: var(--spook-glow-filter-strong) !important);
     fill: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong) !important;
 }
 
 /* Context menu labels */
@@ -106,7 +85,6 @@
 
 /* Hovered context menu labels */
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .label_c1e9c4 {
-    color: var(--spook-neon) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include mixins.glowing-text();
     filter: var(--spook-glow-filter-weak);
 }

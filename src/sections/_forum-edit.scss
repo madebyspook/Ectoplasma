@@ -7,14 +7,13 @@
 
 /* Forum edit main container */
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) {
-    background: transparent !important;
+    @include mixins.wallpaper-host();
 }
 
 /* Forum edit sidebar glass */
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .sidebarRegionScroller__23e6b {
     background: var(--spook-glass-dark) !important;
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include mixins.backdrop-blur();
 }
 
 /* Forum edit content tint without a backdrop boundary */
@@ -55,8 +54,7 @@
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .item_aa8da2.selected_aa8da2,
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .item_aa8da2.themed_aa8da2:hover {
     background: var(--spook-background-select) !important;
-    color: var(--spook-neon) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include mixins.glowing-text();
 }
 
 
@@ -64,12 +62,8 @@
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .wrapper__72c38.container__75098,
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .wrapper__72c38.selectField__0edde,
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .selectDropdown__0edde {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    backdrop-filter: var(--spook-glass-filter) !important;
-    -webkit-backdrop-filter: var(--spook-glass-filter) !important;
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 }
 
 /* Input and dropdown text */
@@ -89,6 +83,5 @@
 /* Dropdown arrow and close button hover */
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .chevronButton__0edde:hover .chevronIcon__0edde,
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) .closeButton_c2b141:hover {
-    color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    @include mixins.icon-hover-glow();
 }

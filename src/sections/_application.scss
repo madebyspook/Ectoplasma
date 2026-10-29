@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+
 /* Transparent application layers */
 body,
 #app-mount, 
@@ -29,6 +31,5 @@ body,
 }
 #app-mount .clickable__81391:hover, /* Header actions */
 #app-mount .backForwardButtons__63abb .button__63abb:not(.disabled__63abb):hover {  /* Window back and forward navigation buttons */
-    color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    @include mixins.icon-hover-glow();
 }

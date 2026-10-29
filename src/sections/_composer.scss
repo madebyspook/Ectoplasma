@@ -1,9 +1,8 @@
+@use "../abstracts/mixins";
+
 /* Glass styling */
 #app-mount .channelTextArea__74017 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
+    @include mixins.glass-panel();
 }
 
 /* Composer */
@@ -32,8 +31,7 @@
 /* Message composer mentions */
 #app-mount .channelTextArea__74017 .wrapper_f61d60 {
     color: var(--spook-neon) !important;
-    background: var(--spook-background-select) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include mixins.selection-highlight();
 }
 
 
@@ -50,19 +48,11 @@
 #app-mount .channelTextArea__74017 .button__74017:hover,
 #app-mount .channelTextArea__74017 .emojiButton__74017:hover,
 #app-mount .channelTextArea__74017 .button_e6e74f:hover {
-    color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    @include mixins.icon-hover-glow();
 }    
 
 
 
-/* Reply bar */
-#app-mount .replyBar__841c8 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    margin-top: -2px !important;
-}
 #app-mount .stackedBars__74017 {
     background: transparent !important;
 }
@@ -84,26 +74,29 @@
 
 /* Reply bar close button hover */
 #app-mount .replyBar__841c8 .closeButton_e876a8:hover {
-    color: var(--spook-neon) !important;
-    filter: var(--spook-glow-filter-strong);
+    @include mixins.icon-hover-glow();
 }
 
 
 
 /* Attachment preview glass styling */
 #app-mount .upload_aa605f {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
+    @include mixins.glass-panel();
+}
+
+/* Attachment preview action buttons */
+#app-mount .upload_aa605f .actionBar_aa605f .button_f7ecac:not(.dangerous_f7ecac) {
+    color: var(--spook-primary) !important;
+}
+
+/* Attachment preview action buttons hover */
+#app-mount .upload_aa605f .actionBar_aa605f .button_f7ecac:hover {
+    @include mixins.icon-hover-glow();
 }
 
 /* Attachment action bar background */
 #app-mount .upload_aa605f .actionBar_aa605f,
 #app-mount .upload_aa605f .wrapper_f7ecac {
-    background: transparent !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    backdrop-filter: var(--spook-glass-filter);
-    -webkit-backdrop-filter: var(--spook-glass-filter);
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 }

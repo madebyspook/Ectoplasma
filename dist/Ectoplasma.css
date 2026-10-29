@@ -238,7 +238,7 @@ body,
 #app-mount .bar__7aaec {
   background: var(--spook-glass-light) !important;
   border: var(--spook-glass-border) !important;
-  border-radius: var(--spook-glass-border-radius) !important;
+  border-radius: var(--spook-glass-border-radius);
   box-shadow: var(--spook-glass-box-shadow) !important;
 }
 
@@ -294,9 +294,9 @@ body,
 /* Selected & Hovered DM */
 #app-mount .privateChannels_e6b769 .interactiveSelected__972a0,
 #app-mount .privateChannels_e6b769 .interactive__972a0:hover {
+  background: var(--spook-background-select) !important;
   text-shadow: var(--spook-glow-neon-strong);
   filter: var(--spook-glow-filter-weak);
-  background: var(--spook-background-select) !important;
 }
 
 /* Selected & Hovered DM Names */
@@ -308,7 +308,7 @@ body,
 /* Unread DM indicator */
 #app-mount .privateChannels_e6b769 .unreadPill__972a0 {
   background-color: var(--spook-neon) !important;
-  box-shadow: var(--spook-glow-accent) !important;
+  box-shadow: var(--spook-glow-accent);
   filter: var(--spook-glow-filter-strong);
 }
 
@@ -535,6 +535,7 @@ body,
 #app-mount .message__5126c .botTagOP__82f07 {
   background: var(--spook-glass-light) !important;
   border: var(--spook-glass-border) !important;
+  border-radius: var(--spook-glass-border-radius);
   box-shadow: var(--spook-glass-box-shadow) !important;
   backdrop-filter: var(--spook-glass-filter);
   -webkit-backdrop-filter: var(--spook-glass-filter);
@@ -688,10 +689,10 @@ body,
 /* Thread connector: retain Discord's rounded L-shape */
 #app-mount .message__5126c.hasThread_c19a55::after {
   background: transparent !important;
+  filter: var(--spook-glow-filter-accent);
   border-left-color: var(--spook-neon) !important;
   border-bottom-color: var(--spook-neon) !important;
   box-shadow: none !important;
-  filter: var(--spook-glow-filter-accent);
 }
 
 /* Unread divider */
@@ -717,7 +718,7 @@ body,
 /* Unread Divider Right New Tag */
 #app-mount .unreadPill__908e2 {
   background-color: var(--spook-neon) !important;
-  box-shadow: var(--spook-glow-accent) !important;
+  box-shadow: var(--spook-glow-accent);
   color: var(--spook-accent) !important;
   text-shadow: 0 0px 5px rgba(0, 0, 0, 0), 0 -1px 2px rgba(255, 255, 255, 0.7);
 }
@@ -868,14 +869,6 @@ body,
   filter: var(--spook-glow-filter-strong);
 }
 
-/* Reply bar */
-#app-mount .replyBar__841c8 {
-  background: var(--spook-glass-light) !important;
-  border: var(--spook-glass-border) !important;
-  border-radius: var(--spook-glass-border-radius);
-  margin-top: -2px !important;
-}
-
 #app-mount .stackedBars__74017 {
   background: transparent !important;
 }
@@ -909,12 +902,24 @@ body,
   box-shadow: var(--spook-glass-box-shadow) !important;
 }
 
+/* Attachment preview action buttons */
+#app-mount .upload_aa605f .actionBar_aa605f .button_f7ecac:not(.dangerous_f7ecac) {
+  color: var(--spook-primary) !important;
+}
+
+/* Attachment preview action buttons hover */
+#app-mount .upload_aa605f .actionBar_aa605f .button_f7ecac:hover {
+  color: var(--spook-neon) !important;
+  filter: var(--spook-glow-filter-strong);
+}
+
 /* Attachment action bar background */
 #app-mount .upload_aa605f .actionBar_aa605f,
 #app-mount .upload_aa605f .wrapper_f7ecac {
-  background: transparent !important;
+  background: var(--spook-glass-light) !important;
   border: var(--spook-glass-border) !important;
   border-radius: var(--spook-glass-border-radius);
+  box-shadow: var(--spook-glass-box-shadow) !important;
   backdrop-filter: var(--spook-glass-filter);
   -webkit-backdrop-filter: var(--spook-glass-filter);
 }
@@ -1038,6 +1043,7 @@ body,
 #app-mount .container__34c2c,
 #app-mount .container__34c2c.header__34c2c {
   background: var(--spook-glass-light) !important;
+  border: var(--spook-glass-border) !important;
   border-radius: var(--spook-glass-border-radius);
   box-shadow: var(--spook-glass-box-shadow) !important;
   backdrop-filter: var(--spook-glass-filter);
@@ -1067,7 +1073,7 @@ body,
 #app-mount .buttons__34c2c .button_a22cb0.secondary_a22cb0:hover [class*=lineClamp],
 #app-mount .container__34c2c .reactionBtn_f8896c.addReactButton__34c2c:hover .icon_f8896c {
   color: var(--spook-neon) !important;
-  filter: var(--spook-glow-filter-strong) !important;
+  filter: var(--spook-glow-filter-strong);
 }
 
 /* Forum edit wallpaper */
@@ -1086,6 +1092,8 @@ body,
 
 /* Forum edit main container */
 #app-mount .standardSidebarView__23e6b:has(.category__3ddc0) {
+  position: relative;
+  isolation: isolate;
   background: transparent !important;
 }
 
@@ -1145,8 +1153,8 @@ body,
   border: var(--spook-glass-border) !important;
   border-radius: var(--spook-glass-border-radius);
   box-shadow: var(--spook-glass-box-shadow) !important;
-  backdrop-filter: var(--spook-glass-filter) !important;
-  -webkit-backdrop-filter: var(--spook-glass-filter) !important;
+  backdrop-filter: var(--spook-glass-filter);
+  -webkit-backdrop-filter: var(--spook-glass-filter);
 }
 
 /* Input and dropdown text */
@@ -1416,8 +1424,8 @@ body,
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4,
 #app-mount .menu_c1e9c4 .item_c1e9c4:hover .icon_c1e9c4 path[fill=currentColor] {
   color: var(--spook-neon) !important;
-  fill: var(--spook-neon) !important;
   filter: var(--spook-glow-filter-strong) !important;
+  fill: var(--spook-neon) !important;
 }
 
 /* Context menu labels */

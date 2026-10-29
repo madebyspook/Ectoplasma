@@ -7,9 +7,7 @@
 
 /* Voice call background */
 #app-mount .wrapper_cb9592 .root_bfe55a {
-    position: relative;
-    isolation: isolate;
-    background: transparent !important;
+    @include mixins.wallpaper-host();
 }
 
 /* Voice channel participant names (not speaking) */
@@ -19,7 +17,6 @@
 
 /* speaking character */    
 #app-mount .usernameSpeaking__07f91 {
-    color: var(--spook-neon) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include mixins.glowing-text();
     filter: var(--spook-glow-filter-weak);
 }
