@@ -61,12 +61,13 @@
     color: var(--spook-secondary) !important;
 }
 /* Chat message text */
-#app-mount .message__5126c .markup__75297 {
-    color: var(--spook-primary) !important;
-}
-/* Chat message headings */
+#app-mount .message__5126c .markup__75297
 #app-mount .message__5126c .markup__75297 h1,
-#app-mount .message__5126c .markup__75297 h2 {
+#app-mount .message__5126c .markup__75297 h2,
+#app-mount .message__5126c .markup__75297 h3,
+#app-mount .message__5126c .markup__75297 h4,
+#app-mount .message__5126c .markup__75297 h5,
+#app-mount .message__5126c .markup__75297 h6 {
     color: var(--spook-primary) !important;
 }
 
