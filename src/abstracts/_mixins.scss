@@ -18,6 +18,17 @@
     filter: var(--spook-glass-filter);
 }
 
+/* Version with Mac OS Vibrance transparency - Need some work, collapsible UI panels are not blurry with it
+// @mixin wallpaper-layer {
+//     content: "";
+//     position: absolute;
+//     inset: 0;
+//     z-index: -1;
+//     pointer-events: none;
+
+//     background: transparent !important;
+// }
+
 @mixin wallpaper-host {
     position: relative;
     isolation: isolate;
