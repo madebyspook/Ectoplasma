@@ -1,5 +1,4 @@
-@use "../components/glass";
-@use "../components/glow";
+@use "../abstracts/mixins";
 
 /* BetterDiscord search background */
 #app-mount .bd-search-wrapper {
@@ -8,8 +7,8 @@
 
 /* Search suggestions dropdown: outer popout and scrollable inner layer */
 #app-mount .container__16eb0 {
-    @include glass.glass-panel();
-    @include glass.backdrop-blur();
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 }
 
 
@@ -31,7 +30,7 @@
     color: var(--spook-primary) !important;
 }
 #app-mount .clearSearchHistory__971b5:hover .clearSearchHistoryIcon__971b5 {
-    @include glow.icon-hover-glow();
+    @include mixins.icon-hover-glow();
 }
 
 /* Search filter sublabels: in:, has:, mentions: */
@@ -54,6 +53,6 @@
 #app-mount .itemContainer__971b5[aria-selected="true"] .itemIcon__971b5,
 #app-mount .itemContainer__971b5[aria-selected="true"] [data-text-variant],
 #app-mount .itemContainer__971b5[aria-selected="true"] .nonText__971b5 {
-    @include glow.glowing-text();
+    @include mixins.glowing-text();
     filter: var(--spook-glow-filter-strong);
 }

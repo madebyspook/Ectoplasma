@@ -1,9 +1,8 @@
-@use "../components/glass";
-@use "../components/glow";
+@use "../abstracts/mixins";
 
 /* Channel List Background */
 #app-mount .container__2637a {
-    @include glass.backdrop-blur();
+    @include mixins.backdrop-blur();
     background: var(--spook-glass-dark) !important;
     margin-bottom: 20px !important;
 }
@@ -23,7 +22,7 @@
 /* Server header hover */
 #app-mount .guildDropdown_f37cb1:hover .headerChildren_f37cb1 svg,
 #app-mount .inviteButton_f37cb1:hover {
-    @include glow.icon-hover-glow();
+    @include mixins.icon-hover-glow();
 }
 
 /* Read & Muted channel, icon, category and collapse arrow */
@@ -54,7 +53,7 @@
 #app-mount .container__2637a .modeSelected__2ea32 .link__2ea32,
 #app-mount .container__2637a .wrapper__2ea32:hover .icon__2ea32,
 #app-mount .container__2637a .wrapper__2ea32:hover .link__2ea32 {
-    @include glow.selection-highlight();
+    @include mixins.selection-highlight();
     filter: var(--spook-glow-filter-weak);
 }
 
@@ -75,15 +74,14 @@
 /* Hovered category name and collapse arrow */
 #app-mount .container__2637a .containerDefault__29444:hover .name__29444,
 #app-mount .container__2637a .containerDefault__29444:hover .icon__29444 {
-    @include glow.glowing-text();
+    @include mixins.glowing-text();
     filter: var(--spook-glow-filter-weak);
 }
 
 /* Unread Indicator */
 #app-mount .channelInfo_c69b6d .numberBadge__463b7,
 #app-mount .unread__2ea32.unreadImportant__2ea32 {
-    background-color: var(--spook-neon) !important;
-    box-shadow: var(--spook-glow-accent);
+    @include mixins.accent-surface-glow-neon();
     filter: var(--spook-glow-filter-strong);
 }
 

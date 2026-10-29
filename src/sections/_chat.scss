@@ -1,6 +1,3 @@
-@use "../components/glass";
-@use "../components/glow";
-
 @use "../abstracts/mixins";
 
 /* BackgroundManager wallpaper behind the entire chat */
@@ -33,7 +30,7 @@
 /* Mentioned Bar */
 #app-mount .mentioned__5126c::before,
 #app-mount .message__5126c.replying__5126c::before {
-    @include glow.accent-surface-glow();
+    @include mixins.accent-surface-glow();
 }
 
 /* User and channel mentions */
@@ -41,7 +38,7 @@
 #app-mount .roleMention__75297.wrapper_f61d60,
 #app-mount .channelMention.wrapper_f61d60 {
     color: var(--spook-neon) !important;
-    @include glow.selection-highlight();
+    @include mixins.selection-highlight();
 }
 
 
@@ -52,10 +49,8 @@
 }
 /* Original Poster badge glass background */
 #app-mount .message__5126c .botTagOP__82f07 {
-    background: var(--spook-glass-light) !important;
-    border: var(--spook-glass-border) !important;
-    box-shadow: var(--spook-glass-box-shadow) !important;
-    @include glass.backdrop-blur();
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 }
 /* Original Poster badge text */
 #app-mount .message__5126c .botTagOP__82f07 .botText__82f07 {
@@ -77,14 +72,12 @@
 
 /* Chat links */
 #app-mount .message__5126c .anchor__14d82 {
-    color: var(--spook-accent) !important;
-    text-shadow: var(--spook-glow-neon-weak);
+    @include mixins.glowing-text($color: var(--spook-accent), $shadow: var(--spook-glow-neon-weak));
 }
 
 /* Chat links hover */
 #app-mount .message__5126c .anchor__14d82:hover {
-    color: var(--spook-accent) !important;
-    text-shadow: var(--spook-glow-neon-strong);
+    @include mixins.glowing-text($color: var(--spook-accent));
 }
 
 
@@ -95,8 +88,7 @@
 }
 /* Reply attachment text hover */
 #app-mount .repliedTextPreview_c19a55:hover .repliedTextPlaceholder_c19a55 {
-    color: var(--spook-neon) !important;
-    text-shadow: var(--spook-glow-neon-strong) !important;
+    @include mixins.icon-hover-glow();
 }
 /* Reply attachment icon */
 #app-mount .repliedTextContentTrailingIcon_c19a55 {
@@ -108,7 +100,7 @@
 #app-mount .repliedMessageClickableSpine_c19a55,
 #app-mount .repliedMessageClickableSpine_c19a55:hover {
     border-color: var(--spook-neon) !important;
-    @include glow.connector-glow();
+    @include mixins.connector-glow();
 }
 
 
@@ -119,8 +111,7 @@
 }
 /* System message links */
 #app-mount .message__5126c.systemMessage__5126c .content__235ca .anchor_14d82 {
-    color: var(--spook-accent) !important;
-    text-shadow: var(--spook-glow-neon-weak);
+    @include mixins.glowing-text($color: var(--spook-accent), $shadow: var(--spook-glow-neon-weak));
 }
 /* System message timestamp */
 #app-mount .message__5126c.systemMessage__5126c .timestamp_c19a55 {
@@ -131,8 +122,7 @@
 
 /* Own reaction: accent border and glow */
 #app-mount .reaction__23977.reactionMe__23977 {
-    border-color: var(--spook-accent) !important;
-    box-shadow: var(--spook-glow-neon-weak) !important;
+    @include mixins.accent-outline-glow(border-color, var(--spook-accent));
 }
 
 /* Own reaction: accent count */
@@ -156,7 +146,7 @@
 }
 /* Chat add reaction icon hover */
 #app-mount .reactionBtn__23977:hover .icon__23977 {
-    @include glow.icon-hover-glow();
+    @include mixins.icon-hover-glow();
 }
 
 /* Chat message hover toolbar buttons */
@@ -165,14 +155,14 @@
 }
 /* Chat message hover toolbar buttons hover */
 #app-mount .hoverBarButton_f84418.button_f7ecac:hover svg {
-    @include glow.icon-hover-glow();
+    @include mixins.icon-hover-glow();
 }
 
 
 
 /* Thread preview card */
 #app-mount .container__9271d {
-    @include glass.glass-panel();
+    @include mixins.glass-panel();
 }
 
 /* Thread preview card title */
@@ -182,8 +172,7 @@
 
 /* Thread preview card message count link */
 #app-mount .container__9271d .cta__9271d {
-    color: var(--spook-accent) !important;
-    text-shadow: var(--spook-glow-neon-weak);
+    @include mixins.glowing-text($color: var(--spook-accent), $shadow: var(--spook-glow-neon-weak));
 }
 
 /* Thread preview card content */
@@ -217,16 +206,15 @@
 /* Unread divider date text */
 #app-mount .divider__908e2.hasContent__908e2 .content__908e2,
 #app-mount .divider__908e2.isUnread__908e2 .content__908e2 {
-    @include glass.glass-panel();
+    @include mixins.glass-panel();
     color: var(--spook-neon) !important;
     filter: var(--spook-glow-filter-weak);
-    @include glass.backdrop-blur();
+    @include mixins.backdrop-blur();
 }
 
 /* Unread Divider Right New Tag */
 #app-mount .unreadPill__908e2 {
-    background-color: var(--spook-neon) !important;
-    box-shadow: var(--spook-glow-accent) !important;
+    @include mixins.accent-surface-glow-neon();
     color: var(--spook-accent) !important;
     text-shadow: 
         0 0px 5px rgba(0, 0, 0, 0),
@@ -241,18 +229,18 @@
 
 /* New messages bar */
 #app-mount .newMessagesBar__0f481 {
-    @include glow.accent-surface-glow();
+    @include mixins.accent-surface-glow();
 }
 
 /* Jump to present bar */
 #app-mount .jumpToPresentBar__0f481 {
-    @include glass.glass-panel();
-    @include glass.backdrop-blur();
+    @include mixins.glass-panel();
+    @include mixins.backdrop-blur();
 }
 
 /* Jump to present button */
 #app-mount .jumpToPresentBar__0f481 .button_a22cb0 {
-    @include glow.accent-surface-glow();
+    @include mixins.accent-surface-glow();
 }
 
 
@@ -284,13 +272,12 @@
 
 /* Poll Embed */
 #app-mount .pollContainer_b7e1cb {
-    @include glass.glass-panel();
+    @include mixins.glass-panel();
 }
 
 /* Winning poll answer frame */
 #app-mount .pollContainer_b7e1cb .answer__4c520.victorStyles_a1443c .answerInner__4c520 {
-    border: 1px solid var(--spook-accent) !important;
-    box-shadow: var(--spook-glow-neon-weak) !important;
+    @include mixins.accent-outline-glow(border, 1px solid var(--spook-accent));
 }
 
 /* Winning poll answer percentage fill */
@@ -309,10 +296,7 @@
 
 /* Code block background */
 #app-mount [class*="markup_"] code {
-    background: var(--spook-glass-dark) !important;
-    border: var(--spook-glass-border) !important;
-    border-radius: var(--spook-glass-border-radius);
-    box-shadow: var(--spook-glass-box-shadow) !important;
+    @include mixins.glass-panel($background: var(--spook-glass-dark));
 }
 
 /* Code block text */

@@ -1,17 +1,17 @@
-@use "../components/glass";
+@use "../abstracts/mixins";
 
 /* Glass styling */
 #app-mount .contentHeader_e9e3ed, /* Header */
 #app-mount .bd-store-card,
 #app-mount .primaryKeybindGroup_f82450 { /* Keyboard shortcuts  */
-    @include glass.glass-panel();
+    @include mixins.glass-panel();
 }
 
 /* Settings backgrounds */
 #app-mount .modal_e44912:has(.container_abd9a8),
 #app-mount [data-layer="CHANNEL_SETTINGS"] {
     background: var(--spook-glass-dark) !important;
-    @include glass.backdrop-blur();
+    @include mixins.backdrop-blur();
 }
 
 /* Transparent settings inner surfaces */

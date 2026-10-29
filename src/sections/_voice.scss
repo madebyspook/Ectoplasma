@@ -1,5 +1,3 @@
-@use "../components/glow";
-
 @use "../abstracts/mixins";
 
 /* BackgroundManager wallpaper */
@@ -19,6 +17,6 @@
 
 /* speaking character */    
 #app-mount .usernameSpeaking__07f91 {
-    @include glow.glowing-text();
+    @include mixins.glowing-text();
     filter: var(--spook-glow-filter-weak);
 }

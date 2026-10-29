@@ -1,4 +1,4 @@
-@use "../components/glow";
+@use "../abstracts/mixins";
 
 /* Transparent application layers */
 body,
@@ -31,5 +31,5 @@ body,
 }
 #app-mount .clickable__81391:hover, /* Header actions */
 #app-mount .backForwardButtons__63abb .button__63abb:not(.disabled__63abb):hover {  /* Window back and forward navigation buttons */
-    @include glow.icon-hover-glow();
+    @include mixins.icon-hover-glow();
 }
