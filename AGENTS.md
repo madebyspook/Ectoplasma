@@ -1,82 +1,43 @@
-Ectoplasma — Agent Instructions
+# Ectoplasma — Agent Instructions
 
-Project Overview
+Ectoplasma is a BetterDiscord theme with dark translucent surfaces, customizable accents, and neon glow effects. Preserve its existing appearance and functionality unless the user explicitly requests a visual change.
 
-Ectoplasma is a BetterDiscord theme featuring a dark, translucent glass aesthetic, customizable accent colors, and neon glow effects.
+## Source and distribution
 
-The project is transitioning from a single CSS file to a modular SCSS architecture.
+- `src/main.scss` is the authoritative, ordered SCSS entry point. Preserve its module order.
+- `src/abstracts/` holds CSS custom properties and shared Sass mixins.
+- `src/sections/` groups styles by Discord interface area.
+- `package.json` supplies production metadata. Its version must match the package lockfile.
+- `scripts/build.mjs` generates the root `Ectoplasma.theme.css` remote loader and `dist/Ectoplasma.css` hosted stylesheet. Never edit either CSS output manually.
+- Preserve the remote-loader architecture, public filenames, and existing GitHub Pages URLs. A release tag does not freeze the remote stylesheet.
 
-The primary goal is to maintain a visually consistent, reliable theme while improving code organization and maintainability.
+## Styling boundaries
 
-Project Structure
+- Keep changes small and scoped to the requested interface area. Preserve selectors, declaration order, specificity, `!important`, and existing behavior unless changes are explicitly authorized.
+- Preserve all `--spook-*` names and intentionally separate styling and diagnostic variables. Similar values do not make controls interchangeable.
+- Reuse existing mixins when they meaningfully reduce duplication; avoid abstractions solely to reduce line count.
+- Preserve BackgroundManager integration, wallpaper variables, and existing no-fallback behavior unless that work is explicitly requested.
+- Do not fix suspected selectors or change visual effects speculatively. Confirm behavior in Discord first.
 
-* Ectoplasma.theme.css — Current working BetterDiscord theme. Treat this as the source of truth until the SCSS migration is complete.
-* src/main.scss — Entry point for the modular SCSS architecture.
-* src/abstracts/ — Shared variables and mixins.
-* src/components/ — Reusable visual components and effects.
-* src/sections/ — Styles organized by Discord interface area.
-* dist/ — Generated CSS output.
+## Tooling and validation
 
-General Development Rules
+- Use the existing local Dart Sass dependency; do not introduce dependencies without a clear benefit.
+- Run `npm run build` after source, metadata, or build changes, then `npm run check` and `npm test` as appropriate.
+- Compare compiled styling with a fresh baseline for changes that must preserve appearance. Ignore only metadata/comment differences; preserve selectors, declarations, and cascade order.
+- `npm run check` is read-only. It must detect missing/stale generated outputs and version mismatches.
+- Build/watch without `--dev` must not install files outside the repository.
+- The installed `EctoplasmaDev.theme.css` must be written **in place**, never with an atomic rename. BetterDiscord can unload atomically replaced development themes. Repository outputs may use atomic replacement.
+- Use temporary fixtures for tooling tests, never the user's real BetterDiscord folder.
+- Follow `docs/TESTING.md` for manual checks. Do not claim runtime compatibility or visual verification without actual Discord testing.
 
-* Preserve existing functionality and appearance unless explicitly instructed otherwise.
-* Prefer small, focused changes over large, unrelated refactors.
-* Follow existing naming conventions and formatting patterns.
-* Do not introduce dependencies unless they provide a clear benefit.
-* Avoid unnecessary complexity and abstraction.
-* Do not modify unrelated sections when implementing a change.
+## Documentation and delivery
 
-CSS and SCSS Guidelines
+- Keep installation instructions separate from contributor setup. Document current behavior and limitations accurately.
+- Keep `CONTRIBUTING.md`, issue templates, and `docs/RELEASING.md` consistent with supported commands.
+- Do not invent screenshots, compatibility results, release notes, or release history.
+- Do not choose or add a license. Leave licensing as an explicit owner decision.
+- Work on a descriptive branch for implementation work; never commit or push directly to `main`.
+- Do not commit, push, open a pull request, tag, merge, create a GitHub Release, or publish unless explicitly requested.
+- Do not change Git configuration, repository settings, or hosting settings without permission. Preserve unrelated work and local editor configuration.
 
-* Keep styles organized by the Discord interface area they affect.
-* Each section should be as self-contained as reasonably possible.
-* Avoid selectors that unintentionally affect unrelated interface areas.
-* Prefer narrowly scoped selectors over broad global overrides.
-* Preserve existing CSS selectors unless a task explicitly requires changing them.
-* Preserve the existing --spook-* CSS custom properties until instructed to rename them.
-* Use shared variables and mixins when they meaningfully reduce duplication.
-* Do not introduce abstractions solely to reduce line count.
-* Maintain compatibility with BetterDiscord and Discord’s current interface.
-
-Visual Design
-
-Ectoplasma uses a consistent visual language:
-
-* Dark and translucent backgrounds.
-* Frosted-glass blur effects.
-* Accent-colored neon glow.
-* Subtle borders, shadows, and highlights.
-* Consistent text hierarchy and readability.
-
-Use existing styles as references when implementing new interface elements.
-
-Do not introduce new visual patterns without a clear reason.
-
-Development and Testing
-
-* Run npm run build after modifying SCSS files.
-* Investigate and resolve build errors before completing a task.
-* Do not manually edit generated CSS files.
-* Do not claim that visual changes have been verified unless they were actually tested in Discord.
-* Explain changes that require manual visual verification.
-
-Git and Change Management
-
-* Keep changes focused on the requested task.
-* Do not commit or push changes unless explicitly requested.
-* Do not merge branches unless explicitly requested.
-* Do not modify Git configuration or repository settings without permission.
-* Do not discard existing work or overwrite unrelated changes.
-
-Working with the User
-
-The user reviews and tests changes in BetterDiscord.
-
-When completing a task:
-
-1. Summarize what changed.
-2. Mention any important implementation decisions.
-3. Report build or validation results.
-4. Identify anything requiring manual testing.
-
-Ask for clarification when a decision could significantly affect the theme’s appearance, architecture, or behavior.
+When handing off, state what changed, the important decisions, validation performed, and remaining manual steps. Distinguish automated checks from Discord testing. Ask before a decision that would significantly affect appearance, architecture, or behavior.
