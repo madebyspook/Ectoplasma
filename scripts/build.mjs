@@ -57,19 +57,20 @@ function build({ check, dev, themesDir }) {
     style: 'expanded',
     sourceMap: false,
   });
-  const { css: loader } = sass.compile(join(source, 'loader.scss'), {
+  const { css: configuration } = sass.compile(join(source, 'loader.scss'), {
     style: 'expanded',
     sourceMap: false,
   });
+  const productionHeader = header(metadata);
+  const outputs = [
+    [loaderPath, `${productionHeader}\n@import url("${stylesheetUrl}");\n\n${configuration}`],
+    [cssPath, `${productionHeader}${css}`],
+  ];
 
-  mkdirSync(join(root, 'dist'), { recursive: true });
-  writeAtomic(join(root, 'dist/Ectoplasma.css'), css);
-  writeAtomic(join(root, 'Ectoplasma.theme.css'), loader);
-  console.log('Built Ectoplasma.theme.css and dist/Ectoplasma.css.');
-
-  if (development) {
-    if (!existsSync(themes)) {
-      throw new Error(`BetterDiscord themes directory not found: ${themes}`);
+  if (check) {
+    const stale = outputs.filter(([path, contents]) => !existsSync(path) || readFileSync(path, 'utf8') !== contents);
+    if (stale.length) {
+      throw new Error(`Generated files are missing or stale: ${stale.map(([path]) => path.slice(root.length)).join(', ')}. Run npm run build.`);
     }
     console.log('Generated CSS, loader, and metadata are consistent.');
     return;
@@ -161,9 +162,9 @@ function main() {
   console.log(`Watching src/ and package metadata${values.dev ? ' (BetterDiscord dev theme)' : ''} (polling).`);
 }
 
-  console.log(
-    `Watching src/ for SCSS changes${development ? ' (BetterDiscord dev theme)' : ''} (polling).`
-  );
-} else {
-  build();
+try {
+  main();
+} catch (error) {
+  console.error(`Build failed: ${error.message}`);
+  process.exitCode = 1;
 }

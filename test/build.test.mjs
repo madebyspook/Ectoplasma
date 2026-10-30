@@ -99,6 +99,34 @@ test('check detects either stale artifact and missing files without repairing th
   });
 });
 
+test('shared configuration and package metadata reach both artifacts without bypassing check', async () => {
+  await withFixture(directory => {
+    assert.equal(run(directory).status, 0);
+    const before = outputs(directory);
+    const configuration = join(directory, 'src/abstracts/_configuration.scss');
+    writeFileSync(configuration, readFileSync(configuration, 'utf8').replace(/--spook-accent:\s*[^;]+;/, '--spook-accent: #ff00ff;'));
+    assert.equal(run(directory, '--check').status, 1);
+    assert.deepEqual(outputs(directory), before, 'Checking changed configuration must not rewrite either artifact.');
+
+    const pkg = JSON.parse(contents(directory, 'package.json'));
+    const lock = JSON.parse(contents(directory, 'package-lock.json'));
+    pkg.version = lock.version = lock.packages[''].version = '9.8.7';
+    writeFileSync(join(directory, 'package.json'), JSON.stringify(pkg));
+    writeFileSync(join(directory, 'package-lock.json'), JSON.stringify(lock));
+    assert.equal(run(directory).status, 0);
+    for (const path of ['Ectoplasma.theme.css', 'dist/Ectoplasma.css']) {
+      const file = contents(directory, path);
+      assert.equal((file.match(/@name /g) || []).length, 1);
+      assert.ok(file.includes('@version 9.8.7'));
+      assert.ok(file.includes('--spook-accent: #ff00ff;'));
+    }
+    const loader = contents(directory, 'Ectoplasma.theme.css');
+    assert.equal((loader.match(/@import /g) || []).length, 1);
+    assert.ok(loader.indexOf('@import') < loader.indexOf(':root'), 'User configuration must follow the imported defaults.');
+    assert.equal(run(directory, '--check').status, 0);
+  });
+});
+
 test('invalid flags and installation destinations fail before producing files', async () => {
   await withFixture(directory => {
     const invalid = [
@@ -135,15 +163,19 @@ test('version mismatch or invalid metadata leaves previous generated outputs int
   });
 });
 
-test('a Sass error leaves previous outputs intact', async () => {
+test('a Sass error in either entry point leaves previous outputs intact', async () => {
   await withFixture(directory => {
     assert.equal(run(directory).status, 0);
     const before = outputs(directory);
-    writeFileSync(join(directory, 'src/sections/_global.scss'), 'invalid {');
-    const result = run(directory);
-    assert.equal(result.status, 1);
-    assert.match(result.stderr, /Build failed:/);
-    assert.deepEqual(outputs(directory), before);
+    for (const path of ['src/sections/_global.scss', 'src/loader.scss']) {
+      const original = contents(directory, path);
+      writeFileSync(join(directory, path), 'invalid {');
+      const result = run(directory);
+      assert.equal(result.status, 1);
+      assert.match(result.stderr, /Build failed:/);
+      assert.deepEqual(outputs(directory), before);
+      writeFileSync(join(directory, path), original);
+    }
   });
 });
 

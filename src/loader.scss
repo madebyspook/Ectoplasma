@@ -1,14 +1,4 @@
 @use "abstracts/configuration";
 
-/**
- * @name Ectoplasma
- * @author Made By Spook
- * @version 1.3
- * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds.
- * @source https://github.com/madebyspook/Ectoplasma
- * @updateUrl https://madebyspook.github.io/Ectoplasma/Ectoplasma.theme.css
- */
-
-@import url("https://madebyspook.github.io/Ectoplasma/dist/Ectoplasma.css");
-
+// The build script supplies metadata and the remote import from package.json.
 @include configuration.user-configuration;
