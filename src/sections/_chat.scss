@@ -315,3 +315,13 @@
 #app-mount .markup__75297:has(> pre) {
     overflow: visible !important;
 }
+
+/* Blockquote text */
+#app-mount .markup__75297 .blockquoteContainer__75297 blockquote {
+    color: var(--spook-secondary) !important;
+}
+
+/* Blockquote vertical bar */
+#app-mount .markup__75297 .blockquoteDivider__75297 {
+    background: var(--spook-secondary) !important;
+}

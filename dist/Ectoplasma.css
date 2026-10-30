@@ -81,6 +81,18 @@
   text-shadow: 0 0px 5px rgba(0, 0, 0, 0.5), 0 -1px 2px rgba(255, 255, 255, 0.3);
 }
 
+/* Version with Mac OS Vibrance transparency - Need some work, collapsible UI panels are not blurry with it */
+/*
+@mixin wallpaper-layer {
+     content: "";
+     position: absolute;
+     inset: 0;
+     z-index: -1;
+     pointer-events: none;
+
+     background: transparent !important;
+ }
+*/
 /* Transparent application layers */
 body,
 #app-mount,
@@ -819,6 +831,16 @@ body,
 /* Let code block shadows extend beyond the message text wrapper */
 #app-mount .markup__75297:has(> pre) {
   overflow: visible !important;
+}
+
+/* Blockquote text */
+#app-mount .markup__75297 .blockquoteContainer__75297 blockquote {
+  color: var(--spook-secondary) !important;
+}
+
+/* Blockquote vertical bar */
+#app-mount .markup__75297 .blockquoteDivider__75297 {
+  background: var(--spook-secondary) !important;
 }
 
 /* Glass styling */
