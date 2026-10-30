@@ -1,0 +1,4 @@
+@use "abstracts/configuration";
+
+// The build script supplies metadata and the remote import from package.json.
+@include configuration.user-configuration;

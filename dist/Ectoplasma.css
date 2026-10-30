@@ -10,10 +10,7 @@
    VARIABLES
    ============================================================ */
 :root {
-  /* Accent */
-  --spook-accent: #3C86ff;
   /* Wallpaper */
-  --spook-background-image: var(--bgm-url);
   --spook-background-color:
       linear-gradient(
           rgb(from color-mix(in srgb, var(--spook-accent) 0%, black) r g b / 0.15),
@@ -73,6 +70,28 @@
       drop-shadow(0 0 8px rgb(from var(--spook-accent) r g b / 0.7));
 }
 
+/* ============================================================
+   USER CONFIGURATION
+   Edit these values in your downloaded Ectoplasma.theme.css.
+   Replacing that file may overwrite your customizations.
+   ============================================================ */
+:root {
+  /* Accent color */
+  --spook-accent: #3C86ff;
+  /* Background: enable ONE option below. Comment out the previous
+     option's declarations when switching. Glass and blur stay enabled. */
+  /* 1. BackgroundManager (default; requires BackgroundManager) */
+  /* --spook-background-image: var(--bgm-url); */
+  /* --spook-background-fill: transparent; */
+  /* 2. Custom wallpaper (BackgroundManager is not required) */
+  /* --spook-background-image: url("YOUR_IMAGE_URL"); */
+  /* --spook-background-fill: transparent; */
+  /* 3. Solid background (BackgroundManager is not required) */
+  --spook-background-image: none;
+  --spook-background-color: none;
+  --spook-background-fill: oklch(from var(--spook-accent) 18% 0.02 h);
+}
+
 /* Global text readability */
 #app-mount {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85), 0 0 3px rgba(255, 255, 255, 0.1);
@@ -84,17 +103,6 @@
 }
 
 /* Version with Mac OS Vibrance transparency - Need some work, collapsible UI panels are not blurry with it */
-/*
-@mixin wallpaper-layer {
-     content: "";
-     position: absolute;
-     inset: 0;
-     z-index: -1;
-     pointer-events: none;
-
-     background: transparent !important;
- }
-*/
 /* Transparent application layers */
 body,
 #app-mount,
@@ -345,6 +353,7 @@ body,
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  background-color: var(--spook-background-fill);
   background-image: var(--spook-background-color), var(--spook-background-image);
   background-position: center;
   background-size: cover;
@@ -512,6 +521,7 @@ body,
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  background-color: var(--spook-background-fill);
   background-image: var(--spook-background-color), var(--spook-background-image);
   background-position: center;
   background-size: cover;
@@ -978,6 +988,7 @@ body,
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  background-color: var(--spook-background-fill);
   background-image: var(--spook-background-color), var(--spook-background-image);
   background-position: center;
   background-size: cover;
@@ -1130,6 +1141,7 @@ body,
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  background-color: var(--spook-background-fill);
   background-image: var(--spook-background-color), var(--spook-background-image);
   background-position: center;
   background-size: cover;
@@ -1232,6 +1244,7 @@ body,
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  background-color: var(--spook-background-fill);
   background-image: var(--spook-background-color), var(--spook-background-image);
   background-position: center;
   background-size: cover;
@@ -1582,6 +1595,7 @@ body,
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  background-color: var(--spook-background-fill);
   background-image: var(--spook-background-color), var(--spook-background-image);
   background-position: center;
   background-size: cover;

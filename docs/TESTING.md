@@ -26,8 +26,8 @@ This is an uncompleted checklist, not evidence of compatibility. Record actual r
 
 - [ ] Download the actual `Ectoplasma.theme.css` file; verify it appears in BetterDiscord and displays the expected loader metadata.
 - [ ] Enable it with other full themes disabled. Confirm the hosted stylesheet loads; note network/cache failures separately from styling defects.
-- [ ] Inspect installation without BackgroundManager or custom wallpaper configuration. Record the current behavior; there is no `--bgm-url` fallback. Do not assume a standalone wallpaper baseline.
-- [ ] With BackgroundManager enabled, inspect the existing wallpaper integration and hidden global BackgroundManager layer.
+- [ ] Test solid mode and a custom wallpaper URL without BackgroundManager. Record results for each wallpaper-backed view.
+- [ ] Select BackgroundManager mode and inspect its wallpaper integration and hidden global layer. Also record behavior when `--bgm-url` is absent; this mode has no automatic fallback.
 - [ ] Apply a Custom CSS accent override, check affected text/surfaces/glow, then remove it.
 - [ ] Test disabling, reenabling, reloading, replacing the loader, and uninstalling. Confirm removal of theme-specific Custom CSS where applicable.
 

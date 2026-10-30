@@ -8,3 +8,25 @@
  */
 
 @import url("https://madebyspook.github.io/Ectoplasma/dist/Ectoplasma.css");
+
+/* ============================================================
+   USER CONFIGURATION
+   Edit these values in your downloaded Ectoplasma.theme.css.
+   Replacing that file may overwrite your customizations.
+   ============================================================ */
+:root {
+  /* Accent color */
+  --spook-accent: #3C86ff;
+  /* Background: enable ONE option below. Comment out the previous
+     option's declarations when switching. Glass and blur stay enabled. */
+  /* 1. BackgroundManager (default; requires BackgroundManager) */
+  /* --spook-background-image: var(--bgm-url); */
+  /* --spook-background-fill: transparent; */
+  /* 2. Custom wallpaper (BackgroundManager is not required) */
+  /* --spook-background-image: url("YOUR_IMAGE_URL"); */
+  /* --spook-background-fill: transparent; */
+  /* 3. Solid background (BackgroundManager is not required) */
+  --spook-background-image: none;
+  --spook-background-color: none;
+  --spook-background-fill: oklch(from var(--spook-accent) 18% 0.02 h);
+}

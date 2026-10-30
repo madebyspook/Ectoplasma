@@ -57,9 +57,13 @@ function build({ check, dev, themesDir }) {
     style: 'expanded',
     sourceMap: false,
   });
+  const { css: configuration } = sass.compile(join(source, 'loader.scss'), {
+    style: 'expanded',
+    sourceMap: false,
+  });
   const productionHeader = header(metadata);
   const outputs = [
-    [loaderPath, `${productionHeader}\n@import url("${stylesheetUrl}");\n`],
+    [loaderPath, `${productionHeader}\n@import url("${stylesheetUrl}");\n\n${configuration}`],
     [cssPath, `${productionHeader}${css}`],
   ];
 
