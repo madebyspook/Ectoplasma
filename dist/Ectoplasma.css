@@ -1,7 +1,7 @@
 /**
  * @name Ectoplasma
  * @author Made By Spook
- * @version 1.4.1
+ * @version 1.4.2
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 /* ============================================================
@@ -564,7 +564,8 @@ body,
 }
 
 /* Chat message text */
-#app-mount .message__5126c .markup__75297 #app-mount .message__5126c .markup__75297 h1,
+#app-mount .message__5126c .markup__75297,
+#app-mount .message__5126c .markup__75297 h1,
 #app-mount .message__5126c .markup__75297 h2,
 #app-mount .message__5126c .markup__75297 h3,
 #app-mount .message__5126c .markup__75297 h4,
@@ -869,7 +870,7 @@ body,
 
 /* Message composer input text */
 #app-mount .channelTextArea__74017 .markup__75297 {
-  color: var(--spook-highlight) !important;
+  color: var(--spook-primary) !important;
 }
 
 /* Message composer mentions */
