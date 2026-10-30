@@ -81,13 +81,7 @@
 /* Unread Indicator */
 #app-mount .channelInfo_c69b6d .numberBadge__463b7,
 #app-mount .unread__2ea32.unreadImportant__2ea32 {
-    @include mixins.accent-surface-glow-neon();
-    filter: var(--spook-glow-filter-strong);
-}
-
-/* Unread message count readability */
-#app-mount .channelInfo_c69b6d .numberBadge__463b7 {
-    @include mixins.badge-readability();
+    @include mixins.notification-badge();
 }
 
 /* New unreads pill glass */

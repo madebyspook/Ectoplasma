@@ -1,7 +1,7 @@
 /**
  * @name Ectoplasma
  * @author Made By Spook
- * @version 1.4.2
+ * @version 1.4.3
  * @description A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.
  */
 /* ============================================================
@@ -144,6 +144,7 @@ body,
   filter: var(--spook-glow-filter-strong);
 }
 
+/* Server Notification */
 #app-mount .lowerBadge_cc5dd2 [class*=numberBadge] {
   background-color: var(--spook-neon) !important;
   box-shadow: var(--spook-glow-accent);
@@ -239,10 +240,6 @@ body,
   background-color: var(--spook-neon) !important;
   box-shadow: var(--spook-glow-accent);
   filter: var(--spook-glow-filter-strong);
-}
-
-/* Unread message count readability */
-#app-mount .channelInfo_c69b6d .numberBadge__463b7 {
   text-shadow: 0 1px 3px rgb(0, 0, 0), 0 0 5px rgba(0, 0, 0, 0.9) !important;
 }
 
@@ -406,6 +403,26 @@ body,
 #app-mount .searchBar__5ec2f .input__75098::placeholder,
 #app-mount .searchBar__5ec2f .icon__75098 svg path {
   color: var(--spook-secondary) !important;
+}
+
+/* Friend request notification badges: sidebar Friends link and Pending tab */
+#app-mount .friendsButtonContainer_e6b769 .numberBadge__463b7,
+#app-mount [data-tab-id=PENDING] .numberBadge__463b7 {
+  background-color: var(--spook-neon) !important;
+  box-shadow: var(--spook-glow-accent);
+  filter: var(--spook-glow-filter-strong);
+  text-shadow: 0 1px 3px rgb(0, 0, 0), 0 0 5px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Friends header tabs */
+#app-mount .tabBar__133bf .item__133bf .itemText_aa8da2 {
+  color: var(--spook-primary) !important;
+}
+
+/* Friends header tab hover */
+#app-mount .tabBar__133bf .item__133bf:hover .itemText_aa8da2 {
+  color: var(--spook-neon) !important;
+  text-shadow: var(--spook-glow-neon-strong);
 }
 
 /* Member list background */
@@ -1554,4 +1571,51 @@ body,
 /* Picker category labels */
 #app-mount .categoryName_dfa278 {
   color: var(--spook-highlight) !important;
+}
+
+/* Browse Channels wallpaper */
+#app-mount .chat__0b563::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: var(--spook-background-color), var(--spook-background-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: var(--spook-glass-filter);
+}
+
+/* Browse Channels wallpaper host */
+#app-mount .chat__0b563 {
+  position: relative;
+  isolation: isolate;
+  background: transparent !important;
+}
+
+/* Transparent content containers */
+#app-mount .chat__0b563 .content_f75fb0,
+#app-mount .chat__0b563 .pageBody__41ed7 {
+  background: transparent !important;
+}
+
+/* Channel rows */
+#app-mount .chat__0b563 .channelRow_e4503a {
+  background: var(--spook-glass-dark) !important;
+}
+
+/* Channel names */
+#app-mount .chat__0b563 .channelText_e4503a {
+  color: var(--spook-primary) !important;
+}
+
+/* Channel type icons */
+#app-mount .chat__0b563 .channelName_e4503a .icon__2ea32 {
+  color: var(--spook-primary) !important;
+}
+
+/* Channel subtitles / activity */
+#app-mount .chat__0b563 .channelSubtitle_e4503a {
+  color: var(--spook-secondary) !important;
 }

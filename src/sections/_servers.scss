@@ -13,8 +13,7 @@
     filter: var(--spook-glow-filter-strong);
 }
 
+/* Server Notification */
 #app-mount .lowerBadge_cc5dd2 [class*="numberBadge"] {
-    @include mixins.accent-surface-glow-neon();
-    filter: var(--spook-glow-filter-strong);
-    @include mixins.badge-readability();
+    @include mixins.notification-badge();
 }

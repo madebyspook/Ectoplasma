@@ -1,0 +1,38 @@
+@use "../abstracts/mixins";
+
+/* Browse Channels wallpaper */
+#app-mount .chat__0b563::before {
+    @include mixins.wallpaper-layer();
+}
+
+/* Browse Channels wallpaper host */
+#app-mount .chat__0b563 {
+    @include mixins.wallpaper-host();
+}
+
+/* Transparent content containers */
+#app-mount .chat__0b563 .content_f75fb0,
+#app-mount .chat__0b563 .pageBody__41ed7 {
+    background: transparent !important;
+}
+
+/* Channel rows */
+#app-mount .chat__0b563 .channelRow_e4503a {
+    background: var(--spook-glass-dark) !important;
+}
+
+/* Channel names */
+#app-mount .chat__0b563 .channelText_e4503a {
+    color: var(--spook-primary) !important;
+}
+
+/* Channel type icons */
+#app-mount .chat__0b563 .channelName_e4503a .icon__2ea32 {
+    color: var(--spook-primary) !important;
+}
+
+/* Channel subtitles / activity */
+#app-mount .chat__0b563 .channelSubtitle_e4503a {
+    color: var(--spook-secondary) !important;
+}
+

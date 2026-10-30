@@ -67,3 +67,19 @@
 #app-mount .searchBar__5ec2f .icon__75098 svg path {
     color: var(--spook-secondary) !important;
 }
+
+/* Friend request notification badges: sidebar Friends link and Pending tab */
+#app-mount .friendsButtonContainer_e6b769 .numberBadge__463b7,
+#app-mount [data-tab-id="PENDING"] .numberBadge__463b7 {
+    @include mixins.notification-badge();
+}
+
+/* Friends header tabs */
+#app-mount .tabBar__133bf .item__133bf .itemText_aa8da2 {
+    color: var(--spook-primary) !important;
+}
+
+/* Friends header tab hover */
+#app-mount .tabBar__133bf .item__133bf:hover .itemText_aa8da2 {
+    @include mixins.glowing-text();
+}
