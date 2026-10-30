@@ -1,12 +1,24 @@
 {
   "name": "ectoplasma",
-  "version": "0.0.0",
+  "version": "1.4.3",
   "private": true,
-  "description": "Development tooling for the Ectoplasma BetterDiscord theme.",
+  "description": "A sleek, near-black Discord theme with icy blue accents and optional blurred backgrounds for a translucent, glass-like appearance.",
+  "author": "Made By Spook",
+  "homepage": "https://madebyspook.github.io/Ectoplasma/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madebyspook/Ectoplasma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/madebyspook/Ectoplasma/issues"
+  },
   "license": "UNLICENSED",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "watch": "node scripts/build.mjs --watch"
+    "watch": "node scripts/build.mjs --watch",
+    "check": "node scripts/build.mjs --check",
+    "test": "node --test",
+    "release:check": "npm run check && npm test"
   },
   "engines": {
     "node": ">=22"

@@ -1,8 +1,8 @@
 # Ectoplasma
 
-Ectoplasma is a BetterDiscord theme with a near-black palette, icy blue accents, and glass-like styling.
+A BetterDiscord theme with a near-black palette, icy blue accents, translucent surfaces, and neon glow effects.
 
-## Current status
+[Download Ectoplasma.theme.css](https://madebyspook.github.io/Ectoplasma/Ectoplasma.theme.css) · [Report a problem](https://github.com/madebyspook/Ectoplasma/issues) · [Contributing](CONTRIBUTING.md)
 
 The theme styles live in `src/`. `npm run build` generates the installable `Ectoplasma.theme.css` remote loader and the complete hosted stylesheet at `dist/Ectoplasma.css`. The loader imports the hosted stylesheet and then supplies editable user configuration.
 
@@ -56,7 +56,7 @@ BackgroundManager is optional when using custom wallpaper or solid mode. The sep
 
 Save the file and inspect the result in Discord. Keep a backup: **replacing the downloaded theme file may overwrite your customizations**. The remote stylesheet can update independently of those local settings. Confirm changes in BetterDiscord; compilation is not visual verification.
 
-## Project structure
+Node.js, npm, and the repository source are only needed for development. `dist/Ectoplasma.css` is the hosted stylesheet, not the file to install.
 
 ```text
 Ectoplasma/
@@ -95,33 +95,58 @@ Ectoplasma/
 └── README.md
 ```
 
-The existing tracked `.DS_Store` is preserved. New operating system metadata is ignored.
+| Variable | Current default | Purpose |
+| --- | --- | --- |
+| `--spook-accent` | `#3C86ff` | Accent used to derive text, surfaces, and glow colors. |
+| `--spook-glass-border-radius` | `12px` | Rounding used by shared glass panels. |
+| `--spook-glass-filter` | `blur(8px) saturate(1.25)` | Wallpaper filtering and panel backdrop filtering. |
+| `--spook-background-image` | `var(--bgm-url)` | Wallpaper image supplied through the BackgroundManager integration. |
+
+Other existing controls are in [src/abstracts/_variables.scss](src/abstracts/_variables.scss). Text, glass, and glow controls have different roles even where values look similar. Changing the accent or wallpaper can affect readability; inspect your chosen settings in Discord.
+
+### Current wallpaper behavior
+
+Ectoplasma reads `--bgm-url`, supplied externally by BackgroundManager, through `--spook-background-image`. It hides BackgroundManager's global `.BGM-bg_container` and uses the image in its own wallpaper layers. Ectoplasma does not install or configure BackgroundManager.
+
+There is currently no fallback for an undefined `--bgm-url`. Without BackgroundManager or an explicit user override, the wallpaper `background-image` declaration cannot resolve. Standalone wallpaper behavior and fallback handling are outstanding work. This repository does not claim that the default appearance without BackgroundManager has been visually verified.
+
+## Updates and removal
+
+The loader imports a moving hosted stylesheet. Published CSS changes can reach installed copies when Discord reloads that resource; browser caching can delay them. Reload Discord if styling appears stale, then check whether GitHub Pages is reachable. Updating the import does not necessarily update the version displayed by the installed loader.
+
+If the loader itself changes, download `Ectoplasma.theme.css` again and replace the installed copy. Keep your preferences in Custom CSS. The `@updateUrl` metadata is not a guarantee of automatic loader updates. No BetterDiscord directory approval or in-client updater support is claimed.
+
+To uninstall, disable Ectoplasma and remove `Ectoplasma.theme.css` from the theme folder. Remove any Ectoplasma-specific Custom CSS overrides you added. If you used the development theme, disable and remove `EctoplasmaDev.theme.css` too.
+
+For blank or unexpected styling, check the filename, hosted CSS access, other enabled themes, your Custom CSS, and the wallpaper behavior above. Include relevant details in a [bug report](https://github.com/madebyspook/Ectoplasma/issues/new/choose).
 
 ## Development
-
-Prerequisites: Node.js 22 or newer and npm. Dart Sass is installed locally as a development dependency; a global Sass installation is unnecessary.
-
-Install the locked dependencies:
-
-```sh
-npm ci
-```
 
 Compile `src/main.scss` to `dist/Ectoplasma.css` and `src/loader.scss` to `Ectoplasma.theme.css`:
 
 ```sh
+npm ci
 npm run build
+npm run check
+npm test
 ```
 
-Rebuild automatically when SCSS files change:
+`package.json` is the source of production theme metadata, including version, author, and description. `npm run build` compiles `src/main.scss` and generates two tracked outputs:
+
+- `Ectoplasma.theme.css`: the primary installable remote loader, with the existing public import URL.
+- `dist/Ectoplasma.css`: the complete compiled stylesheet and matching metadata.
+
+Edit SCSS for styling and package metadata for theme identity. Do not manually edit generated CSS. Expanded CSS and disabled source maps are used for both development and production; a separate minification pipeline is unnecessary here.
+
+`npm run check` compiles in memory and fails if either generated output is missing or stale, or if package and lockfile versions disagree. It does not write files. `npm test` exercises build and watcher behavior in temporary directories without touching your installed theme.
+
+### Watch and local testing
 
 ```sh
 npm run watch
 ```
 
-Stop the watcher with Ctrl+C. The watcher polls SCSS files every 500 ms without additional dependencies. Source maps are disabled; both generated CSS files stay tracked.
-
-`scripts/build.mjs` uses standard Dart Sass compilation. The BetterDiscord metadata header is preserved. Sass normalizes whitespace, numeric spelling, and some attribute quotes, and omits comments inside selectors; the original SCSS remains unchanged.
+This rebuilds repository outputs when SCSS files or package metadata change, polling every 500 ms. It detects added and deleted SCSS files. Compilation errors leave the last successful outputs in place and watching continues. Fix the error and save a watched file to retry. Restart the watcher after editing the build script. Stop it with Ctrl+C.
 
 Watch mode detects new SCSS files and continues watching after compilation errors, including errors on startup. Failed compilation leaves the last successful outputs installed. Repository outputs use atomic replacement; the installed development theme is written in place.
 
@@ -131,7 +156,7 @@ The loader and hosted stylesheet must be published together for the new backgrou
 
 ## BetterDiscord workflow
 
-On macOS, opt into automatic installation after every successful watch build:
+The default destination is `~/Library/Application Support/BetterDiscord/themes/EctoplasmaDev.theme.css`. The themes folder must already exist. To select an existing theme folder explicitly, including on Windows or Linux:
 
 ```sh
 npm run watch -- --dev
@@ -139,10 +164,22 @@ npm run watch -- --dev
 
 This writes the full local stylesheet to `~/Library/Application Support/BetterDiscord/themes/EctoplasmaDev.theme.css`, using the current user's home directory. The themes directory must already exist. Enable EctoplasmaDev with Ectoplasma disabled. The file continues to be written in place because atomic replacement can cause BetterDiscord to unload it. Copy failures are reported and the watcher stays running; another SCSS change retries the build and copy. Plain `npm run build` and `npm run watch` only generate repository outputs.
 
-The existing editor Run on Save configuration is unchanged. Automatic installation with the flag above requires no editor save or copy step.
+### Repository layout
 
-Verify the installed theme in BetterDiscord after building; compilation and source comparisons do not constitute visual testing.
+```text
+src/main.scss            Ordered SCSS entry point
+src/abstracts/           CSS custom properties and shared Sass mixins
+src/sections/            Styles grouped by Discord interface area
+scripts/build.mjs        Build, consistency check, and optional dev installation
+Ectoplasma.theme.css     Generated installable remote loader
+dist/Ectoplasma.css      Generated hosted stylesheet
+test/                   Build and watcher regression tests
+docs/                   Manual testing and release preparation
+.github/                CI and contribution templates
+```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md), the [manual testing checklist](docs/TESTING.md), and the [release preparation guide](docs/RELEASING.md). CI checks builds and generated-file consistency; it does not publish releases or deploy the theme. The existing GitHub Pages setup remains responsible for hosting.
 
 ## License
 
-No license has been selected or added. Choose a license before public distribution or submission. The package is private to prevent accidental npm publication; `UNLICENSED` is a tooling marker, not a license grant.
+No license has been chosen. Licensing remains an explicit owner decision before release preparation is completed. `private: true` prevents accidental npm publication; `UNLICENSED` is a tooling marker, not a license grant. No license or third-party artwork has been added.
