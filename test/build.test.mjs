@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { spawn, spawnSync } from 'node:child_process';
 import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 
@@ -92,7 +92,7 @@ test('check detects either stale artifact and missing files without repairing th
       writeFileSync(join(directory, path), 'stale artifact');
       const result = run(directory, '--check');
       assert.equal(result.status, 1);
-      assert.ok(result.stderr.includes(path));
+      assert.ok(result.stderr.includes(normalize(path)), result.stderr);
       assert.equal(contents(directory, path), 'stale artifact');
       assert.equal(run(directory).status, 0);
     }
