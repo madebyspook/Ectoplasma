@@ -7,6 +7,7 @@
     z-index: -1;
     pointer-events: none;
 
+    background-color: var(--spook-background-fill);
     background-image:
         var(--spook-background-color),
         var(--spook-background-image);
@@ -19,8 +20,7 @@
 }
 
 /* Version with Mac OS Vibrance transparency - Need some work, collapsible UI panels are not blurry with it */
-/*
-@mixin wallpaper-layer {
+@mixin wallpaper-layer-vibrance {
      content: "";
      position: absolute;
      inset: 0;
@@ -29,7 +29,7 @@
 
      background: transparent !important;
  }
-*/
+
 
 @mixin wallpaper-host {
     position: relative;

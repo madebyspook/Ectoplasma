@@ -24,10 +24,15 @@ function build() {
     style: 'expanded',
     sourceMap: false,
   });
+  const { css: loader } = sass.compile(join(source, 'loader.scss'), {
+    style: 'expanded',
+    sourceMap: false,
+  });
 
   mkdirSync(join(root, 'dist'), { recursive: true });
   writeAtomic(join(root, 'dist/Ectoplasma.css'), css);
-  console.log('Built dist/Ectoplasma.css.');
+  writeAtomic(join(root, 'Ectoplasma.theme.css'), loader);
+  console.log('Built Ectoplasma.theme.css and dist/Ectoplasma.css.');
 
   if (development) {
     if (!existsSync(themes)) {

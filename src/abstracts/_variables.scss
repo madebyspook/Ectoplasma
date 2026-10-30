@@ -1,3 +1,5 @@
+@use "configuration";
+
 /**
  * @name Ectoplasma
  * @author Made By Spook
@@ -10,11 +12,7 @@
    ============================================================ */
 
 :root {
-    /* Accent */    
-    --spook-accent: #3C86ff; 
-
     /* Wallpaper */
-    --spook-background-image: var(--bgm-url);
     --spook-background-color:
         linear-gradient(
             rgb(from color-mix(in srgb, var(--spook-accent) 0%, black) r g b / 0.15),
@@ -77,3 +75,6 @@
         drop-shadow(0 0 4px rgb(from var(--spook-accent) r g b / 0.8))
         drop-shadow(0 0 8px rgb(from var(--spook-accent) r g b / 0.7));    
     }
+
+// Emit after the defaults so the solid option can disable the wallpaper tint.
+@include configuration.user-configuration;
